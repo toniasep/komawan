@@ -1,35 +1,29 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Main CSS-->
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url().'assets/css/main.css'; ?>">
-    <!-- Font-icon css-->
-    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>Sign Up</title>
-  </head>
-  <body>
-    <section class="material-half-bg">
-      <div class="cover"></div>
-    </section>
-    <section class="login-content">
-      <div class="logo">
-        <h1>Aplikasi Manajemen Penjualan</h1>
-      </div>
-      <div class="signup-box">
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0 text-dark">Tambah Transaksi</h1>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        
         <form class="login-form" action="<?php echo base_url().'main/signup'; ?>" method="post"><!-- 
           <h3 class="login-head"><i class="fa fa-lg fa-fw fa-user"></i>SIGN IN</h3> -->
           <div class="row">
             <div class="col-lg-6">
               <div class="form-group">
-                <label class="control-label">USERNAME</label>
-                <input class="form-control" type="text" placeholder="Username" name="username" autofocus>
-              </div>
-              <div class="form-group">
-                <label class="control-label">NAMA</label>
-                <input class="form-control" type="text" placeholder="Nama Lengkap" name="nama">
+                <label class="control-label">Pelanggan</label>
+                <input class="form-control" type="text" placeholder="Nama Pelanggan" name="nama" autofocus>
               </div>
               <div class="form-group">
                 <label class="control-label">NO HP</label>
@@ -53,16 +47,16 @@
 
             <div class="col-lg-12">
               <div class="form-group btn-container">
-                <input type="submit" name="submit" value="SIGN UP" class="btn btn-primary btn-block"><br>
+                <button class="btn btn-primary btn-block">SIGN UP</button><br>
                 <label>sudah punya akun ?</label>
-                <a href="<?php echo base_url().'main/login'; ?>" class="btn btn-primary btn-block">LOGIN</a>
+                <input type="submit" name="submit" value="LOGIN" class="btn btn-primary btn-block">
               </div>
             </div>
 
             
           </div>
-        </form>
-      </div>
+        </form> 
+      </div>  
     </section>
-  </body>
-</html>
+    <!-- /.content -->
+  </div>

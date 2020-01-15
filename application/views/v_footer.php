@@ -15,6 +15,14 @@
 </div>
 <!-- ./wrapper -->
 
+<script type="text/javascript">
+  
+</script>
+<script type="text/javascript">
+      $(document).ready(function() {
+          $('#example').DataTable();
+      } );
+  </script>
 <!-- jQuery -->
 <script src="<?php echo base_url(); ?>assets/plugins/jquery/jquery.min.js"></script>
 <!-- jQuery UI 1.11.4 -->

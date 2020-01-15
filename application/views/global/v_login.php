@@ -19,7 +19,7 @@
         <h1>Aplikasi Manajemen Penjualan</h1>
       </div>
       <div class="login-box">
-        <form class="login-form" action="<?php echo base_url().'main/login'; ?>" method="post"><!-- 
+        <form class="login-form" action="<?php echo base_url().'main/dashboard'; ?>" method="post"><!-- 
           <h3 class="login-head"><i class="fa fa-lg fa-fw fa-user"></i>SIGN IN</h3> -->
           <div class="form-group">
             <label class="control-label">USERNAME</label>
@@ -32,7 +32,7 @@
           <div class="form-group btn-container">
           	<input type="submit" name="submit" value="LOGIN" class="btn btn-primary btn-block"><br>
             <label>belum punya akun ?</label>
-            <a href="<?php echo base_url().'main/signup'; ?>"><button class="btn btn-primary btn-block">SIGN UP</button></a>
+            <a href="<?php echo base_url().'main/signup'; ?>" class="btn btn-primary btn-block">SIGN UP</a>
           </div>
         </form>
       </div>
