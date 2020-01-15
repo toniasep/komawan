@@ -1,41 +1,62 @@
 <?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+
 class main extends CI_Controller
 {
 	function index()
 	{
-		// if($this->session->userdata('masuk') == '1'){
-		// 	$list_menu = $this->auth->get_menu();
-
-		// 	$this->load->view('global/header_login');
-		// 	$this->load->view('global/sidebar_login', ['list_menu'=>$list_menu]);
-		// 	$this->load->view('global/home_login');
-		// }else{
-			redirect(base_url().'main/login');
-		// }
+		if($this->session->userdata('masuk') == '1'){
+			$this->load->view('global/v_header');
+			$this->load->view('global/v_dashboard');
+			$this->load->view('global/v_footer');
+		}else{
+			redirect(base_url().'masuk');
+		}
 	}
 
-	function login(){
-		// if(isset($_POST['submit'])){
-		// 	$username = $_POST['username'];
-		// 	$password = $_POST['password'];
+	function masuk(){
+		if($this->input->post('submit') != NULL){
 
-		// 	$log_in = $this->auth->login($username,$password);
-		// 	redirect(base_url());
-		// }else{
-			$this->load->view('global/v_login');
-		// }
-	}
-	function signup(){
-		$this->load->view('global/v_signup');
-	}
-	function dashboard(){
-		$this->load->view('v_header');
-		$this->load->view('v_dashboard');
-		$this->load->view('v_footer');
+			$email = $this->input->post('email');
+			$password = $this->input->post('password');
+
+			if(!$this->auth->masuk($email,$password)){
+				$this->session->set_flashdata('pesan', 'Login Gagal. Pastikan Email/Password Benar');
+				$this->load->view('global/v_masuk');
+			}else{
+				redirect(base_url());
+			}
+			
+		}else{
+			$this->session->set_flashdata('pesan', '');
+			$this->load->view('global/v_masuk');
+		}
 	}
 
-	function logout(){
-		// $this->auth->logout();
-		redirect(base_url().'main/login');
+	function daftar(){
+		if($this->input->post('submit') != NULL){
+			$data = [
+				'nama' => $this->input->post('nama'),
+				'hp' => $this->input->post('hp'),
+				'email' => $this->input->post('email'),
+				'password' => password_hash($this->input->post('password'), PASSWORD_DEFAULT),
+				'hak_akses' => '1',
+				'dihapus' => '0',
+				'ditambah_oleh' => $this->input->post('email'),
+				'tgl_tambah' => date("Y-m-d H:i:s")
+			];
+
+			$this->m_main->tambah('tbl_user', $data);
+
+			echo "<script>alert('Berhasil Daftar, Silahkan Masuk');</script>";
+			redirect(base_url().'masuk');
+		}else{
+			$this->load->view('global/v_daftar');
+		}
+	}
+
+	function keluar(){
+		$this->auth->keluar();
+		redirect(base_url().'masuk');
 	}
 }

@@ -1,18 +1,30 @@
 <?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+
 class transaksi extends CI_Controller
 {
 	function index()
 	{
-		$this->load->view('v_header');
-		$this->load->view('v_list_transaksi');
-		$this->load->view('v_footer');
+		if($this->session->userdata('masuk') == '1'){
+			$where = [
+				'user_id' => $this->session->userdata('id'),
+				'dihapus' => '0'
+			];
+			$hasil['data_transaksi'] = $this->m_main->tampil_where('v_transaksi', $where);
+
+			$this->load->view('global/v_header');
+			$this->load->view('transaksi/v_transaksi', $hasil);
+			$this->load->view('global/v_footer');
+		}else{
+			redirect(base_url().'masuk');
+		}
 	}
 
-	function add_transaksi()
+	function tambah()
 	{
-		$this->load->view('v_header');
-		$this->load->view('v_add_transaksi');
-		$this->load->view('v_footer');
+		$this->load->view('global/v_header');
+		$this->load->view('transaksi/v_transaksi_tambah');
+		$this->load->view('global/v_footer');
 	}
 	
 
