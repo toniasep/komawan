@@ -41,10 +41,10 @@ class pelanggan extends CI_Controller
 
 				// redirect(base_url().'produk');
 			}else{
+				$hasil['data_pos'] = $this->m_main->tampil('tbl_pos');
 
-				
 				$this->load->view('global/v_header');
-				$this->load->view('pelanggan/v_pelanggan_tambah');
+				$this->load->view('pelanggan/v_pelanggan_tambah', $hasil);
 				$this->load->view('global/v_footer');
 			}
 		}else{

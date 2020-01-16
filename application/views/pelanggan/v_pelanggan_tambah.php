@@ -42,7 +42,14 @@
               </div>
               <div class="form-group">
                 <label class="control-label">Kelurahan</label>
-                <select class="form-control selectpicker" data-live-search="true" name="kelurahan" style="width: 40%" placeholder="Nama" required="">
+                <select class="form-control selectpicker" data-live-search="true" data-size="5" name="kelurahan" style="width: 40%" placeholder="Nama" required="">
+                  <?php
+                  foreach ($data_pos->result() as $dp) {
+                  ?>
+                    <option value="<?=$dp->id?>"><?=$dp->urban.','.$dp->sub_district.','.$dp->city?></option>
+                  <?php
+                  }
+                  ?>
                 </select>
               </div>
               <div class="form-group">
@@ -67,7 +74,7 @@
 
 <script>
 $.fn.selectpicker.Constructor.BootstrapVersion = '4';
-$("[aria-label='Search']").keypress(function() {
+$(".selectpicker").keypress(function() {
   console.log( "Handler for .keypress() called." );
 });
 </script>
