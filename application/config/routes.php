@@ -52,3 +52,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'main';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+$route['masuk'] = 'main/masuk';
+$route['keluar'] = 'main/keluar';
+$route['daftar'] = 'main/daftar';
+
+// $route['suket/:num'] = 'suket';
+// $route['suket/all'] = 'suket';
