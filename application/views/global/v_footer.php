@@ -15,19 +15,49 @@
 </div>
 <!-- ./wrapper -->
 
-<script type="text/javascript">
-  
-</script>
-<script type="text/javascript">
-      $(document).ready(function() {
-          $('#example').DataTable();
+
+<script src="<?=base_url().'assets/'?>vendor/datatables/jquery.dataTables.js"></script>
+<script src="<?=base_url().'assets/'?>vendor/datatables/dataTables.bootstrap4.min.js"></script>
+<script src="<?=base_url().'assets/'?>vendor/datatables/dataTables.buttons.min.js"></script>
+<script src="<?=base_url().'assets/'?>vendor/datatables/jszip.min.js"></script>
+<script src="<?=base_url().'assets/'?>vendor/datatables/pdfmake.min.js"></script>
+<script src="<?=base_url().'assets/'?>vendor/datatables/vfs_fonts.js"></script>
+<script src="<?=base_url().'assets/'?>vendor/datatables/buttons.html5.min.js"></script>
+
+<!-- Page level custom scripts -->
+<script src="<?=base_url().'assets/'?>js/demo/datatables-demo.js"></script>
+
+<script>
+  $(document).ready(function() {
+      // Setup - add a text input to each footer cell
+      $('#tabel thead tr').clone(true).appendTo( '#tabel thead' );
+      $('#tabel thead tr:eq(1) th').each( function (i) {
+          var title = $(this).text();
+          $(this).html( '<input type="text" placeholder="Cari '+title+'" />' );
+   
+          $( 'input', this ).on( 'keyup change', function () {
+              if ( table.column(i).search() !== this.value ) {
+                  table
+                      .column(i)
+                      .search( this.value )
+                      .draw();
+              }
+          } );
       } );
-  </script>
-<!-- jQuery -->
-<script src="<?=base_url(); ?>assets/plugins/jquery/jquery.min.js"></script>
-<!-- jQuery UI 1.11.4 -->
-<script src="<?=base_url(); ?>assets/plugins/jquery-ui/jquery-ui.min.js"></script>
-<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+   
+      var table = $('#tabel').DataTable( {
+          orderCellsTop: true,
+          fixedHeader: true,
+          dom: 'Bfrtip',
+          buttons: [
+              'copyHtml5',
+              'excelHtml5',
+              'csvHtml5',
+              'pdfHtml5'
+          ]
+      } );
+  } );
+</script>
 <script>
   $.widget.bridge('uibutton', $.ui.button)
 </script>
@@ -57,5 +87,10 @@
 <script src="<?=base_url(); ?>assets/dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="<?=base_url(); ?>assets/dist/js/demo.js"></script>
+<script src="<?=base_url().'assets/'?>vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<!-- Core plugin JavaScript-->
+<script src="<?=base_url().'assets/'?>vendor/jquery-easing/jquery.easing.min.js"></script>
+
 </body>
 </html>

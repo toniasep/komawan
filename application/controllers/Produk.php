@@ -67,5 +67,50 @@ class produk extends CI_Controller
 		}
 	}
 	
+	function ubah(){
+		if($this->session->userdata('masuk') == '1'){
+			if($this->input->post('submit') != NULL){
+				$where = [
+					'id' => $this->input->post('id'),
+					'user_id' => $this->session->userdata('id'),
+					'dihapus' => '0'
+				];
+				$data = [
+					'nama' => $this->input->post('nama'),
+					'sku' => $this->input->post('sku'),
+					'stok' => $this->input->post('stok'),
+					'harga_beli' => $this->input->post('harga_beli'),
+					'harga_jual' => $this->input->post('harga_jual'),
+					'berat' => $this->input->post('berat'),
+					'deskripsi' => $this->input->post('deskripsi'),
+					'dihapus' => '0',
+					'user_id' => $this->session->userdata('id'),
+					'ditambah_oleh' => $this->session->userdata('email'),
+					'tgl_tambah' => date("Y-m-d H:i:s")
+				];
+
+				$this->m_main->ubah('tbl_produk', $data, $where);
+
+				redirect(base_url().'produk');
+			}else{
+				$where = [
+					'id' => $this->uri->segment(3),
+					'user_id' => $this->session->userdata('id'),
+					'dihapus' => '0'
+				];
+				$hasil['produk'] = $this->m_main->tampil_where('tbl_produk', $where)->row();
+				if($hasil['produk'] != NULL){
+					$this->load->view('global/v_header');
+					$this->load->view('produk/v_produk_ubah', $hasil);
+					$this->load->view('global/v_footer');
+				}else{
+					echo "<h1>GO DIE</h1>";
+				}
+				
+			}
+		}else{
+			redirect(base_url().'masuk');
+		}
+	}
 
 }

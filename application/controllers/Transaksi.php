@@ -22,8 +22,14 @@ class transaksi extends CI_Controller
 
 	function tambah()
 	{
+		$where = [
+			'user_id' => $this->session->userdata('id'),
+			'dihapus' => '0'
+		];
+		$hasil['pelanggan'] = $this->m_main->tampil_where('tbl_pelanggan', $where);
+
 		$this->load->view('global/v_header');
-		$this->load->view('transaksi/v_transaksi_tambah');
+		$this->load->view('transaksi/v_transaksi_tambah', $hasil);
 		$this->load->view('global/v_footer');
 	}
 	

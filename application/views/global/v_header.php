@@ -24,14 +24,14 @@
   <link rel="stylesheet" href="<?=base_url(); ?>assets/plugins/daterangepicker/daterangepicker.css">
   <!-- summernote -->
   <link rel="stylesheet" href="<?=base_url(); ?>assets/plugins/summernote/summernote-bs4.css">
-  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.20/datatables.min.css"/>
-   
-  <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-  <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
-  <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.20/datatables.min.js"></script>
+
+  <script src="<?=base_url().'assets/'?>vendor/jquery/jquery-3.3.1.min.js"></script>
+  <script src="<?=base_url().'assets/'?>vendor/jquery/jquery-ui.js"></script>
+  <link href="<?=base_url().'assets/'?>vendor/jquery/jquery-ui.css" rel="stylesheet">
+  <link href="<?=base_url().'assets/'?>vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+  <link href="<?=base_url().'assets/'?>vendor/datatables/buttons.dataTables.min.css" rel="stylesheet">
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -118,27 +118,12 @@
             </ul>
           </li>
           <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
+            <a href="<?=base_url().'pelanggan'?>" class="nav-link">
               <i class="nav-icon fas fa-tree"></i>
               <p>
                 Pelanggan
-                <i class="fas fa-angle-left right"></i>
               </p>
             </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="<?=base_url().'pelanggan'?>" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Daftar Pelanggan</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="<?=base_url().'pelanggan/tambah'?>" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Tambah Pelanggan</p>
-                </a>
-              </li>
-            </ul>
           </li>
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
