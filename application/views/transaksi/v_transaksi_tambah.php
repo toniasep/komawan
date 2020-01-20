@@ -37,6 +37,10 @@
                 </select>
               </div>
               <div class="form-group">
+                <label class="control-label">NAMA</label>
+                <input class="form-control" type="text" placeholder="Nama Lengkap" name="nama">
+              </div>
+              <div class="form-group">
                 <label class="control-label">NO HP</label>
                 <input class="form-control" type="number" placeholder="No HP" name="hp">
               </div>
