@@ -21,6 +21,7 @@
         
         <form class="login-form" action="<?=base_url().'main/signup'; ?>" method="post"><!-- 
           <h3 class="login-head"><i class="fa fa-lg fa-fw fa-user"></i>SIGN IN</h3> -->
+          <input type="hidden" name="<?=$this->security->get_csrf_token_name();?>" value="<?=$this->security->get_csrf_hash();?>" style="display: none">
           <div class="row">
             <div class="col-lg-6">
               <div class="form-group">
@@ -88,7 +89,7 @@
         
         <form class="login-form" action="<?=base_url();?>pelanggan/tambah" method="post"><!-- 
           <h3 class="login-head"><i class="fa fa-lg fa-fw fa-user"></i>SIGN IN</h3> -->
-          <input type="hidden" name="csrf_test_name" value="c51a2ce8368747923905f6e3dd3a4d11" style="display: none">
+          <input type="hidden" name="<?=$this->security->get_csrf_token_name();?>" value="<?=$this->security->get_csrf_hash();?>" style="display: none">
           <div class="row">
             <div class="col-lg-12">
               <div class="form-group">
