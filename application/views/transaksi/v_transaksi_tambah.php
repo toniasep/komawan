@@ -87,30 +87,30 @@
           <div class="container">
             <div class="container-fluid">
         
-        <form class="login-form" action="<?=base_url();?>pelanggan/tambah" method="post"><!-- 
+        <form class="login-form" id="ftambah_pelanggan"><!-- 
           <h3 class="login-head"><i class="fa fa-lg fa-fw fa-user"></i>SIGN IN</h3> -->
           <input type="hidden" name="<?=$this->security->get_csrf_token_name();?>" value="<?=$this->security->get_csrf_hash();?>" style="display: none">
           <div class="row">
             <div class="col-lg-12">
               <div class="form-group">
                 <label class="control-label">Nama</label>
-                <input class="form-control" type="text" name="nama" autofocus="" required>
+                <input class="form-control" type="text" id="nama" autofocus="" required>
               </div>
               <div class="form-group">
                 <label class="control-label">Nomor HP</label>
-                <input class="form-control" type="number" name="hp" required>
+                <input class="form-control" type="number" id="hp" required>
               </div>
               <div class="form-group">
                 <label class="control-label">Email</label>
-                <input class="form-control" type="email" name="email">
+                <input class="form-control" type="email" id="email">
               </div>
               <div class="form-group">
                 <label class="control-label">Alamat</label>
-                <textarea name="alamat" class="form-control" required></textarea>
+                <textarea id="alamat" class="form-control" required></textarea>
               </div>
               <div class="form-group">
                 <label class="control-label">Kelurahan</label>
-                <select class="form-control selectpicker" data-live-search="true" data-size="5" name="kelurahan" style="width: 40%" placeholder="Nama" required="">
+                <select class="form-control selectpicker" data-live-search="true" data-size="5" id="kelurahan" style="width: 40%" placeholder="Nama" required="">
                   <?php
                   foreach ($data_pos->result() as $dp) {
                   ?>
@@ -120,26 +120,15 @@
                   ?>
                 </select>
               </div>
-              <div class="form-group">
-                <label class="control-label">Kode Pos</label>
-                <input class="form-control" type="number" name="pos_id" required>
-              </div>
-            </div>
-
-            <div class="col-lg-12">
-              <div class="form-group btn-container">
-                <input type="submit" name="submit" value="TAMBAH DATA" class="btn btn-primary btn-block">
-              </div>
-            </div>
-
-            
+            </div>            
           </div>
         </form> 
       </div>
           </div>  
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <input type="submit" name="submit" value="TAMBAH DATA" id="submitpelanggan" class="btn btn-primary btn-block">
+          <button type="button" class="btn btn-default" id="closemodal" data-dismiss="modal">Close</button>
         </div>
       </div>
       
@@ -154,5 +143,39 @@ $(document).ready(function(){ //Make script DOM ready
       $('#myModal').modal("show"); //Open Modal
     }
   });
+
+
+  $("#submitpelanggan").on("click", function(event) {
+
+    var formData = {
+      'nama': $('#nama').val(),
+      'hp': $('#hp').val(),
+      'email': $('#email').val(),
+      'alamat': $('#alamat').val(),
+      'kelurahan': $('#kelurahan').val(),
+      'submit': 'true'
+    };
+
+    $.ajax({
+      url: '<?=base_url()?>pelanggan/tambah',
+      type: "post",
+      data: formData,
+      success: function(d) {
+        $('#closemodal').click();
+
+        $.ajax({
+          url : "<?=base_url().'pelanggan/list_pelanggan'?>",
+          method : "POST",
+          dataType : 'json',
+          success: function(data){
+               for(var i = 0; i < data.length; i++){
+                $('#pelanggan').append(`<option value="`+data[i]['id']+`">`+data[i]['nama']+`</option>`).selectpicker('refresh');
+               }
+          }
+        });
+      }
+    });
+  });
+
 });
 </script>
