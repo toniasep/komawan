@@ -28,8 +28,11 @@ class pelanggan extends CI_Controller
 					'hp' => $this->input->post('hp'),
 					'email' => $this->input->post('email'),
 					'alamat' => $this->input->post('alamat'),
-					'kelurahan' => $this->input->post('hp'),
-					'pos_id' => $this->input->post('pos_id')
+					'pos_id' => $this->input->post('kelurahan'),
+					'dihapus' => '0',
+					'user_id' => $this->session->userdata('id'),
+					'ditambah_oleh' => $this->session->userdata('email'),
+					'tgl_tambah' => date("Y-m-d H:i:s")
 				];
 
 				$this->m_main->tambah('tbl_pelanggan', $data);
