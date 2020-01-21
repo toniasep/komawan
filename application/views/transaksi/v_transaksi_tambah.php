@@ -81,10 +81,61 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Modal Header</h4>
         </div>
         <div class="modal-body">
-          <p>Some text in the modal.</p>
+          <div class="container">
+            <div class="container-fluid">
+        
+        <form class="login-form" action="<?=base_url();?>pelanggan/tambah" method="post"><!-- 
+          <h3 class="login-head"><i class="fa fa-lg fa-fw fa-user"></i>SIGN IN</h3> -->
+          <input type="hidden" name="csrf_test_name" value="c51a2ce8368747923905f6e3dd3a4d11" style="display: none">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="form-group">
+                <label class="control-label">Nama</label>
+                <input class="form-control" type="text" name="nama" autofocus="" required>
+              </div>
+              <div class="form-group">
+                <label class="control-label">Nomor HP</label>
+                <input class="form-control" type="number" name="hp" required>
+              </div>
+              <div class="form-group">
+                <label class="control-label">Email</label>
+                <input class="form-control" type="email" name="email">
+              </div>
+              <div class="form-group">
+                <label class="control-label">Alamat</label>
+                <textarea name="alamat" class="form-control" required></textarea>
+              </div>
+              <div class="form-group">
+                <label class="control-label">Kelurahan</label>
+                <select class="form-control selectpicker" data-live-search="true" data-size="5" name="kelurahan" style="width: 40%" placeholder="Nama" required="">
+                  <?php
+                  foreach ($data_pos->result() as $dp) {
+                  ?>
+                    <option value="<?=$dp->id?>"><?=$dp->urban.','.$dp->sub_district.','.$dp->city?></option>
+                  <?php
+                  }
+                  ?>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="control-label">Kode Pos</label>
+                <input class="form-control" type="number" name="pos_id" required>
+              </div>
+            </div>
+
+            <div class="col-lg-12">
+              <div class="form-group btn-container">
+                <input type="submit" name="submit" value="TAMBAH DATA" class="btn btn-primary btn-block">
+              </div>
+            </div>
+
+            
+          </div>
+        </form> 
+      </div>
+          </div>  
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

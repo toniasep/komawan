@@ -33,7 +33,7 @@
       $('#tabel thead tr').clone(true).appendTo( '#tabel thead' );
       $('#tabel thead tr:eq(1) th').each( function (i) {
           var title = $(this).text();
-          $(this).html( '<input type="text" placeholder="Cari '+title+'" />' );
+          $(this).html( '<input type="text" placeholder=" Cari '+title+'" />' );
    
           $( 'input', this ).on( 'keyup change', function () {
               if ( table.column(i).search() !== this.value ) {

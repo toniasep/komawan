@@ -26,6 +26,7 @@ class transaksi extends CI_Controller
 			'user_id' => $this->session->userdata('id'),
 			'dihapus' => '0'
 		];
+		$hasil['data_pos'] = $this->m_main->tampil('tbl_pos');
 		$hasil['pelanggan'] = $this->m_main->tampil_where('tbl_pelanggan', $where);
 
 		$this->load->view('global/v_header');

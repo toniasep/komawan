@@ -75,10 +75,10 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
-	'username' => 'root',
-	'password' => '',
-	'database' => 'dbkompawan',
+	'hostname' => '1-3m.me',
+	'username' => 'vpaoosto_komawan',
+	'password' => 'komawan%123',
+	'database' => 'vpaoosto_komawan',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,

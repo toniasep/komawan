@@ -23,23 +23,18 @@ class pelanggan extends CI_Controller
 	function tambah(){
 		if($this->session->userdata('masuk') == '1'){
 			if($this->input->post('submit') != NULL){
-				// $data = [
-				// 	'nama' => $this->input->post('nama'),
-				// 	'sku' => $this->input->post('sku'),
-				// 	'stok' => $this->input->post('stok'),
-				// 	'harga_beli' => $this->input->post('harga_beli'),
-				// 	'harga_jual' => $this->input->post('harga_jual'),
-				// 	'berat' => $this->input->post('berat'),
-				// 	'deskripsi' => $this->input->post('deskripsi'),
-				// 	'dihapus' => '0',
-				// 	'user_id' => $this->session->userdata('id'),
-				// 	'ditambah_oleh' => $this->session->userdata('email'),
-				// 	'tgl_tambah' => date("Y-m-d H:i:s")
-				// ];
+				$data = [
+					'nama' => $this->input->post('nama'),
+					'hp' => $this->input->post('hp'),
+					'email' => $this->input->post('email'),
+					'alamat' => $this->input->post('alamat'),
+					'kelurahan' => $this->input->post('hp'),
+					'pos_id' => $this->input->post('pos_id')
+				];
 
-				// $this->m_main->tambah('tbl_produk', $data);
+				$this->m_main->tambah('tbl_pelanggan', $data);
 
-				// redirect(base_url().'produk');
+				redirect(base_url().'/transaksi/tambah');
 			}else{
 				$hasil['data_pos'] = $this->m_main->tampil('tbl_pos');
 

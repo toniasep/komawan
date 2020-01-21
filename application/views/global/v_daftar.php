@@ -18,7 +18,7 @@
       <div class="logo">
         <h1>Aplikasi Manajemen Penjualan</h1>
       </div>
-      <div class="signup-box">
+      <div class="signup-box" style="padding: 50px;">
         <form class="login-form" action="<?=base_url().'daftar'?>" method="post" autocomplete="off"><!-- 
           <h3 class="login-head"><i class="fa fa-lg fa-fw fa-user"></i>SIGN IN</h3> -->
           <input type="hidden" name="<?=$this->security->get_csrf_token_name();?>" value="<?=$this->security->get_csrf_hash();?>" style="display: none">
@@ -32,12 +32,12 @@
                 <label class="control-label">NO HP</label>
                 <input class="form-control" type="number" placeholder="No HP" name="hp" required="">
               </div>
-            </div>
-            <div class="col-lg-6">
               <div class="form-group">
                 <label class="control-label">EMAIL</label>
                 <input class="form-control" type="email" placeholder="Email" name="email" required="">
               </div>
+            </div>
+            <div class="col-lg-6">
               <div class="form-group">
                 <label class="control-label">PASSWORD</label>
                 <input class="form-control" type="password" placeholder="Password" name="password" required="">
