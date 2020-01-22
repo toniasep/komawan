@@ -58,12 +58,6 @@
                     <textarea class="form-control" placeholder="Alamat Lengkap" name="alamat" readonly></textarea>
                   </div>                  
                 </div>
-                <div class="col-lg-6">
-                  <div class="form-group">
-                    <label class="control-label">KELURAHAN</label>
-                    <input class="form-control" type="text" placeholder="Kelurahan" name="kelurahan" readonly>
-                  </div>                            
-                </div>
               </div>
             </div>
             <div class="col-lg-12">
@@ -82,8 +76,14 @@
                     <tr>
                       <td>1</td>
                       <td>
-                        <select class="form-control selectpicker" id="pelanggan" data-live-search="true" required="">
-                          <option>produk 1</option>
+                        <select class="form-control selectpicker" data-live-search="true" data-size="5" id="kelurahan" style="width: 40%" placeholder="Nama" required="">
+                          <?php
+                          foreach ($produk->result() as $p) {
+                          ?>
+                            <option value="<?=$p->id?>"><?=$p->nama?></option>
+                          <?php
+                          }
+                          ?>
                         </select>
                       </td>
                       <td><input type="number" name="qty" class="form-control"></td>
@@ -181,7 +181,7 @@
                   <?php
                   foreach ($data_pos->result() as $dp) {
                   ?>
-                    <option value="<?=$dp->id?>"><?=$dp->urban.','.$dp->sub_district.','.$dp->city?></option>
+                    <option value="<?=$dp->id?>"><?=$dp->urban.', '.$dp->sub_district.', '.$dp->city?></option>
                   <?php
                   }
                   ?>
@@ -208,6 +208,17 @@ $(document).ready(function(){ //Make script DOM ready
     var opval = $(this).val(); //Get value from select element
     if(opval=="tambah_pelanggan"){ //Compare it and if true
       $('#myModal').modal("show"); //Open Modal
+    }else{
+      $.ajax({
+        url: '<?=base_url()?>pelanggan/cari?id='+opval,
+        method: "get",
+        dataType : 'json',
+        success: function(data) {
+           $('*[name=nama]').val(data[0]['nama']);
+           $('*[name=hp]').val(data[0]['hp']);
+           $('*[name=alamat]').val(data[0]['alamat']+'\n'+data[0]['urban']+', '+data[0]['sub_district']+', '+data[0]['city']);
+        }
+      });
     }
   });
 
@@ -222,6 +233,7 @@ $(document).ready(function(){ //Make script DOM ready
       'kelurahan': $('#kelurahan').val(),
       'submit': 'true'
     };
+    var kelurahan_teks = $("#kelurahan option:selected").text();
 
     $.ajax({
       url: '<?=base_url()?>pelanggan/tambah',
@@ -236,9 +248,18 @@ $(document).ready(function(){ //Make script DOM ready
                $('#pelanggan option').remove();
                $('#pelanggan').append(`<option value="tambah_pelanggan">Tambah Baru</option>`).selectpicker('refresh');
                for(var i = 0; i < data.length; i++){
-
-                $('#pelanggan').append(`<option value="`+data[i]['id']+`">`+data[i]['nama']+`</option>`).selectpicker('refresh');
+                if(data[i]['nama'] == formData['nama']){
+                  $('#pelanggan').append(`<option value="`+data[i]['id']+`" selected>`+data[i]['nama']+`</option>`).selectpicker('refresh');
+                }else{
+                  $('#pelanggan').append(`<option value="`+data[i]['id']+`" >`+data[i]['nama']+`</option>`).selectpicker('refresh');
+                }
+                
                }
+
+               $('*[name=nama]').val(formData['nama']);
+               $('*[name=hp]').val(formData['hp']);
+               $('*[name=alamat]').val(formData['alamat']+'\n'+kelurahan_teks);
+
                $('#closemodal').click();
           }
         });
