@@ -22,58 +22,32 @@ class transaksi extends CI_Controller
 
 	function tambah()
 	{
-		if($this->session->userdata('masuk') == '1'){
-			if($this->input->post('submit') != NULL){
-				$produk = $this->input->post('produk');
-				$qty = $this->input->post('qty');
-				$harga = $this->input->post('harga');
-				$total_harga = 0;
-				for($i = 0; $i < count($harga); $i++){
-					$total_harga += $harga[$i];
-				}
+		$where = [
+			'user_id' => $this->session->userdata('id'),
+			'dihapus' => '0'
+		];
+		$hasil['data_pos'] = $this->m_main->tampil('tbl_pos');
+		$hasil['pelanggan'] = $this->m_main->tampil_where('v_pelanggan_kelurahan', $where);
+		$hasil['produk'] = $this->m_main->tampil_where('tbl_produk', $where);
 
-				$data = [
-					'pelanggan_id' => $this->input->post('pelanggan_id'),
-					'total_harga' => $total_harga,
-					'user_id' => $this->session->userdata('id'),
-					'kurir' => 'Anterin',
-					'dihapus' => '0',
-					'ditambah_oleh' => $this->session->userdata('email'),
-					'tgl_tambah' => date("Y-m-d H:i:s")
-				];
-				$id_terakhir = $this->m_main->tambah('tbl_transaksi', $data);
-
-				for($i = 0; $i < count($produk); $i++){
-					$data = [
-						'transaksi_id' => $id_terakhir,
-						'produk_id' => $produk[$i],
-						'qty' => $qty[$i],
-						'harga' => $harga[$i],
-						'ditambah_oleh' => $this->session->userdata('email'),
-						'tgl_tambah' => date("Y-m-d H:i:s")
-					];
-					$this->m_main->tambah('tbl_detail_transaksi', $data);
-				}
-
-				redirect(base_url().'transaksi');
-
-			}else{
-				$where = [
-					'user_id' => $this->session->userdata('id'),
-					'dihapus' => '0'
-				];
-				$hasil['data_pos'] = $this->m_main->tampil('tbl_pos');
-				$hasil['pelanggan'] = $this->m_main->tampil_where('v_pelanggan_kelurahan', $where);
-				$hasil['produk'] = $this->m_main->tampil_where('tbl_produk', $where);
-
-				$this->load->view('global/v_header');
-				$this->load->view('transaksi/v_transaksi_tambah', $hasil);
-				$this->load->view('global/v_footer');
-			}
-		}else{
-			redirect(base_url().'masuk');
-		}
+		$this->load->view('global/v_header');
+		$this->load->view('transaksi/v_transaksi_tambah', $hasil);
+		$this->load->view('global/v_footer');
 	}
 	
+	public function label(){
+		$this->load->view('transaksi/v_label');
+	}
 
+	public function nota_transaksi(){
+        $id = $this->uri->segment(3);
+
+		$hasil['transaksi'] = $this->m_laundry->tampil_where('v_transaksi', ['id'=>$id]);
+		$hasil['detail_transaksi'] = $this->m_laundry->tampil_where('v_detail_transaksi', ['id_transaksi'=>$id]);
+        
+        $this->pdf->load_view('transaksi/laporan/nota_transaksi',$hasil);
+        set_time_limit (500);
+        $this->pdf->render();
+        $this->pdf->stream("Nota_".$id.".pdf");
+    }
 }
