@@ -89,22 +89,7 @@
                       <td><input type="number" name="qty" id="qty" class="form-control" value="1"></td>
                       <td><input type="number" id="harga" name="harga" readonly="" class="form-control"></td>
                     </tr>
-                    <tr>
-                      <td>2</td>
-                      <td>
-                        <select class="form-control selectpicker" data-live-search="true" data-size="5" id="produk" style="width: 40%" required="">
-                          <?php
-                          foreach ($produk->result() as $p) {
-                          ?>
-                            <option value="<?=$p->id?>" data-harga="<?=$p->harga_jual?>"><?=$p->nama?></option>
-                          <?php
-                          }
-                          ?>
-                        </select>
-                      </td>
-                      <td><input type="number" name="qty" id="qty" class="form-control" value="1"></td>
-                      <td><input type="number" id="harga" name="harga" readonly="" class="form-control"></td>
-                    </tr>
+        
                   </tbody>
                 </table>
               </div>
