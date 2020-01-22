@@ -29,23 +29,41 @@ class produk extends CI_Controller
 				];
 				$total_produk = $this->m_main->tampil_where('tbl_produk', $where)->num_rows();
 				if($total_produk < $this->session->userdata('produk_max')){
-					$data = [
-						'nama' => $this->input->post('nama'),
-						'sku' => $this->input->post('sku'),
-						'stok' => $this->input->post('stok'),
-						'harga_beli' => $this->input->post('harga_beli'),
-						'harga_jual' => $this->input->post('harga_jual'),
-						'berat' => $this->input->post('berat'),
-						'deskripsi' => $this->input->post('deskripsi'),
-						'dihapus' => '0',
-						'user_id' => $this->session->userdata('id'),
-						'ditambah_oleh' => $this->session->userdata('email'),
-						'tgl_tambah' => date("Y-m-d H:i:s")
-					];
+					$config['upload_path']= './gambar/';
+					$config['allowed_types']= 'jpg|png|jpeg';
+					$config['file_name'] = $this->input->post('sku');
+					//
+					$this->load->library('upload', $config);
+					$this->upload->initialize($config);
+					if ( ! $this->upload->do_upload('gambar'))
+					{
+					    $error = array('error' => $this->upload->display_errors());
+					    var_dump($error);
+					}
+					else
+					{
+					    $upload_data = $this->upload->data();
+					    $file_name = $upload_data['file_name'];
+					    
+						$data = [
+							'nama' => $this->input->post('nama'),
+							'gambar' => $this->input->post('gambar'),
+							'sku' => $this->input->post('sku'),
+							'stok' => $this->input->post('stok'),
+							'harga_beli' => $this->input->post('harga_beli'),
+							'harga_jual' => $this->input->post('harga_jual'),
+							'berat' => $this->input->post('berat'),
+							'deskripsi' => $this->input->post('deskripsi'),
+							'dihapus' => '0',
+							'user_id' => $this->session->userdata('id'),
+							'ditambah_oleh' => $this->session->userdata('email'),
+							'tgl_tambah' => date("Y-m-d H:i:s")
+						];
 
-					$this->m_main->tambah('tbl_produk', $data);
+						$this->m_main->tambah('tbl_produk', $data);
 
-					redirect(base_url().'produk');
+						redirect(base_url().'produk');
+					}
 				}else{
 					echo "<h1>PRODUK SUDHA LEBIH</h1>";
 				}
