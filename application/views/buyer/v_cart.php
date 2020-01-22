@@ -15,7 +15,7 @@
     <div class="pd-row-full">
       <div class="">
         <div class="pd-horizontal-filter" style="background-color: #0f4c75; border: #0f4c75">
-          <a href="#" style="text-decoration: none; color: #fff; font-size: 20px; margin-top: 6px; margin-left: 10px;">TOKO JAYA ABADI</a>
+          <a href="<?=base_url()?>buyer" style="text-decoration: none; color: #fff; font-size: 20px; margin-top: 6px; margin-left: 10px;">TOKO JAYA ABADI</a>
           <a href="#" class="pd-button-grid" style="display: none;"><span class="fa fa-list fa-2x"></span></a>
           <a href="#" class="pd-button-list" style="display: none;"><span class="fa fa-th-large fa-2x"></span></a>
           <span class="pd-filter-total" style="display: none"></span>
@@ -26,7 +26,7 @@
               <option value="high">Price high to low</option>
             </select>
           </div>
-          <a href="#" class="pd-button-list"><span class="fa fa-shopping-cart fa-lg" style="color: #fff; margin-top: 12px; margin-right: 10px;"> (0)</span></a>
+          <a href="<?=base_url()?>buyer/cart" class="pd-button-list"><span class="fa fa-shopping-cart fa-lg" style="color: #fff; margin-top: 12px; margin-right: 10px;"> (0)</span></a>
         </div>
 
       </div>
