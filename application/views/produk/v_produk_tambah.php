@@ -37,6 +37,10 @@
                 <label class="control-label">Stok</label>
                 <input class="form-control" type="number" name="stok">
               </div>
+              <div class="form-group">
+                <label class="control-label">Berat(gr)</label>
+                <input class="form-control" type="number" name="berat">
+              </div>
             </div>
             <div class="col-lg-6">
               <div class="form-group">
@@ -48,12 +52,8 @@
                 <input class="form-control" type="number" name="harga_jual">
               </div>
               <div class="form-group">
-                <label class="control-label">Berat(gr)</label>
-                <input class="form-control" type="number" name="berat">
-              </div>
-              <div class="form-group">
                 <label class="control-label">Deskripsi</label>
-                <input class="form-control" type="number" name="deskripsi">
+                <textarea class="form-control"name="deskripsi"></textarea>
               </div>
             </div>
 

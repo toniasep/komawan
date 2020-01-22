@@ -47,7 +47,6 @@ class produk extends CI_Controller
 					    
 						$data = [
 							'nama' => $this->input->post('nama'),
-							'gambar' => $this->input->post('gambar'),
 							'sku' => $this->input->post('sku'),
 							'stok' => $this->input->post('stok'),
 							'harga_beli' => $this->input->post('harga_beli'),
