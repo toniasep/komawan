@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>PidieUi</title>
   <link href="<?= base_url(); ?>assets/css/pidie-0.0.1.css" rel="stylesheet"/>
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 
@@ -132,17 +133,24 @@
     <div class="pd-slide-pagination"></div>
   </header>
 
-  <div class="pd-container">
+  <div class="pd-container-full">
     <div class="pd-row">
   
       <div class="pd-col-12">
-        <div class="pd-horizontal-filter">
-          <a href="#" class="pd-button-grid"><span class="pd-icon">view_module</span></a>
-          <a href="#" class="pd-button-list"><span class="pd-icon">view_list</span></a>
-          <span class="pd-filter-total"></span>
-          <div class="pd-filter-right">
+        <div class="pd-horizontal-filter" style="background-color: #3282b8">
+          <a href="#" style="text-decoration: none; color: #fff; font-family: lato; font-size: 20px; margin-top: 5px">JAYA ABADI</a>
+          <a href="#" class="pd-button-grid" style="display: none;"><span class="fa fa-list fa-2x"></span></a>
+          <a href="#" class="pd-button-list" style="display: none;"><span class="fa fa-th-large fa-2x"></span></a>
+          <span class="pd-filter-total" style="display: none"></span>
+          <div class="pd-filter-right" style="margin-right: 1%">
+            <select class="pd-input-filter" style="display: none;">
+              <option value="popular">Popularity</option>
+              <option value="low">Price low to high</option>
+              <option value="high">Price high to low</option>
+            </select>
             <input type="search" class="pd-input-filter" placeholder="Cari Produk"/>
           </div>
+          <a href="#" class="pd-button-list"><span class="fa fa-shopping-cart fa-lg" style="color: #fff; margin-top: 10px"></span></a>
         </div>
         <div class="pd-filter pd-filter-grid pd-row">
           <div class="pd-list-grid pd-col-md-4">
@@ -153,9 +161,8 @@
                 <p class="pd-card-text pd-text-orange">485000</p>
               </div>
               <div class="pd-card-footer pd-text-right">
-                <button class="pd-button pd-button-danger pd-button-sm"><span class="pd-icon">shop</span></button>
-                <button class="pd-button pd-button-primary pd-button-sm"><span class="pd-icon">shopping_cart</span></button>
-                <button class="pd-button pd-button-success pd-button-sm"><span class="pd-icon">bookmark</span></button>
+                <button class="pd-button pd-button-danger pd-button-sm"><span class="fa fa-shopping-cart"> Beli</span></button>
+                <button class="pd-button pd-button-primary pd-button-sm">Detail</button>
               </div>
             </div>
           </div>
@@ -247,7 +254,7 @@
   </div>
 
   <footer class="pd-text-center">
-    <p>Apache License 2.0 Tedir Ghazali</p>
+    <p>Toko Jaya Abadi</p>
   </footer>
 
   <script src="<?= base_url(); ?>assets/js/pidie-0.0.1.js"></script>
