@@ -76,14 +76,14 @@
   <!-- /.navbar -->
 
   <!-- Main Sidebar Container -->
-  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+  <aside class="main-sidebar sidebar-dark-primary elevation-4" style="background-color: #0f4c75">
     <!-- Brand Logo -->
     <a href="<?=base_url()?>" class="brand-link">
       <center><img src="<?=base_url()?>img/Untitled-2.png" style="width: 50%;"/></center>
     </a>
 
     <!-- Sidebar -->
-    <div class="sidebar">
+    <div class="sidebar" style="background-color: #0f4c75">
 
       <!-- Sidebar Menu -->
       <nav class="mt-2">
