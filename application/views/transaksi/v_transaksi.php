@@ -19,9 +19,9 @@
     <nav>
         <div class="container">
           <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
-              <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-belum" role="tab" aria-controls="nav-home" aria-selected="true">Belum di Proses</a>
-              <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-sedang" role="tab" aria-controls="nav-profile" aria-selected="false">Sedang di Proses</a>
-              <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-sudah" role="tab" aria-controls="nav-contact" aria-selected="false">Sudah di Proses</a>
+              <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-belum" role="tab" aria-controls="nav-home" aria-selected="true">Belum di Proses (0)</a>
+              <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-sedang" role="tab" aria-controls="nav-profile" aria-selected="false">Sedang di Proses (0)</a>
+              <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-sudah" role="tab" aria-controls="nav-contact" aria-selected="false">Sudah di Proses (0)</a>
           </div>
         </div>
     </nav>
