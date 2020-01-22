@@ -55,7 +55,7 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}h1{font-size:2
 */
 
 *, ::after, ::before { box-sizing: border-box; }
-body{ font-family: Titillium; }
+body{ font-family: lato; }
 .pd-left{ float: left; }
 .pd-right{ float: right; }
 .pd-text-left{ text-align: left; }
@@ -2765,12 +2765,12 @@ input[type="button"].pd-block {
 */
 .pd-horizontal-filter, .pd-vertical-filter{
   width: 100%;
-  padding: 10px 15px;
+  padding: 15px 25px;
   background-color: #3282b8;
   border:1px solid #3282b8;
   margin-top: 0px;
   margin-left: 0px;
-  margin-bottom: 15px;
+  margin-bottom: 25px;
 }
 .pd-horizontal-filter{
   display: -ms-flexbox;
