@@ -6,11 +6,24 @@ class transaksi extends CI_Controller
 	function index()
 	{
 		if($this->session->userdata('masuk') == '1'){
-			$where = [
+			$whereb = [
 				'user_id' => $this->session->userdata('id'),
-				'dihapus' => '0'
+				'dihapus' => '0',
+				'status' => 'belum_diproses'
 			];
-			$hasil['data_transaksi'] = $this->m_main->tampil_where('v_transaksi', $where);
+			$hasil['data_transaksi_belum'] = $this->m_main->tampil_where('v_transaksi', $whereb);
+			$wheres = [
+				'user_id' => $this->session->userdata('id'),
+				'dihapus' => '0',
+				'status' => 'sedang_diproses'
+			];
+			$hasil['data_transaksi_sedang'] = $this->m_main->tampil_where('v_transaksi', $wheres);
+			$wheresu = [
+				'user_id' => $this->session->userdata('id'),
+				'dihapus' => '0',
+				'status' => 'sudah_diproses'
+			];
+			$hasil['data_transaksi_sudah'] = $this->m_main->tampil_where('v_transaksi', $wheresu);
 
 			$this->load->view('global/v_header');
 			$this->load->view('transaksi/v_transaksi', $hasil);
@@ -22,6 +35,7 @@ class transaksi extends CI_Controller
 
 	function tambah()
 	{
+
 		if($this->session->userdata('masuk') == '1'){
 			if($this->input->post('submit') != NULL){
 				$where = [
@@ -84,7 +98,22 @@ class transaksi extends CI_Controller
 		}else{
 			redirect(base_url().'masuk');
 		}
+
 	}
 	
+	public function label(){
+		$this->load->view('transaksi/v_label');
+	}
 
+	public function nota_transaksi(){
+        $id = $this->uri->segment(3);
+
+		$hasil['transaksi'] = $this->m_laundry->tampil_where('v_transaksi', ['id'=>$id]);
+		$hasil['detail_transaksi'] = $this->m_laundry->tampil_where('v_detail_transaksi', ['id_transaksi'=>$id]);
+        
+        $this->pdf->load_view('transaksi/laporan/nota_transaksi',$hasil);
+        set_time_limit (500);
+        $this->pdf->render();
+        $this->pdf->stream("Nota_".$id.".pdf");
+    }
 }
