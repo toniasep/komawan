@@ -36,9 +36,9 @@
   <div class="pd-container">
     <div class="pd-row">
       <div class="pd-col-md-5">
-        <div class="card" style="width: 18rem;">
+        <div class="card" style="width: 100%; margin-bottom: 10px;">
           <div class="card-body">
-            <h5 class="card-title">Special title treatment</h5>
+            <h5 class="card-title">Nama Produk</h5>
             <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
             <a href="#" class="btn btn-primary">Go somewhere</a>
           </div>
@@ -52,13 +52,6 @@
           </div>
         </div>
 
-        <div class="card text-right" style="width: 18rem;">
-          <div class="card-body">
-            <h5 class="card-title">Special title treatment</h5>
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-          </div>
-        </div>
       </div>
 
       <div class="pd-col-md-7">

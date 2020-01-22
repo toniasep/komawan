@@ -23,7 +23,7 @@
           <section class="login-content">
             <div class="signup-box" style="padding: 50px;">
               <form class="login-form" action="<?=base_url().'daftar'?>" method="post" autocomplete="off">
-                <center><h3 class="login-head text-primary pt-3">Daftar</h3></center><hr>
+                <center><h3 class="login-head text-primary">Daftar</h3></center><hr>
                 <input type="hidden" name="<?=$this->security->get_csrf_token_name();?>" value="<?=$this->security->get_csrf_hash();?>" style="display: none">
                 <div class="row">
                   <div class="col-lg-12">
@@ -42,9 +42,16 @@
                     <div class="form-group">
                       <input class="form-control" type="password" placeholder="Konfirmasi Password" name="copassword" required="">
                     </div>
+                    <div class="form-group">
+                      <select id="inputState" class="form-control">
+                        <option selected>-- Pilih Paket --</option>
+                        <option>...</option>
+                      </select><br>
+                      <label><a href="<?=base_url().'masuk'?>">Lihat detail paket</a></label>
+                    </div>
                     <div class="form-group btn-container">
                       <input type="submit" name="submit" value="DAFTAR" class="btn btn-primary btn-block"><br>
-                      <label>Sudah punya akun ? <a href="<?=base_url().'masuk'?>">Masuk</a></label>
+                      <label>Sudah punya akun ? <a href="<?=base_url().'masuk'?>">Masuk</a></label>                      
                     </div>
                   </div>
                 </div>
