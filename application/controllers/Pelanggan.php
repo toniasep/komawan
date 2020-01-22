@@ -59,4 +59,13 @@ class pelanggan extends CI_Controller
 		echo json_encode($hasil);
 	}
 
+	function cari(){
+		$where = [
+			'id' => $this->input->get('id'),
+			'dihapus' => '0'
+		];
+		$hasil = $this->m_main->tampil_where('v_user_kelurahan', $where)->result();
+		echo json_encode($hasil);
+	}
+
 }

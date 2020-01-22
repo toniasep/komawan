@@ -28,6 +28,7 @@ class transaksi extends CI_Controller
 		];
 		$hasil['data_pos'] = $this->m_main->tampil('tbl_pos');
 		$hasil['pelanggan'] = $this->m_main->tampil_where('tbl_pelanggan', $where);
+		$hasil['produk'] = $this->m_main->tampil_where('tbl_produk', $where);
 
 		$this->load->view('global/v_header');
 		$this->load->view('transaksi/v_transaksi_tambah', $hasil);

@@ -4,6 +4,7 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>PidieUi</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link href="<?= base_url(); ?>assets/css/pidie-0.0.1.css" rel="stylesheet"/>
   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -153,404 +154,52 @@
           <a href="#" class="pd-button-list"><span class="fa fa-shopping-cart fa-lg" style="color: #fff; margin-top: 10px"></span></a>
         </div>
         <div class="pd-filter pd-filter-grid pd-row">
+          <?php 
+            foreach($data_produk->result() as $dp){ 
+          ?>
           <div class="pd-list-grid pd-col-md-4">
             <div class="pd-card">
-              <img src="https://loremflickr.com/300/200/cat?lock=1" class="pd-card-img-top"/>
+              <img src="<?= base_url() ?>gambar/<?=$dp->gambar?>" class="pd-card-img-top"/>
               <div class="pd-card-body">
-                <b class="pd-card-title">Acis Cat Salmon</b>
-                <p class="pd-card-text pd-text-orange">485000</p>
+                <b class="pd-card-title"><?=$dp->nama?></b>
+                <p class="pd-card-text pd-text-orange"><?=$dp->harga_jual?></p>
               </div>
               <div class="pd-card-footer pd-text-right">
                 <button class="pd-button pd-button-danger pd-button-sm"><span class="fa fa-shopping-cart"> Beli</span></button>
-                <button class="pd-button pd-button-primary pd-button-sm">Detail</button>
-              </div>
-            </div>
-          </div>
-          <div class="pd-list-grid pd-col-md-4">
-            <div class="pd-card">
-              <img src="https://loremflickr.com/300/200/cat?lock=3" class="pd-card-img-top"/>
-              <div class="pd-card-body">
-                <b class="pd-card-title">Catfood Caesar Natural</b>
-                <p class="pd-card-text pd-text-orange">1750000</p>
-              </div>
-              <div class="pd-card-footer pd-text-right">
-                <button class="pd-button pd-button-danger pd-button-sm"><span class="pd-icon">shop</span></button>
-                <button class="pd-button pd-button-primary pd-button-sm"><span class="pd-icon">shopping_cart</span></button>
-                <button class="pd-button pd-button-success pd-button-sm"><span class="pd-icon">bookmark</span></button>
-              </div>
-            </div>
-          </div>
-          <div class="pd-list-grid pd-col-md-4">
-            <div class="pd-card">
-              <img src="https://loremflickr.com/300/200/cat?lock=28" class="pd-card-img-top"/>
-              <div class="pd-card-body">
-                <b class="pd-card-title">Me O Kitten Persian Cat</b>
-                <p class="pd-card-text pd-text-orange">77500</p>
-              </div>
-              <div class="pd-card-footer pd-text-right">
-                <button class="pd-button pd-button-danger pd-button-sm"><span class="pd-icon">shop</span></button>
-                <button class="pd-button pd-button-primary pd-button-sm"><span class="pd-icon">shopping_cart</span></button>
-                <button class="pd-button pd-button-success pd-button-sm"><span class="pd-icon">bookmark</span></button>
-              </div>
-            </div>
-          </div>
-          <div class="pd-list-grid pd-col-md-4">
-            <div class="pd-card">
-              <img src="https://loremflickr.com/300/200/cat?lock=4" class="pd-card-img-top"/>
-              <div class="pd-card-body">
-                <b class="pd-card-title">Universal Kitten</b>
-                <p class="pd-card-text pd-text-orange">35000</p>
-              </div>
-              <div class="pd-card-footer pd-text-right">
-                <button class="pd-button pd-button-danger pd-button-sm"><span class="pd-icon">shop</span></button>
-                <button class="pd-button pd-button-primary pd-button-sm"><span class="pd-icon">shopping_cart</span></button>
-                <button class="pd-button pd-button-success pd-button-sm"><span class="pd-icon">bookmark</span></button>
-              </div>
-            </div>
-          </div>
-          <div class="pd-list-grid pd-col-md-4">
-            <div class="pd-card">
-              <img src="https://loremflickr.com/300/200/cat?lock=5" class="pd-card-img-top"/>
-              <div class="pd-card-body">
-                <b class="pd-card-title">Omega Cat</b>
-                <p class="pd-card-text pd-text-orange">19000</p>
-              </div>
-              <div class="pd-card-footer pd-text-right">
-                <button class="pd-button pd-button-danger pd-button-sm"><span class="pd-icon">shop</span></button>
-                <button class="pd-button pd-button-primary pd-button-sm"><span class="pd-icon">shopping_cart</span></button>
-                <button class="pd-button pd-button-success pd-button-sm"><span class="pd-icon">bookmark</span></button>
-              </div>
-            </div>
-          </div>
-          <div class="pd-list-grid pd-col-md-4">
-            <div class="pd-card">
-              <img src="https://loremflickr.com/300/200/cat?lock=6" class="pd-card-img-top"/>
-              <div class="pd-card-body">
-                <b class="pd-card-title">Bolt</b>
-                <p class="pd-card-text pd-text-orange">19500</p>
-              </div>
-              <div class="pd-card-footer pd-text-right">
-                <button class="pd-button pd-button-danger pd-button-sm"><span class="pd-icon">shop</span></button>
-                <button class="pd-button pd-button-primary pd-button-sm"><span class="pd-icon">shopping_cart</span></button>
-                <button class="pd-button pd-button-success pd-button-sm"><span class="pd-icon">bookmark</span></button>
+                <button class="pd-button pd-button-primary pd-button-sm" data-toggle="modal" data-target="#myModal<?= $dp->id ?>">Detail</button>
               </div>
             </div>
           </div>
 
-          <div class="pd-list-grid pd-col-md-4">
-            <div class="pd-card">
-              <img src="https://loremflickr.com/300/200/cat?lock=7" class="pd-card-img-top"/>
-              <div class="pd-card-body">
-                <b class="pd-card-title">Cat Food SUPERCAT</b>
-                <p class="pd-card-text pd-text-orange">14750</p>
-              </div>
-              <div class="pd-card-footer pd-text-right">
-                <button class="pd-button pd-button-danger pd-button-sm"><span class="pd-icon">shop</span></button>
-                <button class="pd-button pd-button-primary pd-button-sm"><span class="pd-icon">shopping_cart</span></button>
-                <button class="pd-button pd-button-success pd-button-sm"><span class="pd-icon">bookmark</span></button>
-              </div>
-            </div>
-          </div>
-
-          <div class="pd-list-grid pd-col-md-4">
-            <div class="pd-card">
-              <img src="https://loremflickr.com/300/200/cat?lock=8" class="pd-card-img-top"/>
-              <div class="pd-card-body">
-                <b class="pd-card-title">Momo Cat</b>
-                <p class="pd-card-text pd-text-orange">34000</p>
-              </div>
-              <div class="pd-card-footer pd-text-right">
-                <button class="pd-button pd-button-danger pd-button-sm"><span class="pd-icon">shop</span></button>
-                <button class="pd-button pd-button-primary pd-button-sm"><span class="pd-icon">shopping_cart</span></button>
-                <button class="pd-button pd-button-success pd-button-sm"><span class="pd-icon">bookmark</span></button>
+          <!-- Modal -->
+          <div class="modal fade" id="myModal<?= $dp->id ?>">
+            <div class="modal-dialog">
+              <div class="modal-content">
+              
+                <!-- Modal Header -->
+                <div class="modal-header">
+                  <h4 class="modal-title">Deskripsi <?= $dp->nama ?></h4>
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                
+                <!-- Modal body -->
+                <div class="modal-body">
+                  <?= $dp->deskripsi ?>
+                </div>
+                
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+                
               </div>
             </div>
           </div>
 
-          <div class="pd-list-grid pd-col-md-4">
-            <div class="pd-card">
-              <img src="https://loremflickr.com/300/200/cat?lock=9" class="pd-card-img-top"/>
-              <div class="pd-card-body">
-                <b class="pd-card-title">Felibite</b>
-                <p class="pd-card-text pd-text-orange">25000</p>
-              </div>
-              <div class="pd-card-footer pd-text-right">
-                <button class="pd-button pd-button-danger pd-button-sm"><span class="pd-icon">shop</span></button>
-                <button class="pd-button pd-button-primary pd-button-sm"><span class="pd-icon">shopping_cart</span></button>
-                <button class="pd-button pd-button-success pd-button-sm"><span class="pd-icon">bookmark</span></button>
-              </div>
-            </div>
-          </div>
 
-          <div class="pd-list-grid pd-col-md-4">
-            <div class="pd-card">
-              <img src="https://loremflickr.com/300/200/cat?lock=10" class="pd-card-img-top"/>
-              <div class="pd-card-body">
-                <b class="pd-card-title">Royal Canin Kitten</b>
-                <p class="pd-card-text pd-text-orange">55000</p>
-              </div>
-              <div class="pd-card-footer pd-text-right">
-                <button class="pd-button pd-button-danger pd-button-sm"><span class="pd-icon">shop</span></button>
-                <button class="pd-button pd-button-primary pd-button-sm"><span class="pd-icon">shopping_cart</span></button>
-                <button class="pd-button pd-button-success pd-button-sm"><span class="pd-icon">bookmark</span></button>
-              </div>
-            </div>
-          </div>
-
-          <div class="pd-list-grid pd-col-md-4">
-            <div class="pd-card">
-              <img src="https://loremflickr.com/300/200/cat?lock=11" class="pd-card-img-top"/>
-              <div class="pd-card-body">
-                <b class="pd-card-title">Cat Food</b>
-                <p class="pd-card-text pd-text-orange">470000</p>
-              </div>
-              <div class="pd-card-footer pd-text-right">
-                <button class="pd-button pd-button-danger pd-button-sm"><span class="pd-icon">shop</span></button>
-                <button class="pd-button pd-button-primary pd-button-sm"><span class="pd-icon">shopping_cart</span></button>
-                <button class="pd-button pd-button-success pd-button-sm"><span class="pd-icon">bookmark</span></button>
-              </div>
-            </div>
-          </div>
-
-          <div class="pd-list-grid pd-col-md-4">
-            <div class="pd-card">
-              <img src="https://loremflickr.com/300/200/cat?lock=12" class="pd-card-img-top"/>
-              <div class="pd-card-body">
-                <b class="pd-card-title">Maxi</b>
-                <p class="pd-card-text pd-text-orange">22500</p>
-              </div>
-              <div class="pd-card-footer pd-text-right">
-                <button class="pd-button pd-button-danger pd-button-sm"><span class="pd-icon">shop</span></button>
-                <button class="pd-button pd-button-primary pd-button-sm"><span class="pd-icon">shopping_cart</span></button>
-                <button class="pd-button pd-button-success pd-button-sm"><span class="pd-icon">bookmark</span></button>
-              </div>
-            </div>
-          </div>
-
-          <div class="pd-list-grid pd-col-md-4">
-            <div class="pd-card">
-              <img src="https://loremflickr.com/300/200/cat?lock=13" class="pd-card-img-top"/>
-              <div class="pd-card-body">
-                <b class="pd-card-title">Whiskas Pouch</b>
-                <p class="pd-card-text pd-text-orange">4600</p>
-              </div>
-              <div class="pd-card-footer pd-text-right">
-                <button class="pd-button pd-button-danger pd-button-sm"><span class="pd-icon">shop</span></button>
-                <button class="pd-button pd-button-primary pd-button-sm"><span class="pd-icon">shopping_cart</span></button>
-                <button class="pd-button pd-button-success pd-button-sm"><span class="pd-icon">bookmark</span></button>
-              </div>
-            </div>
-          </div>
-
-          <div class="pd-list-grid pd-col-md-4">
-            <div class="pd-card">
-              <img src="https://loremflickr.com/300/200/cat?lock=14" class="pd-card-img-top"/>
-              <div class="pd-card-body">
-                <b class="pd-card-title">Fancy Feast</b>
-                <p class="pd-card-text pd-text-orange">9500</p>
-              </div>
-              <div class="pd-card-footer pd-text-right">
-                <button class="pd-button pd-button-danger pd-button-sm"><span class="pd-icon">shop</span></button>
-                <button class="pd-button pd-button-primary pd-button-sm"><span class="pd-icon">shopping_cart</span></button>
-                <button class="pd-button pd-button-success pd-button-sm"><span class="pd-icon">bookmark</span></button>
-              </div>
-            </div>
-          </div>
-
-          <div class="pd-list-grid pd-col-md-4">
-            <div class="pd-card">
-              <img src="https://loremflickr.com/300/200/cat?lock=15" class="pd-card-img-top"/>
-              <div class="pd-card-body">
-                <b class="pd-card-title">Proplan</b>
-                <p class="pd-card-text pd-text-orange">38000</p>
-              </div>
-              <div class="pd-card-footer pd-text-right">
-                <button class="pd-button pd-button-danger pd-button-sm"><span class="pd-icon">shop</span></button>
-                <button class="pd-button pd-button-primary pd-button-sm"><span class="pd-icon">shopping_cart</span></button>
-                <button class="pd-button pd-button-success pd-button-sm"><span class="pd-icon">bookmark</span></button>
-              </div>
-            </div>
-          </div>
-
-          <div class="pd-list-grid pd-col-md-4">
-            <div class="pd-card">
-              <img src="https://loremflickr.com/300/200/cat?lock=16" class="pd-card-img-top"/>
-              <div class="pd-card-body">
-                <b class="pd-card-title">Rawfood</b>
-                <p class="pd-card-text pd-text-orange">24000</p>
-              </div>
-              <div class="pd-card-footer pd-text-right">
-                <button class="pd-button pd-button-danger pd-button-sm"><span class="pd-icon">shop</span></button>
-                <button class="pd-button pd-button-primary pd-button-sm"><span class="pd-icon">shopping_cart</span></button>
-                <button class="pd-button pd-button-success pd-button-sm"><span class="pd-icon">bookmark</span></button>
-              </div>
-            </div>
-          </div>
-
-          <div class="pd-list-grid pd-col-md-4">
-            <div class="pd-card">
-              <img src="https://loremflickr.com/300/200/cat?lock=17" class="pd-card-img-top"/>
-              <div class="pd-card-body">
-                <b class="pd-card-title">Vitakraft</b>
-                <p class="pd-card-text pd-text-orange">19500</p>
-              </div>
-              <div class="pd-card-footer pd-text-right">
-                <button class="pd-button pd-button-danger pd-button-sm"><span class="pd-icon">shop</span></button>
-                <button class="pd-button pd-button-primary pd-button-sm"><span class="pd-icon">shopping_cart</span></button>
-                <button class="pd-button pd-button-success pd-button-sm"><span class="pd-icon">bookmark</span></button>
-              </div>
-            </div>
-          </div>
-
-          <div class="pd-list-grid pd-col-md-4">
-            <div class="pd-card">
-              <img src="https://loremflickr.com/300/200/cat?lock=18" class="pd-card-img-top"/>
-              <div class="pd-card-body">
-                <b class="pd-card-title">Gojek Jio</b>
-                <p class="pd-card-text pd-text-orange">412000</p>
-              </div>
-              <div class="pd-card-footer pd-text-right">
-                <button class="pd-button pd-button-danger pd-button-sm"><span class="pd-icon">shop</span></button>
-                <button class="pd-button pd-button-primary pd-button-sm"><span class="pd-icon">shopping_cart</span></button>
-                <button class="pd-button pd-button-success pd-button-sm"><span class="pd-icon">bookmark</span></button>
-              </div>
-            </div>
-          </div>
-
-          <div class="pd-list-grid pd-col-md-4">
-            <div class="pd-card">
-              <img src="https://loremflickr.com/300/200/cat?lock=19" class="pd-card-img-top"/>
-              <div class="pd-card-body">
-                <b class="pd-card-title">Nekko pouch</b>
-                <p class="pd-card-text pd-text-orange">5500</p>
-              </div>
-              <div class="pd-card-footer pd-text-right">
-                <button class="pd-button pd-button-danger pd-button-sm"><span class="pd-icon">shop</span></button>
-                <button class="pd-button pd-button-primary pd-button-sm"><span class="pd-icon">shopping_cart</span></button>
-                <button class="pd-button pd-button-success pd-button-sm"><span class="pd-icon">bookmark</span></button>
-              </div>
-            </div>
-          </div>
-
-          <div class="pd-list-grid pd-col-md-4">
-            <div class="pd-card">
-              <img src="https://loremflickr.com/300/200/cat?lock=20" class="pd-card-img-top"/>
-              <div class="pd-card-body">
-                <b class="pd-card-title">Yummy</b>
-                <p class="pd-card-text pd-text-orange">13300</p>
-              </div>
-              <div class="pd-card-footer pd-text-right">
-                <button class="pd-button pd-button-danger pd-button-sm"><span class="pd-icon">shop</span></button>
-                <button class="pd-button pd-button-primary pd-button-sm"><span class="pd-icon">shopping_cart</span></button>
-                <button class="pd-button pd-button-success pd-button-sm"><span class="pd-icon">bookmark</span></button>
-              </div>
-            </div>
-          </div>
-
-          <div class="pd-list-grid pd-col-md-4">
-            <div class="pd-card">
-              <img src="https://loremflickr.com/300/200/cat?lock=21" class="pd-card-img-top"/>
-              <div class="pd-card-body">
-                <b class="pd-card-title">Profelin</b>
-                <p class="pd-card-text pd-text-orange">13000</p>
-              </div>
-              <div class="pd-card-footer pd-text-right">
-                <button class="pd-button pd-button-danger pd-button-sm"><span class="pd-icon">shop</span></button>
-                <button class="pd-button pd-button-primary pd-button-sm"><span class="pd-icon">shopping_cart</span></button>
-                <button class="pd-button pd-button-success pd-button-sm"><span class="pd-icon">bookmark</span></button>
-              </div>
-            </div>
-          </div>
-
-          <div class="pd-list-grid pd-col-md-4">
-            <div class="pd-card">
-              <img src="https://loremflickr.com/300/200/cat?lock=22" class="pd-card-img-top"/>
-              <div class="pd-card-body">
-                <b class="pd-card-title">Nature Protection</b>
-                <p class="pd-card-text pd-text-orange">120000</p>
-              </div>
-              <div class="pd-card-footer pd-text-right">
-                <button class="pd-button pd-button-danger pd-button-sm"><span class="pd-icon">shop</span></button>
-                <button class="pd-button pd-button-primary pd-button-sm"><span class="pd-icon">shopping_cart</span></button>
-                <button class="pd-button pd-button-success pd-button-sm"><span class="pd-icon">bookmark</span></button>
-              </div>
-            </div>
-          </div>
-
-          <div class="pd-list-grid pd-col-md-4">
-            <div class="pd-card">
-              <img src="https://loremflickr.com/300/200/cat?lock=23" class="pd-card-img-top"/>
-              <div class="pd-card-body">
-                <b class="pd-card-title">Equilibrio Kitten</b>
-                <p class="pd-card-text pd-text-orange">430000</p>
-              </div>
-              <div class="pd-card-footer pd-text-right">
-                <button class="pd-button pd-button-danger pd-button-sm"><span class="pd-icon">shop</span></button>
-                <button class="pd-button pd-button-primary pd-button-sm"><span class="pd-icon">shopping_cart</span></button>
-                <button class="pd-button pd-button-success pd-button-sm"><span class="pd-icon">bookmark</span></button>
-              </div>
-            </div>
-          </div>
-
-          <div class="pd-list-grid pd-col-md-4">
-            <div class="pd-card">
-              <img src="https://loremflickr.com/300/200/cat?lock=24" class="pd-card-img-top"/>
-              <div class="pd-card-body">
-                <b class="pd-card-title">Friskies Indoor Delight</b>
-                <p class="pd-card-text pd-text-orange">55000</p>
-              </div>
-              <div class="pd-card-footer pd-text-right">
-                <button class="pd-button pd-button-danger pd-button-sm"><span class="pd-icon">shop</span></button>
-                <button class="pd-button pd-button-primary pd-button-sm"><span class="pd-icon">shopping_cart</span></button>
-                <button class="pd-button pd-button-success pd-button-sm"><span class="pd-icon">bookmark</span></button>
-              </div>
-            </div>
-          </div>
-
-          <div class="pd-list-grid pd-col-md-4">
-            <div class="pd-card">
-              <img src="https://loremflickr.com/300/200/cat?lock=25" class="pd-card-img-top"/>
-              <div class="pd-card-body">
-                <b class="pd-card-title">Smart Heart Cat</b>
-                <p class="pd-card-text pd-text-orange">30000</p>
-              </div>
-              <div class="pd-card-footer pd-text-right">
-                <button class="pd-button pd-button-danger pd-button-sm"><span class="pd-icon">shop</span></button>
-                <button class="pd-button pd-button-primary pd-button-sm"><span class="pd-icon">shopping_cart</span></button>
-                <button class="pd-button pd-button-success pd-button-sm"><span class="pd-icon">bookmark</span></button>
-              </div>
-            </div>
-          </div>
-
-          <div class="pd-list-grid pd-col-md-4">
-            <div class="pd-card">
-              <img src="https://loremflickr.com/300/200/cat?lock=26" class="pd-card-img-top"/>
-              <div class="pd-card-body">
-                <b class="pd-card-title">Smart Heart Cat</b>
-                <p class="pd-card-text pd-text-orange">30000</p>
-              </div>
-              <div class="pd-card-footer pd-text-right">
-                <button class="pd-button pd-button-danger pd-button-sm"><span class="pd-icon">shop</span></button>
-                <button class="pd-button pd-button-primary pd-button-sm"><span class="pd-icon">shopping_cart</span></button>
-                <button class="pd-button pd-button-success pd-button-sm"><span class="pd-icon">bookmark</span></button>
-              </div>
-            </div>
-          </div>
-
-          <div class="pd-list-grid pd-col-md-4">
-            <div class="pd-card">
-              <img src="https://loremflickr.com/300/200/cat?lock=27" class="pd-card-img-top"/>
-              <div class="pd-card-body">
-                <b class="pd-card-title">Good Cat</b>
-                <p class="pd-card-text pd-text-orange">315000</p>
-              </div>
-              <div class="pd-card-footer pd-text-right">
-                <button class="pd-button pd-button-danger pd-button-sm"><span class="pd-icon">shop</span></button>
-                <button class="pd-button pd-button-primary pd-button-sm"><span class="pd-icon">shopping_cart</span></button>
-                <button class="pd-button pd-button-success pd-button-sm"><span class="pd-icon">bookmark</span></button>
-              </div>
-            </div>
-          </div>
+          <?php
+          }
+          ?>
 
         </div>
 
@@ -613,9 +262,13 @@
   <footer class="pd-text-center">
     <p>Toko Jaya Abadi</p>
   </footer>
-
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   <script src="<?= base_url(); ?>assets/js/pidie-0.0.1.js"></script>
   <script>
+
+
     var pidie = new Pidie();
     pidie.panel
     pidie.slide

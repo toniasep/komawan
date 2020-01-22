@@ -5,7 +5,13 @@ class buyer extends CI_Controller
 {
 	function index()
 	{
-		$this->load->view('buyer/v_buyer');
+		$where = [
+				// 'user_id' => $this->session->userdata('id'),
+				'dihapus' => '0'
+			];
+
+		$hasil['data_produk'] = $this->m_main->tampil_where('tbl_produk', $where);
+		$this->load->view('buyer/v_buyer', $hasil);
 	}
 
 }

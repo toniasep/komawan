@@ -99,27 +99,13 @@
             </a>
           </li>
           <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-shopping-bag"></i>
+            <a href="<?=base_url().'transaksi'?>" class="nav-link">
+              <i class="nav-icon fas fa-chart-pie"></i>
+
               <p>
                 Transaksi
-                <i class="right fas fa-angle-left"></i>
               </p>
             </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="<?=base_url().'transaksi'?>" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Daftar Transaksi</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="<?=base_url().'transaksi/add_transaksi'?>" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Tambah Transaksi</p>
-                </a>
-              </li>
-            </ul>
           </li>
           <li class="nav-item has-treeview">
             <a href="<?=base_url().'pelanggan'?>" class="nav-link">
