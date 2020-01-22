@@ -34,7 +34,6 @@
               </div>
               <div class="form-group btn-container">
                 <input type="submit" name="submit" value="MASUK" class="btn btn-primary btn-block"><br>
-                <label>Belum punya akun ? <a href="<?=base_url().'daftar'?>">Daftar</a></label>
               </div>
             </form>
           </div>

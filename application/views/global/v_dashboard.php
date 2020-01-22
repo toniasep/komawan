@@ -63,6 +63,15 @@
               <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
+
+          <div class="col-lg-12">
+            Status Akun : <?php if ($this->session->userdata('hak_akses')==1) {
+              echo 'Aktif';
+            }else{
+              echo 'Tidak Aktif';
+            } ?> <br>
+            Paket : <?=$this->session->userdata('paket_nama')?> (27 hari lagi)
+          </div>
           <!-- ./col -->
         </div>
         <!-- /.row -->

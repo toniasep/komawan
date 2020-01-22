@@ -21,7 +21,7 @@ class admin extends CI_Controller
 			$email = $this->input->post('email');
 			$password = $this->input->post('password');
 
-			if($email == 'su@klola.id' and $password == 'su'){
+			if($email == 'su' and $password == 'su'){
 				$sess_data['su'] = '1';
 				$this->session->set_userdata($sess_data);
 				redirect(base_url('admin'));

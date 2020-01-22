@@ -43,9 +43,12 @@
                       <input class="form-control" type="password" placeholder="Konfirmasi Password" name="copassword" required="">
                     </div>
                     <div class="form-group">
-                      <select id="inputState" class="form-control">
+                      <select id="inputState" class="form-control" name="paket_id">
                         <option selected>-- Pilih Paket --</option>
-                        <option>...</option>
+                        <option value="01">Starting</option>
+                        <option value="02">Growing</option>
+                        <option value="01">Proffesional</option>
+                        <option value="01">Enterprise</option>
                       </select><br>
                       <label><a href="<?=base_url().'masuk'?>">Lihat detail paket</a></label>
                     </div>

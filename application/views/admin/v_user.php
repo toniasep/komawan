@@ -149,8 +149,8 @@
 					          <th>Nama</th>
 					          <th>Hp</th>
 					          <th>Email</th>
-					          <th>Paket ID</th>
 					          <th>Status</th>
+					          <th>Paket ID</th>
 					          <th>Tindakan</th>
 					        </tr>
 					      </thead>
@@ -168,11 +168,54 @@
 						          <td><?=$dp->hak_akses?></td>
 						          <td><?=$dp->paket_id?></td>
 						          <td>
-						          	<a href="<?=base_url().'admin/edit/'.$dp->id?>" class="btn btn-primary btn-circle">
+						          	<a href="" data-toggle="modal" data-target="#myModal<?= $dp->id ?>" class="btn btn-primary btn-circle">
 						          		<i class="fas fa-fw fa-edit"></i>
 					                </a>
 						          </td>
 						        </tr>
+
+
+          <!-- Modal -->
+          <div class="modal fade" id="myModal<?= $dp->id ?>">
+            <div class="modal-dialog modal-sm">
+              <div class="modal-content">
+              
+                <!-- Modal Header -->
+                <div class="modal-header">
+                  <h4 class="modal-title"><?= $dp->nama ?></h4>
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                
+                <!-- Modal body -->
+                <div class="modal-body">
+                  
+	              <div class="form-group">
+	                <label class="control-label">Status</label>
+	                <select class="form-control" name="hak_akses">
+	                	<option value="1">Aktif</option>
+	                	<option value="0">Tidak Aktif</option>
+	                </select>
+	              </div>
+	              <div class="form-group">
+	                <label class="control-label">Paket</label>
+	                <select class="form-control" class="paket_id">
+	                	<option value="01">Starting</option>
+	                	<option value="02">Growing</option>
+	                </select>
+	              </div>
+
+                </div>
+                
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-primary">Simpan</button>
+                  <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+
 						    <?php
 						    	$no++;
 						    }
