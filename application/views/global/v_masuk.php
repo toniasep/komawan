@@ -10,14 +10,11 @@
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>MASUk</title>
   </head>
-  <body>
-    <section class="material-half-bg">
-      <div class="cover"></div>
-    </section>
+  <body style="background-color: #3282b8">
+
     <section class="login-content">
       <div class="logo">
         <h1>Aplikasi Manajemen Penjualan</h1>
-
       </div>
       <div class="login-box">
         <form class="login-form" action="<?=base_url().'main/masuk'?>" method="post"><!-- 
