@@ -109,13 +109,13 @@
             <ul class="nav nav-treeview">
               <li class="nav-item">
                 <a href="<?=base_url().'transaksi'?>" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
+                  <i class="fas fa-list nav-icon"></i>
                   <p>Daftar Transaksi</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="<?=base_url().'transaksi/tambah'?>" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
+                  <i class="fas fa-plus nav-icon"></i>
                   <p>Tambah Transaksi</p>
                 </a>
               </li>
@@ -140,13 +140,13 @@
             <ul class="nav nav-treeview">
               <li class="nav-item">
                 <a href="<?=base_url().'produk'?>" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
+                  <i class="fas fa-list nav-icon"></i>
                   <p>Daftar Produk</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="<?=base_url().'produk/tambah'?>" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
+                  <i class="fas fa-plus nav-icon"></i>
                   <p>Tambah Produk</p>
                 </a>
               </li>
