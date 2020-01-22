@@ -40,7 +40,7 @@
   <link href="<?=base_url().'assets/'?>vendor/jquery/jquery-ui.css" rel="stylesheet">
 </head>
 
-<body class="hold-transition sidebar-mini layout-fixed">
+<body class="hold-transition sidebar-mini layout-fixed" style="font-family: lato;">
 <div class="wrapper">
 
   <!-- Navbar -->
@@ -79,7 +79,7 @@
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="<?=base_url()?>" class="brand-link">
-      <center><img src="<?=base_url()?>img/Untitled-2.png" style="width: 70%;height: 25%;"/></center>
+      <center><img src="<?=base_url()?>img/Untitled-2.png" style="width: 50%;"/></center>
     </a>
 
     <!-- Sidebar -->
@@ -99,13 +99,27 @@
             </a>
           </li>
           <li class="nav-item has-treeview">
-            <a href="<?=base_url().'transaksi'?>" class="nav-link">
-              <i class="nav-icon fas fa-chart-pie"></i>
-
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-archive"></i>
               <p>
                 Transaksi
+                <i class="fas fa-angle-left right"></i>
               </p>
             </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="<?=base_url().'transaksi'?>" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Daftar Transaksi</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?=base_url().'transaksi/tambah'?>" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Tambah Transaksi</p>
+                </a>
+              </li>
+            </ul>
           </li>
           <li class="nav-item has-treeview">
             <a href="<?=base_url().'pelanggan'?>" class="nav-link">
