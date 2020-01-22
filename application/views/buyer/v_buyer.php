@@ -10,322 +10,11 @@
 
   <div class="pd-panel"></div>
 
-  <nav class="pd-nav">
+  <nav class="pd-nav" style="display: none">
     <button id="panel" class="pd-nav-toggle">
       <span class="pd-nav-toggle-icon"></span>
     </button>
-    <a class="pd-nav-brand" href="#">
-      <img src="images/pidiejs.png"/>
-      <h1>PidieUi</h1>
-    </a>
-    <ul class="pd-nav-menu pd-menu-left">
-      <li><a href="#">Home</a></li>
-      <li class="pd-nav-mega"><a href="#">Product</a>
-        <div class="pd-mega-menu">
-          <div class="pd-row">
-            <div class="pd-col">
-              <h4>Product 1</h4>
-              <ul>
-                <li><a href="#">Product 1.1</a></li>
-                <li><a href="#">Product 1.2</a></li>
-                <li><a href="#">Product 1.3</a></li>
-                <li><a href="#">Product 1.4</a></li>
-                <li><a href="#">Product 1.5</a></li>
-                <li><a href="#">Product 1.6</a></li>
-                <li><a href="#">Product 1.7</a></li>
-                <li><a href="#">Product 1.8</a></li>
-                <li><a href="#">Product 1.9</a></li>
-              </ul>
-            </div>
-            <div class="pd-col">
-              <h4>Product 2</h4>
-              <ul>
-                <li><a href="#">Product 2.1</a></li>
-                <li><a href="#">Product 2.2</a></li>
-                <li><a href="#">Product 2.3</a></li>
-              </ul>
-              <h4>Product 3</h4>
-              <ul>
-                <li><a href="#">Product 3.1</a></li>
-                <li><a href="#">Product 3.2</a></li>
-                <li><a href="#">Product 3.3</a></li>
-                <li><a href="#">Product 3.4</a></li>
-                <li><a href="#">Product 3.5</a></li>
-              </ul>
-            </div>
-            <div class="pd-col">
-              <h4>Product 4</h4>
-              <ul>
-                <li><a href="#">Product 4.1</a></li>
-                <li><a href="#">Product 4.2</a></li>
-                <li><a href="#">Product 4.3</a></li>
-                <li><a href="#">Product 4.4</a></li>
-              </ul>
-              <h4>Product 5</h4>
-              <ul>
-                <li><a href="#">Product 5.1</a></li>
-                <li><a href="#">Product 5.2</a></li>
-                <li><a href="#">Product 5.3</a></li>
-                <li><a href="#">Product 5.4</a></li>
-              </ul>
-            </div>
-            <div class="pd-col">
-              <h4>Product 6</h4>
-              <ul>
-                <li><a href="#">Product 6.1</a></li>
-                <li><a href="#">Product 6.2</a></li>
-                <li><a href="#">Product 6.3</a></li>
-                <li><a href="#">Product 6.4</a></li>
-                <li><a href="#">Product 6.5</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </li>
-      <li class="pd-nav-mega"><a href="#">Article</a>
-        <div class="pd-mega-menu">
-          <h4 class="pd-mega-title">Featured Articles</h4>
-          <div class="pd-row">
-            <a href="#" class="pd-center">
-              <img src="https://loremflickr.com/200/150/cat?lock=1"/>
-              <h5 class="pd-mega-title">Article 1</h5>
-            </a>
-            <a href="#" class="pd-center">
-              <img src="https://loremflickr.com/200/150/cat?lock=14"/>
-              <h5 class="pd-mega-title">Article 2</h5>
-            </a>
-            <a href="#" class="pd-center">
-              <img src="https://loremflickr.com/200/150/cat?lock=3"/>
-              <h5 class="pd-mega-title">Article 3</h5>
-            </a>
-            <a href="#" class="pd-center">
-              <img src="https://loremflickr.com/200/150/cat?lock=4"/>
-              <h5 class="pd-mega-title">Article 4</h5>
-            </a>
-            <a href="#" class="pd-center">
-              <img src="https://loremflickr.com/200/150/cat?lock=5"/>
-              <h5 class="pd-mega-title">Article 5</h5>
-            </a>
-          </div>
-        </div>
-      </li>
-      <li class="pd-nav-mega"><a href="#">Book</a>
-        <div class="pd-mega-menu">
-          <h4 class="pd-mega-title">Featured Books</h4>
-          <div class="pd-row">
-            <a href="#"><img src="https://loremflickr.com/120/157/cat?lock=6"/></a>
-            <a href="#"><img src="https://loremflickr.com/120/157/cat?lock=7"/></a>
-            <a href="#"><img src="https://loremflickr.com/120/157/cat?lock=8"/></a>
-            <a href="#"><img src="https://loremflickr.com/120/157/cat?lock=9"/></a>
-            <a href="#"><img src="https://loremflickr.com/120/157/cat?lock=10"/></a>
-            <a href="#"><img src="https://loremflickr.com/120/157/cat?lock=11"/></a>
-            <a href="#"><img src="https://loremflickr.com/120/157/cat?lock=12"/></a>
-            <a href="#"><img src="https://loremflickr.com/120/157/cat?lock=13"/></a>
-          </div>
-        </div>
-      </li>
-      <li class="pd-nav-mega"><a href="#">Login</a>
-        <div class="pd-mega-menu">
-          <div class="pd-row">
-            <div class="pd-col-3"></div>
-            <div class="pd-col">
-              <form>
-                <div class="pd-field">
-                  <label>Username or Email</label>
-                  <input type="text" class="pd-input"/>
-                </div>
-                <div class="pd-field">
-                  <label>Password</label>
-                  <input type="password" class="pd-input"/>
-                </div>
-                <button class="pd-button pd-button-primary">Login</button>
-              </form>
-            </div>
-            <div class="pd-col">
-              <button class="pd-button pd-button-primary pd-block">Login with Facebook</button>
-              <button class="pd-button pd-button-danger pd-block">Login with Google</button>
-              <button class="pd-button pd-button-info pd-block">Login with Twitter</button>
-            </div>
-            <div class="pd-col-3"></div>
-          </div>
-        </div>
-      </li>
-      <li class="pd-nav-mega"><a href="#">Register</a>
-        <div class="pd-mega-menu">
-          <div class="pd-row">
-            <div class="pd-col-3"></div>
-            <div class="pd-col">
-              <form>
-                <div class="pd-field">
-                  <label>Username</label>
-                  <input type="text" class="pd-input"/>
-                </div>
-                <div class="pd-field">
-                  <label>Email</label>
-                  <input type="email" class="pd-input"/>
-                </div>
-                <div class="pd-field">
-                  <label>Password</label>
-                  <input type="password" class="pd-input"/>
-                </div>
-                <button class="pd-button pd-button-primary">Register</button>
-              </form>
-            </div>
-            <div class="pd-col">
-              <button class="pd-button pd-button-primary pd-block">Register with Facebook</button>
-              <button class="pd-button pd-button-danger pd-block">Register with Google</button>
-              <button class="pd-button pd-button-info pd-block">Register with Twitter</button>
-            </div>
-            <div class="pd-col-3"></div>
-          </div>
-        </div>
-      </li>
-      <li class="pd-nav-dropdown"><a href="#">Dropdown</a>
-        <ul>
-          <li><a href="#">Dropdown 1</a></li>
-          <li><a href="#">Dropdown 2</a></li>
-          <li><a href="#">Dropdown 3</a></li>
-          <li><a href="#">Dropdown 4</a></li>
-          <li><a href="#">Dropdown 5</a></li>
-        </ul>
-      </li>
-      <li class="pd-nav-mega"><a href="#">Mega Tabs</a>
-        <div class="pd-mega-tabs">
-          <ul class="pd-mega-tabs-list">
-            <li><a href="#">Dry Food</a>
-              <div class="pd-mega-tabs-sub">
-                <div class="pd-row">
-                  <a href="#" class="pd-center pd-mega-tabs-item">
-                    <img src="https://loremflickr.com/200/150/cat?lock=1"/>
-                    <h5 class="pd-mega-title">Universal Kitten</h5>
-                    <p class="pd-text-orange">Rp 35.000</p>
-                  </a>
-                  <a href="#" class="pd-center pd-mega-tabs-item">
-                    <img src="https://loremflickr.com/200/150/cat?lock=2"/>
-                    <h5 class="pd-mega-title">Proplan</h5>
-                    <p class="pd-text-orange">Rp 19.000</p>
-                  </a>
-                  <a href="#" class="pd-center pd-mega-tabs-item">
-                    <img src="https://loremflickr.com/200/150/cat?lock=3"/>
-                    <h5 class="pd-mega-title">Bolt</h5>
-                    <p class="pd-text-orange">Rp 230.000</p>
-                  </a>
-                  <a href="#" class="pd-center pd-mega-tabs-item">
-                    <img src="https://loremflickr.com/200/150/cat?lock=4"/>
-                    <h5 class="pd-mega-title">Omega Cat</h5>
-                    <p class="pd-text-orange">Rp 76.000</p>
-                  </a>
-                </div>
-              </div>
-            </li>
-            <li><a href="#">Wet Food</a>
-              <div class="pd-mega-tabs-sub">
-                <div class="pd-row">
-                  <a href="#" class="pd-center pd-mega-tabs-item">
-                    <img src="https://loremflickr.com/200/150/cat?lock=5"/>
-                    <h5 class="pd-mega-title">New Kitten</h5>
-                    <p class="pd-text-orange">Rp 137.000</p>
-                  </a>
-                  <a href="#" class="pd-center pd-mega-tabs-item">
-                    <img src="https://loremflickr.com/200/150/cat?lock=6"/>
-                    <h5 class="pd-mega-title">ProFood</h5>
-                    <p class="pd-text-orange">Rp 117.000</p>
-                  </a>
-                  <a href="#" class="pd-center pd-mega-tabs-item">
-                    <img src="https://loremflickr.com/200/150/cat?lock=7"/>
-                    <h5 class="pd-mega-title">Bolty</h5>
-                    <p class="pd-text-orange">Rp 220.000</p>
-                  </a>
-                  <a href="#" class="pd-center pd-mega-tabs-item">
-                    <img src="https://loremflickr.com/200/150/cat?lock=8"/>
-                    <h5 class="pd-mega-title">OmeFood Cat</h5>
-                    <p class="pd-text-orange">Rp 116.000</p>
-                  </a>
-                </div>
-              </div>
-            </li>
-            <li><a href="#">Raw Food</a>
-              <div class="pd-mega-tabs-sub">
-                <div class="pd-row">
-                  <a href="#" class="pd-center pd-mega-tabs-item">
-                    <img src="https://loremflickr.com/200/150/cat?lock=9"/>
-                    <h5 class="pd-mega-title">Universal Food</h5>
-                    <p class="pd-text-orange">Rp 130.000</p>
-                  </a>
-                  <a href="#" class="pd-center pd-mega-tabs-item">
-                    <img src="https://loremflickr.com/200/150/cat?lock=10"/>
-                    <h5 class="pd-mega-title">Foodplan</h5>
-                    <p class="pd-text-orange">Rp 111.000</p>
-                  </a>
-                  <a href="#" class="pd-center pd-mega-tabs-item">
-                    <img src="https://loremflickr.com/200/150/cat?lock=11"/>
-                    <h5 class="pd-mega-title">Lolt</h5>
-                    <p class="pd-text-orange">Rp 210.000</p>
-                  </a>
-                  <a href="#" class="pd-center pd-mega-tabs-item">
-                    <img src="https://loremflickr.com/200/150/cat?lock=12"/>
-                    <h5 class="pd-mega-title">Foodga Cat</h5>
-                    <p class="pd-text-orange">Rp 166.000</p>
-                  </a>
-                </div>
-              </div>
-            </li>
-            <li><a href="#">Vegetarian</a>
-              <div class="pd-mega-tabs-sub">
-                <div class="pd-row">
-                  <a href="#" class="pd-center pd-mega-tabs-item">
-                    <img src="https://loremflickr.com/200/150/cat?lock=13"/>
-                    <h5 class="pd-mega-title">Cat Kitten</h5>
-                    <p class="pd-text-orange">Rp 315.000</p>
-                  </a>
-                  <a href="#" class="pd-center pd-mega-tabs-item">
-                    <img src="https://loremflickr.com/200/150/cat?lock=14"/>
-                    <h5 class="pd-mega-title">Prokitten</h5>
-                    <p class="pd-text-orange">Rp 118.000</p>
-                  </a>
-                  <a href="#" class="pd-center pd-mega-tabs-item">
-                    <img src="https://loremflickr.com/200/150/cat?lock=15"/>
-                    <h5 class="pd-mega-title">Colten</h5>
-                    <p class="pd-text-orange">Rp 200.000</p>
-                  </a>
-                  <a href="#" class="pd-center pd-mega-tabs-item">
-                    <img src="https://loremflickr.com/200/150/cat?lock=16"/>
-                    <h5 class="pd-mega-title">Omega Kitten</h5>
-                    <p class="pd-text-orange">Rp 175.000</p>
-                  </a>
-                </div>
-              </div>
-            </li>
-            <li><a href="#">Low Protein</a>
-              <div class="pd-mega-tabs-sub">
-                <div class="pd-row">
-                  <a href="#" class="pd-center pd-mega-tabs-item">
-                    <img src="https://loremflickr.com/200/150/cat?lock=17"/>
-                    <h5 class="pd-mega-title">Universal Kitten</h5>
-                    <p class="pd-text-orange">Rp 35.000</p>
-                  </a>
-                  <a href="#" class="pd-center pd-mega-tabs-item">
-                    <img src="https://loremflickr.com/200/150/cat?lock=18"/>
-                    <h5 class="pd-mega-title">Proplan</h5>
-                    <p class="pd-text-orange">Rp 19.000</p>
-                  </a>
-                  <a href="#" class="pd-center pd-mega-tabs-item">
-                    <img src="https://loremflickr.com/200/150/cat?lock=19"/>
-                    <h5 class="pd-mega-title">Bolt</h5>
-                    <p class="pd-text-orange">Rp 230.000</p>
-                  </a>
-                  <a href="#" class="pd-center pd-mega-tabs-item">
-                    <img src="https://loremflickr.com/200/150/cat?lock=20"/>
-                    <h5 class="pd-mega-title">Omega Cat</h5>
-                    <p class="pd-text-orange">Rp 76.000</p>
-                  </a>
-                </div>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </li>
-    </ul>
+    
     <!--<form class="pd-nav-search">
       <input type="search" name="q"/>
       <button type="submit">Search</button>
@@ -335,7 +24,8 @@
       <li><a href="#">Download</a></li>
     </ul>-->
   </nav>
-  <header class="pd-header-slide">
+
+  <header class="pd-header-slide" style="display: none">
     <span class="pd-slide-prev">&lsaquo;</span>
     <span class="pd-slide-next">&rsaquo;</span>
     <div class="pd-slide-items">
@@ -444,59 +134,14 @@
 
   <div class="pd-container">
     <div class="pd-row">
-      <div class="pd-col-3">
-        <div class="pd-vertical-filter">
-          <div class="pd-field">
-            <input type="search" class="pd-input" placeholder="Search item"/>
-          </div>
-          <h4>Category</h4> <!-- saya tunda dulu -->
-          <div class="pd-checkbox">
-            <input type="checkbox" class="pd-checkbox-input" id="dry"/>
-            <label class="pd-checkbox-label" for="dry">Dry Food</label>
-          </div>
-          <div class="pd-checkbox">
-            <input type="checkbox" class="pd-checkbox-input" id="wet"/>
-            <label class="pd-checkbox-label" for="wet">Wet Food</label>
-          </div> 
-          <div class="pd-checkbox">
-            <input type="checkbox" class="pd-checkbox-input" id="raw"/>
-            <label class="pd-checkbox-label" for="raw">Raw Food</label>
-          </div>
-          <div class="pd-checkbox">
-            <input type="checkbox" class="pd-checkbox-input" id="vegan"/>
-            <label class="pd-checkbox-label" for="vegan">Vegetarian</label>
-          </div>
-          <div class="pd-checkbox">
-            <input type="checkbox" class="pd-checkbox-input" id="low"/>
-            <label class="pd-checkbox-label" for="low">Low Protein</label>
-          </div>
-          <h4>Brand</h4>
-          <div class="pd-checkbox">
-            <input type="checkbox" class="pd-checkbox-input" id="dry"/>
-            <label class="pd-checkbox-label" for="dry">Domestic</label>
-          </div>
-          <div class="pd-checkbox">
-            <input type="checkbox" class="pd-checkbox-input" id="wet"/>
-            <label class="pd-checkbox-label" for="wet">Wild</label>
-          </div> 
-          <div class="pd-checkbox">
-            <input type="checkbox" class="pd-checkbox-input" id="raw"/>
-            <label class="pd-checkbox-label" for="raw">Kitten</label>
-          </div>
-        </div>
-      </div>
-      <div class="pd-col-9">
+  
+      <div class="pd-col-12">
         <div class="pd-horizontal-filter">
           <a href="#" class="pd-button-grid"><span class="pd-icon">view_module</span></a>
           <a href="#" class="pd-button-list"><span class="pd-icon">view_list</span></a>
           <span class="pd-filter-total"></span>
           <div class="pd-filter-right">
-            <select class="pd-input-filter">
-              <option value="popular">Popularity</option>
-              <option value="low">Price low to high</option>
-              <option value="high">Price high to low</option>
-            </select>
-            <input type="search" class="pd-input-filter" placeholder="Search item"/>
+            <input type="search" class="pd-input-filter" placeholder="Cari Produk"/>
           </div>
         </div>
         <div class="pd-filter pd-filter-grid pd-row">
@@ -908,7 +553,7 @@
     </div>
   </div>
 
-  <div class="pd-container">
+  <div class="pd-container" style="display: none">
     <div class="pd-tabs pd-tabs-horizontal">
       <ul class="pd-tabs-header">
         <li class="pd-tabs-title">Tab 1</li>
@@ -937,7 +582,7 @@
     </div>
   </div>
 
-  <div class="pd-container">
+  <div class="pd-container" style="display: none">
     <div class="pd-accordion">
       <h3 class="pd-accordion-title">Lorem ipsum dolor sit amet</h3>
       <div class="pd-accordion-body">
