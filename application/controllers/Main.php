@@ -6,8 +6,17 @@ class main extends CI_Controller
 	function index()
 	{
 		if($this->session->userdata('masuk') == '1'){
+
+			$where = [
+				'user_id' => $this->session->userdata('id'),
+				'dihapus' => '0'
+			];
+			$hasil['data_pelanggan'] = $this->m_main->tampil_where('tbl_pelanggan', $where);
+			$hasil['data_produk'] = $this->m_main->tampil_where('tbl_produk', $where);
+			$hasil['data_transaksi'] = $this->m_main->tampil_where('v_transaksi', $where);
+
 			$this->load->view('global/v_header');
-			$this->load->view('global/v_dashboard');
+			$this->load->view('global/v_dashboard', $hasil);
 			$this->load->view('global/v_footer');
 		}else{
 			redirect(base_url().'masuk');

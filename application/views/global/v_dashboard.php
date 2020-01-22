@@ -22,6 +22,9 @@
             <!-- small box -->
             <div class="small-box bg-info">
               <div class="inner">
+                <?php 
+                  var_dump($data_produk->result());
+                ?>
                 <h3>150</h3>
 
                 <p>Transaksi</p>
