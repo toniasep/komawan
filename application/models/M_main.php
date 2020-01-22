@@ -49,4 +49,12 @@ class m_main extends CI_Model
 		return $this->db->insert_id();
 	}
 
+	function user_aktif(){
+		return $this->db->query("SELECT * FROM v_user_paket WHERE dihapus = '0' AND STATUS = '1' group by ORDER BY tgl_aktif DESC");
+	}
+
+	function user_belum_aktif(){
+		return $this->db->query("SELECT * FROM v_user_paket WHERE dihapus = '0' AND STATUS = '0' ORDER BY tgl_expire DESC");
+	}
+
 }

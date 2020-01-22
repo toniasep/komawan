@@ -90,14 +90,6 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <li class="nav-item has-treeview">
             <a href="<?=base_url().'admin'?>" class="nav-link">
-              <i class="nav-icon fas fa-users"></i>
-              <p>
-                Semua User
-              </p>
-            </a>
-          </li>
-          <li class="nav-item has-treeview">
-            <a href="<?=base_url().'admin'?>" class="nav-link">
               <i class="nav-icon fas fa-user-check"></i>
               <p>
                 User Aktif
@@ -105,7 +97,7 @@
             </a>
           </li>
           <li class="nav-item has-treeview">
-            <a href="<?=base_url().'admin'?>" class="nav-link">
+            <a href="<?=base_url().'admin/belum_aktif'?>" class="nav-link">
               <i class="nav-icon fas fa-user-clock"></i>
               <p>
                 User Belum Aktif
@@ -149,8 +141,11 @@
 					          <th>Nama</th>
 					          <th>Hp</th>
 					          <th>Email</th>
-					          <th>Status</th>
-					          <th>Paket ID</th>
+					          <th>Paket</th>
+                    <th>Tgl Daftar</th>
+                    <th>Tgl Bayar</th>
+                    <th>Tgl Aktif</th>
+                    <th>Tgl Expire</th>
 					          <th>Tindakan</th>
 					        </tr>
 					      </thead>
@@ -162,27 +157,43 @@
 							?>
 						        <tr>
 						          <td><?=$no?></td>
-						          <td><?=$dp->nama?></td>
+						          <td><?=$dp->user_nama?></td>
 						          <td><?=$dp->hp?></td>
 						          <td><?=$dp->email?></td>
-						          <td><?=$dp->hak_akses?></td>
-						          <td><?=$dp->paket_id?></td>
+						          <td><?=$dp->paket_nama?></td>
+                      <td><?=$dp->tgl_daftar?></td>
+                      <td><?=$dp->tgl_bayar?></td>
+                      <td><?=$dp->tgl_aktif?></td>
+                      <td><?=$dp->tgl_expire?></td>
 						          <td>
-						          	<a href="" data-toggle="modal" data-target="#myModal<?= $dp->id ?>" class="btn btn-primary btn-circle">
-						          		<i class="fas fa-fw fa-edit"></i>
-					                </a>
+                        <?php if($status == 'aktif'){
+                        ?>
+                          <a href="<?=base_url().'admin/hapus/'.$dp->user_id?>" class="btn btn-danger btn-circle" onclick="return confirm('Apakah Anda yakin untuk menghapus data <?=$dp->user_nama?>?');">
+                              <i class="fas fa-trash"></i>
+                          </a>
+                        <?php
+                        }else{
+                        ?>
+
+                          <a href="<?=base_url().'admin/aktivasi/'.$dp->transaksi_id?>" class="btn btn-primary btn-circle" onclick="return confirm('Apakah Anda yakin untuk mengaktifkan data <?=$dp->user_nama?>?');">
+                              <i class="fas fa-edit"></i>
+                          </a>
+                        <?php
+                        }
+                        ?>
+						          	
 						          </td>
 						        </tr>
 
 
           <!-- Modal -->
-          <div class="modal fade" id="myModal<?= $dp->id ?>">
+          <div class="modal fade" id="myModal<?= $dp->user_id ?>">
             <div class="modal-dialog modal-sm">
               <div class="modal-content">
               
                 <!-- Modal Header -->
                 <div class="modal-header">
-                  <h4 class="modal-title"><?= $dp->nama ?></h4>
+                  <h4 class="modal-title"><?= $dp->user_nama ?></h4>
                   <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
                 
