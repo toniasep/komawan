@@ -66,4 +66,22 @@ class pelanggan extends CI_Controller
 		echo json_encode($hasil);
 	}
 
+	function hapus(){
+		if($this->session->userdata('masuk') ==  '1'){
+			$where['id'] = $this->uri->segment(3);
+			$data = [
+				'dihapus' => '1',
+				'diedit_oleh' => $this->session->userdata('email'),
+				'tgl_edit' => date("Y-m-d H:i:s")
+			];	
+
+			$this->m_main->ubah('tbl_pelanggan', $data, $where);
+
+			redirect(base_url().'pelanggan');
+		}else{
+			redirect(base_url().'masuk');
+		}
+	}
+	
+
 }

@@ -41,10 +41,10 @@
             <form>
               <div class="form-row">
                 <div class="form-group col-md-4">
-                  <h5 class="card-title">Nama Produk</h5>
+                  <h5 class="card-title">Sepatu Kuda</h5>
                 </div>
                 <div class="form-group col-md-4"> 
-                  <p class="card-text">Harga</p>
+                  <h5 class="card-text">RP. 50000</h5>
                 </div>
                 <div class="form-group col-md-4">
                   <input type="number" class="form-control" name="qty" placeholder="Qty">
@@ -54,7 +54,20 @@
             </form>
           </div>
           <div class="card-body">
-            
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                </div>
+                <div class="form-group col-md-4"> 
+                  <p class="card-text">Sub Total</p>
+                  <p class="card-text">Biaya Pengiriman</p>
+                  <p class="card-text">Total</p>
+                </div>
+                <div class="form-group col-md-4">
+                  <p class="card-text">Rp.</p>
+                  <p class="card-text">Rp.</p>
+                  <p class="card-text">Rp.</p>
+                </div>
+              </div>
           </div>
         </div>
       </div>
@@ -63,48 +76,35 @@
         <form>
           <div class="form-row">
             <div class="form-group col-md-6">
-              <label for="inputEmail4">Email</label>
-              <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+              <label for="formGroupExampleInput">Nama</label>
+              <input type="text" class="form-control" id="inputEmail4" placeholder="Nama">
             </div>
             <div class="form-group col-md-6">
-              <label for="inputPassword4">Password</label>
-              <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+              <label for="formGroupExampleInput">No. Hp</label>
+              <input type="number" class="form-control" id="inputPassword4" placeholder="No. Hp">
             </div>
-          </div>
-          <div class="form-group">
-            <label for="inputAddress">Address</label>
-            <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-          </div>
-          <div class="form-group">
-            <label for="inputAddress2">Address 2</label>
-            <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
           </div>
           <div class="form-row">
             <div class="form-group col-md-6">
-              <label for="inputCity">City</label>
-              <input type="text" class="form-control" id="inputCity">
+              <label for="formGroupExampleInput">Email</label>
+              <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
             </div>
-            <div class="form-group col-md-4">
-              <label for="inputState">State</label>
-              <select id="inputState" class="form-control">
-                <option selected>Choose...</option>
-                <option>...</option>
+            <div class="form-group col-md-6">
+              <label for="formGroupExampleInput">Kelurahan</label>
+              <select class="form-control" id="exampleFormControlSelect1">
+                <option>-- Kelurahan -</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
               </select>
-            </div>
-            <div class="form-group col-md-2">
-              <label for="inputZip">Zip</label>
-              <input type="text" class="form-control" id="inputZip">
             </div>
           </div>
           <div class="form-group">
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" id="gridCheck">
-              <label class="form-check-label" for="gridCheck">
-                Check me out
-              </label>
-            </div>
+            <label for="formGroupExampleInput">Alamat Lengkap</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3">Alamat Lengkap</textarea>
           </div>
-          <button type="submit" class="btn btn-primary">Sign in</button>
+          <button type="submit" class="btn" style="background-color: #0f4c75; color: #fff">Proses</button>
         </form>
       </div>
     </div>
