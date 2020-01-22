@@ -41,7 +41,6 @@
                                   <th>Nama Pelanggan</th>
                                   <th>Total</th>
                                   <th>Kurir</th>
-                                  <th>Kode Booking</th>
                                   <th>Tindakan</th>
                                 </tr>
                               </thead>
@@ -56,7 +55,6 @@
                                       <td><?=$dt->pelanggan_nama?></td>
                                       <td><?=$dt->total_harga?></td>
                                       <td><?=$dt->kurir?></td>
-                                      <td><?=$dt->kode_booking?></td>
                                       <td>
                                         <a href="<?=base_url().'transaksi/ubah/'.$dt->id?>" class="btn btn-primary btn-circle">
                                             <i class="fas fa-fw fa-edit"></i>
@@ -93,7 +91,6 @@
                                   <th>Nama Pelanggan</th>
                                   <th>Total</th>
                                   <th>Kurir</th>
-                                  <th>Kode Booking</th>
                                   <th>Tindakan</th>
                                 </tr>
                               </thead>
@@ -108,7 +105,6 @@
                                       <td><?=$dt->pelanggan_nama?></td>
                                       <td><?=$dt->total_harga?></td>
                                       <td><?=$dt->kurir?></td>
-                                      <td><?=$dt->kode_booking?></td>
                                       <td>
                                         <a href="<?=base_url().'transaksi/ubah/'.$dt->id?>" class="btn btn-primary btn-circle">
                                             <i class="fas fa-fw fa-edit"></i>
@@ -145,7 +141,6 @@
                                   <th>Nama Pelanggan</th>
                                   <th>Total</th>
                                   <th>Kurir</th>
-                                  <th>Kode Booking</th>
                                   <th>Tindakan</th>
                                 </tr>
                               </thead>
@@ -160,7 +155,6 @@
                                       <td><?=$dt->pelanggan_nama?></td>
                                       <td><?=$dt->total_harga?></td>
                                       <td><?=$dt->kurir?></td>
-                                      <td><?=$dt->kode_booking?></td>
                                       <td>
                                         <a href="<?=base_url().'transaksi/ubah/'.$dt->id?>" class="btn btn-primary btn-circle">
                                             <i class="fas fa-fw fa-edit"></i>
