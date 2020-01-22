@@ -4,6 +4,7 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>PidieUi</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link href="<?= base_url(); ?>assets/css/pidie-0.0.1.css" rel="stylesheet"/>
   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -153,50 +154,49 @@
           <a href="#" class="pd-button-list"><span class="fa fa-shopping-cart fa-lg" style="color: #fff; margin-top: 10px"></span></a>
         </div>
         <div class="pd-filter pd-filter-grid pd-row">
+          <?php 
+            foreach($data_produk->result() as $dp){ 
+          ?>
           <div class="pd-list-grid pd-col-md-4">
             <div class="pd-card">
-              <img src="https://loremflickr.com/300/200/cat?lock=1" class="pd-card-img-top"/>
+              <img src="<?= base_url() ?>gambar/<?=$dp->gambar?>" class="pd-card-img-top"/>
               <div class="pd-card-body">
-                <b class="pd-card-title">Acis Cat Salmon</b>
-                <p class="pd-card-text pd-text-orange">485000</p>
+                <b class="pd-card-title"><?=$dp->nama?></b>
+                <p class="pd-card-text pd-text-orange"><?=$dp->harga_jual?></p>
               </div>
               <div class="pd-card-footer pd-text-right">
                 <button class="pd-button pd-button-danger pd-button-sm"><span class="fa fa-shopping-cart"> Beli</span></button>
-                <button class="pd-button pd-button-primary pd-button-sm">Detail</button>
+                <button class="pd-button pd-button-primary pd-button-sm" data-toggle="modal" data-target="#modal11111">Detail</button>
               </div>
             </div>
           </div>
-          <div class="pd-list-grid pd-col-md-4">
-            <div class="pd-card">
-              <img src="https://loremflickr.com/300/200/cat?lock=3" class="pd-card-img-top"/>
-              <div class="pd-card-body">
-                <b class="pd-card-title">Catfood Caesar Natural</b>
-                <p class="pd-card-text pd-text-orange">1750000</p>
-              </div>
-              <div class="pd-card-footer pd-text-right">
-                <button class="pd-button pd-button-danger pd-button-sm"><span class="pd-icon">shop</span></button>
-                <button class="pd-button pd-button-primary pd-button-sm"><span class="pd-icon">shopping_cart</span></button>
-                <button class="pd-button pd-button-success pd-button-sm"><span class="pd-icon">bookmark</span></button>
-              </div>
-            </div>
-          </div>
-          <div class="pd-list-grid pd-col-md-4">
-            <div class="pd-card">
-              <img src="https://loremflickr.com/300/200/cat?lock=27" class="pd-card-img-top"/>
-              <div class="pd-card-body">
-                <b class="pd-card-title">Good Cat</b>
-                <p class="pd-card-text pd-text-orange">315000</p>
-              </div>
-              <div class="pd-card-footer pd-text-right">
-                <button class="pd-button pd-button-danger pd-button-sm"><span class="pd-icon">shop</span></button>
-                <button class="pd-button pd-button-primary pd-button-sm"><span class="pd-icon">shopping_cart</span></button>
-                <button class="pd-button pd-button-success pd-button-sm"><span class="pd-icon">bookmark</span></button>
-              </div>
-            </div>
-          </div>
+
+
+          <!-- Button trigger modal -->
+
+
+          <?php
+          }
+          ?>
 
         </div>
 
+          <!-- Modal -->
+          <div class="modal fade" id="#modal11111" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLongTitle">Deskripsi <?=$dp->nama?></h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <?=$dp->deskripsi?>
+                </div>
+              </div>
+            </div>
+          </div>
         <div class="pd-filter-pagination" data-pagination="6"></div>
 
       </div>
@@ -256,7 +256,9 @@
   <footer class="pd-text-center">
     <p>Toko Jaya Abadi</p>
   </footer>
-
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   <script src="<?= base_url(); ?>assets/js/pidie-0.0.1.js"></script>
   <script>
     var pidie = new Pidie();
