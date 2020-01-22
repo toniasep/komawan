@@ -48,8 +48,9 @@ class main extends CI_Controller
 				'nama' => $this->input->post('nama'),
 				'hp' => $this->input->post('hp'),
 				'email' => $this->input->post('email'),
+				'paket_id' => $this->input->post('paket_id'),
 				'password' => password_hash($this->input->post('password'), PASSWORD_DEFAULT),
-				'hak_akses' => '1',
+				'hak_akses' => '0',
 				'dihapus' => '0',
 				'ditambah_oleh' => $this->input->post('email'),
 				'tgl_tambah' => date("Y-m-d H:i:s")

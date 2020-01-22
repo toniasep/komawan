@@ -15,7 +15,7 @@
     <div class="pd-row-full">
       <div class="">
         <div class="pd-horizontal-filter" style="background-color: #0f4c75; border: #0f4c75">
-          <a href="#" style="text-decoration: none; color: #fff; font-size: 20px; margin-top: 6px; margin-left: 10px;">TOKO JAYA ABADI</a>
+          <a href="<?=base_url()?>buyer" style="text-decoration: none; color: #fff; font-size: 20px; margin-top: 6px; margin-left: 10px;">TOKO JAYA ABADI</a>
           <a href="#" class="pd-button-grid" style="display: none;"><span class="fa fa-list fa-2x"></span></a>
           <a href="#" class="pd-button-list" style="display: none;"><span class="fa fa-th-large fa-2x"></span></a>
           <span class="pd-filter-total" style="display: none"></span>
@@ -26,32 +26,37 @@
               <option value="high">Price high to low</option>
             </select>
           </div>
-          <a href="#" class="pd-button-list"><span class="fa fa-shopping-cart fa-lg" style="color: #fff; margin-top: 12px; margin-right: 10px;"> (0)</span></a>
+          <a href="<?=base_url()?>buyer/cart" class="pd-button-list"><span class="fa fa-shopping-cart fa-lg" style="color: #fff; margin-top: 12px; margin-right: 10px;"> (0)</span></a>
         </div>
 
       </div>
     </div>
   </div>
 
-  <div class="pd-container">
+  <div class="pd-container-full">
     <div class="pd-row">
       <div class="pd-col-md-5">
-        <div class="card" style="width: 100%; margin-bottom: 10px;">
+        <div class="card text-center" style="width:100%">
           <div class="card-body">
-            <h5 class="card-title">Nama Produk</h5>
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+            <form>
+              <div class="form-row">
+                <div class="form-group col-md-4">
+                  <h5 class="card-title">Nama Produk</h5>
+                </div>
+                <div class="form-group col-md-4"> 
+                  <p class="card-text">Harga</p>
+                </div>
+                <div class="form-group col-md-4">
+                  <input type="number" class="form-control" name="qty" placeholder="Qty">
+                </div>
+              </div>
+              <hr>
+            </form>
+          </div>
+          <div class="card-body">
+            
           </div>
         </div>
-
-        <div class="card text-center" style="width: 18rem;">
-          <div class="card-body">
-            <h5 class="card-title">Special title treatment</h5>
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-          </div>
-        </div>
-
       </div>
 
       <div class="pd-col-md-7">
