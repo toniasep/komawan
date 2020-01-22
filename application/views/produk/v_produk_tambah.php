@@ -16,15 +16,18 @@
     <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
-        
-        <form class="login-form" action="<?=base_url().'produk/tambah'?>" method="post"><!-- 
-          <h3 class="login-head"><i class="fa fa-lg fa-fw fa-user"></i>SIGN IN</h3> -->
+        <?php echo form_open_multipart('produk/tambah'); ?>
+        <!-- <form class="login-form" action="<?=base_url()?>produk/tambah" method="post"> -->
           <input type="hidden" name="<?=$this->security->get_csrf_token_name();?>" value="<?=$this->security->get_csrf_hash();?>" style="display: none">
           <div class="row">
             <div class="col-lg-6">
               <div class="form-group">
                 <label class="control-label">Nama</label>
                 <input class="form-control" type="text" name="nama" autofocus>
+              </div>
+              <div class="form-group">
+                <label class="control-label">Gambar</label>
+                <input type="file" class="form-control" name="gambar" accept="image/*" required>
               </div>
               <div class="form-group">
                 <label class="control-label">SKU</label>
@@ -34,6 +37,8 @@
                 <label class="control-label">Stok</label>
                 <input class="form-control" type="number" name="stok">
               </div>
+            </div>
+            <div class="col-lg-6">
               <div class="form-group">
                 <label class="control-label">Harga Beli</label>
                 <input class="form-control" type="number" name="harga_beli">
