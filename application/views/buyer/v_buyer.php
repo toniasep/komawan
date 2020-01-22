@@ -153,16 +153,17 @@
           </div>
           <a href="#" class="pd-button-list"><span class="fa fa-shopping-cart fa-lg" style="color: #fff; margin-top: 12px; margin-right: 10px;"> (0)</span></a>
         </div>
+          <div class="container-fluid">
         <div class="pd-filter pd-filter-grid pd-row">
           <?php 
             foreach($data_produk->result() as $dp){ 
           ?>
           <div class="pd-list-grid pd-col-md-3" style="margin-bottom: 15px;">
             <div class="pd-card">
-              <img src="<?= base_url() ?>gambar/<?=$dp->gambar?>" class="pd-card-img-top"/>
+              <img src="<?= base_url() ?>gambar/<?=$dp->gambar?>" style='object-fit: cover; height: 300px;' class="pd-card-img-top"/>
               <div class="pd-card-body">
                 <b class="pd-card-title"><?=$dp->nama?></b>
-                <p class="pd-card-text pd-text-orange"><?=$dp->harga_jual?></p>
+                <p class="pd-card-text pd-text-orange">Rp. <?=$dp->harga_jual?></p>
               </div>
               <div class="pd-card-footer pd-text-right">
                 <button class="pd-button pd-button-sm" style="background-color: #3282b8; color: #fff"><span class="fa fa-shopping-cart"> Beli</span></button>
@@ -173,7 +174,7 @@
 
           <!-- Modal -->
           <div class="modal fade" id="myModal<?= $dp->id ?>">
-            <div class="modal-dialog">
+            <div class="modal-dialog modal-lg">
               <div class="modal-content">
               
                 <!-- Modal Header -->
@@ -200,7 +201,7 @@
           <?php
           }
           ?>
-
+          </div>
         </div>
 
         <div class="pd-filter-pagination pb-4" data-pagination="6"></div>

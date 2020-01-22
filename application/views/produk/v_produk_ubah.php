@@ -24,7 +24,11 @@
             <div class="col-lg-6">
               <div class="form-group">
                 <label class="control-label">Nama</label>
-                <input class="form-control" type="text" name="nama" autofocus value="<?=$produk->nama?>">
+                <input class="form-control" type="text" name="nama" value="<?=$produk->nama?>">
+              </div>
+              <div class="form-group">
+                <label class="control-label">Gambar</label>
+                <input type="file" class="form-control" name="gambar" accept="image/*" required>
               </div>
               <div class="form-group">
                 <label class="control-label">SKU</label>
@@ -35,6 +39,12 @@
                 <input class="form-control" type="number" name="stok" value="<?=$produk->stok?>">
               </div>
               <div class="form-group">
+                <label class="control-label">Berat(gr)</label>
+                <input class="form-control" type="number" name="berat" value="<?=$produk->berat?>">
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="form-group">
                 <label class="control-label">Harga Beli</label>
                 <input class="form-control" type="number" name="harga_beli" value="<?=$produk->harga_beli?>">
               </div>
@@ -43,12 +53,8 @@
                 <input class="form-control" type="number" name="harga_jual" value="<?=$produk->harga_jual?>">
               </div>
               <div class="form-group">
-                <label class="control-label">Berat(gr)</label>
-                <input class="form-control" type="number" name="berat" value="<?=$produk->berat?>">
-              </div>
-              <div class="form-group">
                 <label class="control-label">Deskripsi</label>
-                <input class="form-control" type="number" name="deskripsi" value="<?=$produk->deskripsi?>">
+                <textarea class="form-control" name="deskripsi" style="height: 211px;"><?=$produk->deskripsi?></textarea>
               </div>
             </div>
 
