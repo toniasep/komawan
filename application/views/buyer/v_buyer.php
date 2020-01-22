@@ -163,7 +163,7 @@
               <img src="<?= base_url() ?>gambar/<?=$dp->gambar?>" style='object-fit: cover; height: 300px;' class="pd-card-img-top"/>
               <div class="pd-card-body">
                 <b class="pd-card-title"><?=$dp->nama?></b>
-                <p class="pd-card-text pd-text-orange"><?=$dp->harga_jual?></p>
+                <p class="pd-card-text pd-text-orange">Rp. <?=$dp->harga_jual?></p>
               </div>
               <div class="pd-card-footer pd-text-right">
                 <button class="pd-button pd-button-sm" style="background-color: #3282b8; color: #fff"><span class="fa fa-shopping-cart"> Beli</span></button>
@@ -174,7 +174,7 @@
 
           <!-- Modal -->
           <div class="modal fade" id="myModal<?= $dp->id ?>">
-            <div class="modal-dialog">
+            <div class="modal-dialog modal-lg">
               <div class="modal-content">
               
                 <!-- Modal Header -->
