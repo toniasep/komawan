@@ -133,15 +133,16 @@
     <div class="pd-slide-pagination"></div>
   </header>
 
-  <div class="pd-container">
+  <div class="pd-container-full">
     <div class="pd-row">
   
       <div class="pd-col-12">
-        <div class="pd-horizontal-filter">
-          <a href="#" class="pd-button-grid" style="margin-right: 1%; margin-top: 5px;"><span class="fa fa-list fa-2x"></span></a>
-          <a href="#" class="pd-button-list" style="margin-top: 5px;"><span class="fa fa-th-large fa-2x"></span></a>
+        <div class="pd-horizontal-filter" style="background-color: #3282b8">
+          <a href="#" style="text-decoration: none; color: #fff; font-family: lato; font-size: 20px; margin-top: 5px">JAYA ABADI</a>
+          <a href="#" class="pd-button-grid" style="display: none;"><span class="fa fa-list fa-2x"></span></a>
+          <a href="#" class="pd-button-list" style="display: none;"><span class="fa fa-th-large fa-2x"></span></a>
           <span class="pd-filter-total" style="display: none"></span>
-          <div class="pd-filter-right">
+          <div class="pd-filter-right" style="margin-right: 1%">
             <select class="pd-input-filter" style="display: none;">
               <option value="popular">Popularity</option>
               <option value="low">Price low to high</option>
@@ -149,6 +150,7 @@
             </select>
             <input type="search" class="pd-input-filter" placeholder="Cari Produk"/>
           </div>
+          <a href="#" class="pd-button-list"><span class="fa fa-shopping-cart fa-lg" style="color: #fff; margin-top: 10px"></span></a>
         </div>
         <div class="pd-filter pd-filter-grid pd-row">
           <div class="pd-list-grid pd-col-md-4">
@@ -609,7 +611,7 @@
   </div>
 
   <footer class="pd-text-center">
-    <p>Apache License 2.0 Tedir Ghazali</p>
+    <p>Toko Jaya Abadi</p>
   </footer>
 
   <script src="<?= base_url(); ?>assets/js/pidie-0.0.1.js"></script>
