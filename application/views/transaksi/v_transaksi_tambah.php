@@ -168,7 +168,10 @@ $(document).ready(function(){ //Make script DOM ready
           method : "POST",
           dataType : 'json',
           success: function(data){
+               $('#pelanggan option').remove();
+               $('#pelanggan').append(`<option value="tambah_pelanggan">Tambah Baru</option>`).selectpicker('refresh');
                for(var i = 0; i < data.length; i++){
+
                 $('#pelanggan').append(`<option value="`+data[i]['id']+`">`+data[i]['nama']+`</option>`).selectpicker('refresh');
                }
           }

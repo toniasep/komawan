@@ -56,7 +56,7 @@ class pelanggan extends CI_Controller
 			'dihapus' => '0'
 		];
 		$hasil = $this->m_main->tampil_where('tbl_pelanggan', $where)->result();
-		json_encode($hasil);
+		echo json_encode($hasil);
 	}
 
 }
