@@ -23,47 +23,114 @@
           <h3 class="login-head"><i class="fa fa-lg fa-fw fa-user"></i>SIGN IN</h3> -->
           <input type="hidden" name="<?=$this->security->get_csrf_token_name();?>" value="<?=$this->security->get_csrf_hash();?>" style="display: none">
           <div class="row">
-            <div class="col-lg-6">
-              <div class="form-group">
-                <label class="control-label">Pelanggan</label>
-                <select class="form-control selectpicker" id="pelanggan" data-live-search="true" name="pelanggan_id" data-size="5" style="width: 40%" placeholder="Pelanggan" required="">
-                  <option disabled selected value style="display:none"> -- Pilih Pelanggan -- </option>
-                  <option value="tambah_pelanggan">Tambah Baru</option>
-                  <?php foreach ($pelanggan->result() as $p) {
-                  ?>
-                    <option value="<?=$p->id?>"><?=$p->nama?></option>
-                  <?php
-                  }
-                  ?>
-                </select>
+            <div class="col-lg-12">
+              <div class="row">
+                <div class="col-lg-4">
+                  <div class="form-group">
+                    <label class="control-label">Pelanggan</label>
+                    <select class="form-control selectpicker" id="pelanggan" data-live-search="true" name="pelanggan_id" data-size="5" style="width: 40%" placeholder="Pelanggan" required="">
+                      <option disabled selected value style="display:none"> -- Pilih Pelanggan -- </option>
+                      <option value="tambah_pelanggan">Tambah Baru</option>
+                      <?php foreach ($pelanggan->result() as $p) {
+                      ?>
+                        <option value="<?=$p->id?>"><?=$p->nama?></option>
+                      <?php
+                      }
+                      ?>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="form-group">
+                    <label class="control-label">NAMA</label>
+                    <input class="form-control" type="text" placeholder="Nama Lengkap" name="nama" readonly>
+                  </div>                  
+                </div>
+                <div class="col-lg-4">
+                  <div class="form-group">
+                    <label class="control-label">NO HP</label>
+                    <input class="form-control" type="number" placeholder="No HP" name="hp" readonly>
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label class="control-label">ALAMAT LENGKAP</label>
+                    <textarea class="form-control" placeholder="Alamat Lengkap" name="alamat" readonly></textarea>
+                  </div>                  
+                </div>
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label class="control-label">KELURAHAN</label>
+                    <input class="form-control" type="text" placeholder="Kelurahan" name="kelurahan" readonly>
+                  </div>                            
+                </div>
               </div>
-              <div class="form-group">
-                <label class="control-label">NAMA</label>
-                <input class="form-control" type="text" placeholder="Nama Lengkap" name="nama">
-              </div>
-              <div class="form-group">
-                <label class="control-label">NO HP</label>
-                <input class="form-control" type="number" placeholder="No HP" name="hp">
+            </div>
+            <div class="col-lg-12">
+            <hr>
+              <div class="table-responsive">
+                <table class="table table-bordered">
+                  <thead>
+                    <tr>
+                      <th>#</th>
+                      <th>Produk</th>
+                      <th>Qty</th>
+                      <th>Harga</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1</td>
+                      <td>
+                        <select class="form-control selectpicker" id="pelanggan" data-live-search="true" required="">
+                          <option>produk 1</option>
+                        </select>
+                      </td>
+                      <td><input type="number" name="qty" class="form-control"></td>
+                      <td><input type="number" name="harga" readonly="" class="form-control"></td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
             </div>
             <div class="col-lg-6">
-              <div class="form-group">
-                <label class="control-label">EMAIL</label>
-                <input class="form-control" type="email" placeholder="Email" name="email">
+              <hr>
+              <div class="row">
+                <div class="col-lg-4">
+                  <input type="text" name="kurir" class="form-control">
+                </div>
+                <div class="col-lg-4">
+                  <input type="text" name="berat" class="form-control">
+                </div>
+                <div class="col-lg-4">
+                  <input type="text" name="ongkir" class="form-control">
+                </div>
               </div>
-              <div class="form-group">
-                <label class="control-label">PASSWORD</label>
-                <input class="form-control" type="password" placeholder="Password" name="password">
-              </div>
-              <div class="form-group">
-                <label class="control-label">KONFIRMASI PASSWORD</label>
-                <input class="form-control" type="password" placeholder="Konfirmasi Password" name="copassword">
-              </div>
+            </div>
+            <div class="col-lg-6 flat-right text-right">
+              <table rowspan=5 colspan=5 class="float-right">
+                <tr>
+                  <td>Sub Total</td>
+                  <td></td>
+                  <td><input type="text" name="" class="form-control"></td>
+                </tr>
+                <tr>
+                  <td>Biaya Pengiriman</td>
+                  <td></td>
+                  <td><input type="text" name="" class="form-control"></td>
+                </tr>
+                <tr>
+                  <td>Total</td>
+                  <td></td>
+                  <td><input type="text" name="" class="form-control"></td>
+                </tr>
+              </table>
             </div>
 
             <div class="col-lg-12">
+              <br><br>
               <div class="form-group btn-container">
-                <input type="submit" name="submit" value="TAMBAH DATA" class="btn btn-primary btn-block">
+                <input type="submit" name="submit" value="TAMBAH TRANSAKSI" class="btn btn-primary btn-block">
               </div>
             </div>
 
