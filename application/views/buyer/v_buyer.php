@@ -138,8 +138,8 @@
   
       <div class="pd-col-12">
         <div class="pd-horizontal-filter">
-          <a href="#" class="pd-button-grid" style="margin-right: 1%"><span class="fa fa-list fa-2x"></span></a>
-          <a href="#" class="pd-button-list"><span class="fa fa-th-large fa-2x"></span></a>
+          <a href="#" class="pd-button-grid" style="margin-right: 1%; margin-top: 5px;"><span class="fa fa-list fa-2x"></span></a>
+          <a href="#" class="pd-button-list" style="margin-top: 5px;"><span class="fa fa-th-large fa-2x"></span></a>
           <span class="pd-filter-total" style="display: none"></span>
           <div class="pd-filter-right">
             <select class="pd-input-filter" style="display: none;">
@@ -159,9 +159,8 @@
                 <p class="pd-card-text pd-text-orange">485000</p>
               </div>
               <div class="pd-card-footer pd-text-right">
-                <button class="pd-button pd-button-danger pd-button-sm"><span class="pd-icon">shop</span></button>
-                <button class="pd-button pd-button-primary pd-button-sm"><span class="pd-icon">shopping_cart</span></button>
-                <button class="pd-button pd-button-success pd-button-sm"><span class="pd-icon">bookmark</span></button>
+                <button class="pd-button pd-button-danger pd-button-sm"><span class="fa fa-shopping-cart"> Beli</span></button>
+                <button class="pd-button pd-button-primary pd-button-sm">Detail</button>
               </div>
             </div>
           </div>
