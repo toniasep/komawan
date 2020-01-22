@@ -104,7 +104,7 @@
             <label for="formGroupExampleInput">Alamat Lengkap</label>
             <textarea class="form-control" id="exampleFormControlTextarea1" rows="3">Alamat Lengkap</textarea>
           </div>
-          <button type="submit" class="btn" style="background-color: #0f4c75; color: #fff">Bayar</button>
+          <button type="submit" class="btn" style="background-color: #0f4c75; color: #fff">Proses</button>
         </form>
       </div>
     </div>
