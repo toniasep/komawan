@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>PidieUi</title>
   <link href="<?= base_url(); ?>assets/css/pidie-0.0.1.css" rel="stylesheet"/>
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 
@@ -137,10 +138,15 @@
   
       <div class="pd-col-12">
         <div class="pd-horizontal-filter">
-          <a href="#" class="pd-button-grid"><span class="pd-icon">view_module</span></a>
-          <a href="#" class="pd-button-list"><span class="pd-icon">view_list</span></a>
-          <span class="pd-filter-total"></span>
+          <a href="#" class="pd-button-grid" style="margin-right: 1%"><span class="fa fa-list fa-2x"></span></a>
+          <a href="#" class="pd-button-list"><span class="fa fa-th-large fa-2x"></span></a>
+          <span class="pd-filter-total" style="display: none"></span>
           <div class="pd-filter-right">
+            <select class="pd-input-filter" style="display: none;">
+              <option value="popular">Popularity</option>
+              <option value="low">Price low to high</option>
+              <option value="high">Price high to low</option>
+            </select>
             <input type="search" class="pd-input-filter" placeholder="Cari Produk"/>
           </div>
         </div>
