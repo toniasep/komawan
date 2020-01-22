@@ -11,15 +11,20 @@ class auth{
 			'email' => $email,
 			'dihapus'=>'0'
 		);
-		$masuk = $this->CI->db->get_where('tbl_user', $data)->row();
+		$masuk = $this->CI->db->get_where('v_user_paket', $data)->row();
 		if($masuk != NULL){
 			if(password_verify($password, $masuk->password)){
 				$sess_data['masuk'] = '1';
-				$sess_data['id'] = $masuk->id;
-				$sess_data['nama'] = $masuk->nama;
+				$sess_data['id'] = $masuk->user_id;
+				$sess_data['nama'] = $masuk->user_nama;
 				$sess_data['email'] = $masuk->email;
 				$sess_data['hp'] = $masuk->hp;
 				$sess_data['hak_akses'] = $masuk->hak_akses;
+				$sess_data['paket_id'] = $masuk->paket_id;
+				$sess_data['paket_nama'] = $masuk->paket_nama;
+				$sess_data['tgl_expire'] = $masuk->tgl_expire;
+				$sess_data['produk_max'] = $masuk->produk_max;
+				$sess_data['transaksi_max'] = $masuk->transaksi_max;
 				$this->CI->session->set_userdata($sess_data);
 				return true;
 			}

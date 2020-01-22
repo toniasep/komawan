@@ -23,23 +23,33 @@ class produk extends CI_Controller
 	function tambah(){
 		if($this->session->userdata('masuk') == '1'){
 			if($this->input->post('submit') != NULL){
-				$data = [
-					'nama' => $this->input->post('nama'),
-					'sku' => $this->input->post('sku'),
-					'stok' => $this->input->post('stok'),
-					'harga_beli' => $this->input->post('harga_beli'),
-					'harga_jual' => $this->input->post('harga_jual'),
-					'berat' => $this->input->post('berat'),
-					'deskripsi' => $this->input->post('deskripsi'),
-					'dihapus' => '0',
+				$where = [
 					'user_id' => $this->session->userdata('id'),
-					'ditambah_oleh' => $this->session->userdata('email'),
-					'tgl_tambah' => date("Y-m-d H:i:s")
+					'dihapus' => '0'
 				];
+				$total_produk = $this->m_main->tampil_where('tbl_produk', $where)->num_rows();
+				if($total_produk < $this->session->userdata('produk_max')){
+					$data = [
+						'nama' => $this->input->post('nama'),
+						'sku' => $this->input->post('sku'),
+						'stok' => $this->input->post('stok'),
+						'harga_beli' => $this->input->post('harga_beli'),
+						'harga_jual' => $this->input->post('harga_jual'),
+						'berat' => $this->input->post('berat'),
+						'deskripsi' => $this->input->post('deskripsi'),
+						'dihapus' => '0',
+						'user_id' => $this->session->userdata('id'),
+						'ditambah_oleh' => $this->session->userdata('email'),
+						'tgl_tambah' => date("Y-m-d H:i:s")
+					];
 
-				$this->m_main->tambah('tbl_produk', $data);
+					$this->m_main->tambah('tbl_produk', $data);
 
-				redirect(base_url().'produk');
+					redirect(base_url().'produk');
+				}else{
+					echo "<h1>PRODUK SUDHA LEBIH</h1>";
+				}
+				
 			}else{
 				$this->load->view('global/v_header');
 				$this->load->view('produk/v_produk_tambah');

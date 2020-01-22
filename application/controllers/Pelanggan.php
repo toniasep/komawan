@@ -50,5 +50,13 @@ class pelanggan extends CI_Controller
 		}
 	}
 
+	function list_pelanggan(){
+		$where = [
+			'user_id' => $this->session->userdata('id'),
+			'dihapus' => '0'
+		];
+		$hasil = $this->m_main->tampil_where('tbl_pelanggan', $where)->result();
+		json_encode($hasil);
+	}
 
 }
