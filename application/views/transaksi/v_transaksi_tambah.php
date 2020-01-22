@@ -161,8 +161,6 @@ $(document).ready(function(){ //Make script DOM ready
       type: "post",
       data: formData,
       success: function(d) {
-        $('#closemodal').click();
-
         $.ajax({
           url : "<?=base_url().'pelanggan/list_pelanggan'?>",
           method : "POST",
@@ -174,6 +172,7 @@ $(document).ready(function(){ //Make script DOM ready
 
                 $('#pelanggan').append(`<option value="`+data[i]['id']+`">`+data[i]['nama']+`</option>`).selectpicker('refresh');
                }
+               $('#closemodal').click();
           }
         });
       }
