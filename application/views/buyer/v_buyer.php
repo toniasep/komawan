@@ -138,7 +138,7 @@
   <div class="pd-container-full">
     <div class="pd-row-full">
       <div class="">
-        <div class="pd-horizontal-filter" style="background-color: #3282b8; border: #3282b8">
+        <div class="pd-horizontal-filter" style="background-color: #0f4c75; border: #0f4c75">
           <a href="#" style="text-decoration: none; color: #fff; font-size: 20px; margin-top: 6px; margin-left: 10px;">TOKO JAYA ABADI</a>
           <a href="#" class="pd-button-grid" style="display: none;"><span class="fa fa-list fa-2x"></span></a>
           <a href="#" class="pd-button-list" style="display: none;"><span class="fa fa-th-large fa-2x"></span></a>
@@ -151,7 +151,7 @@
             </select>
             <input type="search" class="pd-input-filter" placeholder="Cari Produk"/>
           </div>
-          <a href="#" class="pd-button-list"><span class="fa fa-shopping-cart fa-lg" style="color: #fff; margin-top: 12px; margin-right: 10px;"></span></a>
+          <a href="#" class="pd-button-list"><span class="fa fa-shopping-cart fa-lg" style="color: #fff; margin-top: 12px; margin-right: 10px;"> (0)</span></a>
         </div>
         <div class="pd-filter pd-filter-grid pd-row">
           <?php 

@@ -1833,14 +1833,14 @@ fieldset:disabled a.pd-button {
 
 .pd-button-primary {
   color: #fff;
-  background-color: #007bff;
-  border-color: #007bff;
+  background-color: #0f4c75;
+  border-color: #0f4c75;
 }
 
 .pd-button-primary:hover {
   color: #fff;
-  background-color: #0069d9;
-  border-color: #0062cc;
+  background-color: #0f4c75;
+  border-color: #0f4c75;
 }
 
 .pd-button-primary:focus, .pd-button-primary.focus {
