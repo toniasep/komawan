@@ -137,8 +137,8 @@
     <div class="pd-row">
   
       <div class="pd-col-12">
-        <div class="pd-horizontal-filter" style="background-color: #3282b8">
-          <a href="#" style="text-decoration: none; color: #fff; font-family: lato; font-size: 20px; margin-top: 5px">JAYA ABADI</a>
+        <div class="pd-horizontal-filter" style="background-color: #3282b8; border: #3282b8">
+          <a href="#" style="text-decoration: none; color: #fff; font-family: Lato; font-size: 20px; margin-top: 6px">JAYA ABADI</a>
           <a href="#" class="pd-button-grid" style="display: none;"><span class="fa fa-list fa-2x"></span></a>
           <a href="#" class="pd-button-list" style="display: none;"><span class="fa fa-th-large fa-2x"></span></a>
           <span class="pd-filter-total" style="display: none"></span>
