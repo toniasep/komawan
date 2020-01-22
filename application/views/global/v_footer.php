@@ -15,6 +15,21 @@
 </div>
 <!-- ./wrapper -->
 
+<!-- Gridview -->
+<script src="<?=base_url().'assets/'?>js/pidie-0.0.1.js"></script>
+<script>
+    var pidie = new Pidie();
+    pidie.panel
+    pidie.slide
+    pidie.gridList
+    pidie.filterSearch
+    pidie.tabs
+    pidie.accordionCollapse
+    pidie.filterSort
+    pidie.filterPagination
+    pidie.filterCheckbox
+</script>
+<!-- Gridview -->
 
 <script src="<?=base_url().'assets/'?>vendor/datatables/jquery.dataTables.js"></script>
 <script src="<?=base_url().'assets/'?>vendor/datatables/dataTables.bootstrap4.min.js"></script>
@@ -27,37 +42,7 @@
 <!-- Page level custom scripts -->
 <script src="<?=base_url().'assets/'?>js/demo/datatables-demo.js"></script>
 
-<script>
-  $(document).ready(function() {
-      // Setup - add a text input to each footer cell
-      $('#tabel thead tr').clone(true).appendTo( '#tabel thead' );
-      $('#tabel thead tr:eq(1) th').each( function (i) {
-          var title = $(this).text();
-          $(this).html( '<input type="text" placeholder=" Cari '+title+'" />' );
-   
-          $( 'input', this ).on( 'keyup change', function () {
-              if ( table.column(i).search() !== this.value ) {
-                  table
-                      .column(i)
-                      .search( this.value )
-                      .draw();
-              }
-          } );
-      } );
-   
-      var table = $('#tabel').DataTable( {
-          orderCellsTop: true,
-          fixedHeader: true,
-          dom: 'Bfrtip',
-          buttons: [
-              'copyHtml5',
-              'excelHtml5',
-              'csvHtml5',
-              'pdfHtml5'
-          ]
-      } );
-  } );
-</script>
+
 <script>
   $.widget.bridge('uibutton', $.ui.button)
 </script>
