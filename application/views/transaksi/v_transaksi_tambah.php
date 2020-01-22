@@ -33,7 +33,7 @@
                       <option value="tambah_pelanggan">Tambah Baru</option>
                       <?php foreach ($pelanggan->result() as $p) {
                       ?>
-                        <option value="<?=$p->id?>"><?=$p->nama?></option>
+                        <option value="<?=$p->id?>" data-hp="<?=$p->hp?>" data-alamat="<?=$p->alamat.', '.$p->urban.', '.$p->sub_district.', '.$p->city?>"><?=$p->nama?></option>
                       <?php
                       }
                       ?>
@@ -76,19 +76,20 @@
                     <tr>
                       <td>1</td>
                       <td>
-                        <select class="form-control selectpicker" data-live-search="true" data-size="5" id="kelurahan" style="width: 40%" placeholder="Nama" required="">
+                        <select class="form-control selectpicker" data-live-search="true" data-size="5" id="produk" style="width: 40%" required="">
                           <?php
                           foreach ($produk->result() as $p) {
                           ?>
-                            <option value="<?=$p->id?>"><?=$p->nama?></option>
+                            <option value="<?=$p->id?>" data-harga="<?=$p->harga_jual?>"><?=$p->nama?></option>
                           <?php
                           }
                           ?>
                         </select>
                       </td>
-                      <td><input type="number" name="qty" class="form-control"></td>
-                      <td><input type="number" name="harga" readonly="" class="form-control"></td>
+                      <td><input type="number" name="qty" id="qty" class="form-control" value="1"></td>
+                      <td><input type="number" id="harga" name="harga" readonly="" class="form-control"></td>
                     </tr>
+        
                   </tbody>
                 </table>
               </div>
@@ -209,17 +210,34 @@ $(document).ready(function(){ //Make script DOM ready
     if(opval=="tambah_pelanggan"){ //Compare it and if true
       $('#myModal').modal("show"); //Open Modal
     }else{
-      $.ajax({
-        url: '<?=base_url()?>pelanggan/cari?id='+opval,
-        method: "get",
-        dataType : 'json',
-        success: function(data) {
-           $('*[name=nama]').val(data[0]['nama']);
-           $('*[name=hp]').val(data[0]['hp']);
-           $('*[name=alamat]').val(data[0]['alamat']+'\n'+data[0]['urban']+', '+data[0]['sub_district']+', '+data[0]['city']);
-        }
-      });
+      // $.ajax({
+      //   url: '<?=base_url()?>pelanggan/cari?id='+opval,
+      //   method: "get",
+      //   dataType : 'json',
+      //   success: function(data) {
+      //      $('*[name=nama]').val(data[0]['nama']);
+      //      $('*[name=hp]').val(data[0]['hp']);
+      //      $('*[name=alamat]').val(data[0]['alamat']+'\n'+data[0]['urban']+', '+data[0]['sub_district']+', '+data[0]['city']);
+      //   }
+      // });
+      var selected = $('#pelanggan').find(':selected');
+      $('*[name=nama]').val(selected.text());
+       $('*[name=hp]').val(selected.data('hp'));
+       $('*[name=alamat]').val(selected.data('alamat'));
     }
+  });
+
+  $('#produk').change(function(){
+    $('#harga').val($('#produk').find(':selected').data('harga'));
+    $('#qty').val(1);
+  });
+
+  $('#qty').change(function(){
+    $('#harga').val(Number($('#qty').val())*Number($('#produk').find(':selected').data('harga')));
+  });
+
+  $('#harga').change(function(){
+    $('#harga').val($('#produk').find(':selected').data('harga'));
   });
 
 
