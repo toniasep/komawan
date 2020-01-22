@@ -166,13 +166,35 @@
               </div>
               <div class="pd-card-footer pd-text-right">
                 <button class="pd-button pd-button-danger pd-button-sm"><span class="fa fa-shopping-cart"> Beli</span></button>
-                <button class="pd-button pd-button-primary pd-button-sm" data-toggle="modal" data-target="#modal11111">Detail</button>
+                <button class="pd-button pd-button-primary pd-button-sm" data-toggle="modal" data-target="#myModal<?= $dp->id ?>">Detail</button>
               </div>
             </div>
           </div>
 
-
-          <!-- Button trigger modal -->
+          <!-- Modal -->
+          <div class="modal fade" id="myModal<?= $dp->id ?>">
+            <div class="modal-dialog">
+              <div class="modal-content">
+              
+                <!-- Modal Header -->
+                <div class="modal-header">
+                  <h4 class="modal-title">Deskripsi <?= $dp->nama ?></h4>
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                
+                <!-- Modal body -->
+                <div class="modal-body">
+                  <?= $dp->deskripsi ?>
+                </div>
+                
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+                
+              </div>
+            </div>
+          </div>
 
 
           <?php
@@ -181,22 +203,6 @@
 
         </div>
 
-          <!-- Modal -->
-          <div class="modal fade" id="#modal11111" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLongTitle">Deskripsi <?=$dp->nama?></h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div class="modal-body">
-                  <?=$dp->deskripsi?>
-                </div>
-              </div>
-            </div>
-          </div>
         <div class="pd-filter-pagination" data-pagination="6"></div>
 
       </div>
@@ -261,6 +267,8 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   <script src="<?= base_url(); ?>assets/js/pidie-0.0.1.js"></script>
   <script>
+
+
     var pidie = new Pidie();
     pidie.panel
     pidie.slide
