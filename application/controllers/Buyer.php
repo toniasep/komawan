@@ -14,7 +14,7 @@ class buyer extends CI_Controller
 	}
 
 	function cart(){
-		$this->load->view('buyer/v_cart', $hasil);
+		$this->load->view('buyer/v_cart');
 	}
 
 }
