@@ -19,7 +19,7 @@
     <section class="content">
       <div class="container-fluid">
         
-        <form class="login-form" action="<?=base_url().'main/signup'; ?>" method="post"><!-- 
+        <form class="login-form" action="<?=base_url().'transaksi/tambah'?>" method="post"><!-- 
           <h3 class="login-head"><i class="fa fa-lg fa-fw fa-user"></i>SIGN IN</h3> -->
           <input type="hidden" name="<?=$this->security->get_csrf_token_name();?>" value="<?=$this->security->get_csrf_hash();?>" style="display: none">
           <div class="row">
@@ -63,20 +63,21 @@
             <div class="col-lg-12">
             <hr>
               <div class="table-responsive">
-                <table class="table table-bordered">
+                <table class="table table-bordered" id="tabel_produk">
                   <thead>
                     <tr>
-                      <th>#</th>
+                      <th>No</th>
                       <th>Produk</th>
                       <th>Qty</th>
                       <th>Harga</th>
+                      <th></th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
                       <td>1</td>
                       <td>
-                        <select class="form-control selectpicker" data-live-search="true" data-size="5" id="produk" style="width: 40%" required="">
+                        <select name="produk[]" id="produk1" class="form-control selectpicker" data-live-search="true" data-size="5" style="width: 40%" required="" onchange="changeProduk(1)">
                           <?php
                           foreach ($produk->result() as $p) {
                           ?>
@@ -86,8 +87,11 @@
                           ?>
                         </select>
                       </td>
-                      <td><input type="number" name="qty" id="qty" class="form-control" value="1"></td>
-                      <td><input type="number" id="harga" name="harga" readonly="" class="form-control"></td>
+                      <td><input type="number" name="qty[]" id="qty1" class="form-control" value="1" onchange="changeQty(1)"></td>
+                      <td><input type="number" name="harga[]" id="harga1" readonly="" class="form-control" onchange="changeHarga()"></td>
+                      <td>
+                        <button type="button" class="btn btn-primary mx-3" onclick="tambah_baris_produk()"><i class="fa fa-plus"></i></button>
+                      </td>
                     </tr>
         
                   </tbody>
@@ -113,7 +117,7 @@
                 <tr>
                   <td>Sub Total</td>
                   <td></td>
-                  <td><input type="text" name="" class="form-control"></td>
+                  <td><input type="text" id="sub_total" class="form-control" readonly=""></td>
                 </tr>
                 <tr>
                   <td>Biaya Pengiriman</td>
@@ -123,7 +127,7 @@
                 <tr>
                   <td>Total</td>
                   <td></td>
-                  <td><input type="text" name="" class="form-control"></td>
+                  <td><input type="text" name="" class="form-control" readonly=""></td>
                 </tr>
               </table>
             </div>
@@ -227,19 +231,6 @@ $(document).ready(function(){ //Make script DOM ready
     }
   });
 
-  $('#produk').change(function(){
-    $('#harga').val($('#produk').find(':selected').data('harga'));
-    $('#qty').val(1);
-  });
-
-  $('#qty').change(function(){
-    $('#harga').val(Number($('#qty').val())*Number($('#produk').find(':selected').data('harga')));
-  });
-
-  $('#harga').change(function(){
-    $('#harga').val($('#produk').find(':selected').data('harga'));
-  });
-
 
   $("#submitpelanggan").on("click", function(event) {
 
@@ -286,4 +277,49 @@ $(document).ready(function(){ //Make script DOM ready
   });
 
 });
+
+
+function changeProduk(no){
+   $('#harga'+no).val($('#produk'+no).find(':selected').data('harga'));
+   $('#qty'+no).val(1);
+}
+
+function changeQty(no){
+  $('#harga'+no).val(Number($('#qty'+no).val())*Number($('#produk'+no).find(':selected').data('harga')));
+}
+
+function changeHarga(){
+  var produks = $('input[name="harga[]"]');
+  var sub_total = 0;
+  for(var i = 0; i < produks.length; i++){
+    sub_total += Number(produks[i].value);
+  }
+  $('#sub_total').val(sub_total);
+}
+
+function tambah_baris_produk(){
+  $rowno = $("#tabel_produk tr").length;
+  $rowno = $rowno + 1;
+    $.ajax({
+        url : "<?=base_url().'produk/list_produk'?>",
+        method : "POST",
+        dataType : 'json',
+        success: function(data){
+            var html = `<tr id="tabel_produk`+$rowno+`"><td>`+($rowno-1)+`</td><td>
+            <select name="produk[]" id="produk`+$rowno+`" class="form-control produk_selectpicker" data-live-search="true" data-size="5" style="width: 40%" required="" onchange="changeProduk(`+$rowno+`)">`;
+            var i;
+            for(var i = 0; i < data.length; i++){
+                html += `<option value="`+data[i]['id']+`" data-harga="`+data[i]['harga_jual']+`">`+data[i]['nama']+`</option>`;
+            }
+            html += `</select></td><td><input type="number" name="qty[]" id="qty`+$rowno+`" class="form-control" value="1" onchange="changeQty(`+$rowno+`)"></td><td><input type="number" name="harga[]" id="harga`+$rowno+`" readonly="" class="form-control" onchange="changeHarga()"></td><td><button class="btn btn-danger mx-3" onclick=hapus_baris_produk(`+$rowno+`)><i class="fa fa-minus"></i></button></td></tr>`;
+            $("#tabel_produk tr:last").after(html); 
+            $('.produk_selectpicker').selectpicker('refresh');
+        }
+    });
+}
+
+function hapus_baris_produk(rowno)
+{
+  $('#tabel_produk'+rowno).remove();
+}
 </script>

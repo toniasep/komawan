@@ -36,8 +36,6 @@ class pelanggan extends CI_Controller
 				];
 
 				$this->m_main->tambah('tbl_pelanggan', $data);
-
-				redirect(base_url().'/transaksi/tambah');
 			}else{
 				$hasil['data_pos'] = $this->m_main->tampil('tbl_pos');
 

@@ -141,4 +141,14 @@ class produk extends CI_Controller
 		}
 	}
 
+	function list_produk(){
+		$where = [
+			'user_id' => $this->session->userdata('id'),
+			'dihapus' => '0'
+		];
+		$hasil = $this->m_main->tampil_where('tbl_produk', $where)->result();
+
+		echo json_encode($hasil);
+	}
+
 }
