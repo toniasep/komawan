@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>PidieUi</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Klola</title>
+  <link rel="icon" href="<?=base_url()?>img/Untitled-3.png" type="image">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <link href="<?= base_url(); ?>assets/css/pidie-0.0.1.css" rel="stylesheet"/>
+  <link href="<?= base_url(); ?>assets/css/pidie-0.0.1.css?v=1.0" rel="stylesheet"/>
   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body>
+<body style="font-family: lato;">
 
   <div class="pd-panel"></div>
-
-  <nav class="pd-nav" style="display: none">
+  <!-- Hidden -->
+  <nav class="pd-nav" style="display: none;">
     <button id="panel" class="pd-nav-toggle">
       <span class="pd-nav-toggle-icon"></span>
     </button>
@@ -26,7 +27,7 @@
       <li><a href="#">Download</a></li>
     </ul>-->
   </nav>
-
+  <!-- Hidden -->
   <header class="pd-header-slide" style="display: none">
     <span class="pd-slide-prev">&lsaquo;</span>
     <span class="pd-slide-next">&rsaquo;</span>
@@ -135,11 +136,10 @@
   </header>
 
   <div class="pd-container-full">
-    <div class="pd-row">
-  
-      <div class="pd-col-12">
+    <div class="pd-row-full">
+      <div class="">
         <div class="pd-horizontal-filter" style="background-color: #3282b8; border: #3282b8">
-          <a href="#" style="text-decoration: none; color: #fff; font-family: Lato; font-size: 20px; margin-top: 6px">JAYA ABADI</a>
+          <a href="#" style="text-decoration: none; color: #fff; font-size: 20px; margin-top: 6px">TOKO JAYA ABADI</a>
           <a href="#" class="pd-button-grid" style="display: none;"><span class="fa fa-list fa-2x"></span></a>
           <a href="#" class="pd-button-list" style="display: none;"><span class="fa fa-th-large fa-2x"></span></a>
           <span class="pd-filter-total" style="display: none"></span>
@@ -151,13 +151,13 @@
             </select>
             <input type="search" class="pd-input-filter" placeholder="Cari Produk"/>
           </div>
-          <a href="#" class="pd-button-list"><span class="fa fa-shopping-cart fa-lg" style="color: #fff; margin-top: 10px"></span></a>
+          <a href="#" class="pd-button-list"><span class="fa fa-shopping-cart fa-lg" style="color: #fff; margin-top: 12px"></span></a>
         </div>
         <div class="pd-filter pd-filter-grid pd-row">
           <?php 
             foreach($data_produk->result() as $dp){ 
           ?>
-          <div class="pd-list-grid pd-col-md-4">
+          <div class="pd-list-grid pd-col-md-3">
             <div class="pd-card">
               <img src="<?= base_url() ?>gambar/<?=$dp->gambar?>" class="pd-card-img-top"/>
               <div class="pd-card-body">
@@ -165,8 +165,8 @@
                 <p class="pd-card-text pd-text-orange"><?=$dp->harga_jual?></p>
               </div>
               <div class="pd-card-footer pd-text-right">
-                <button class="pd-button pd-button-danger pd-button-sm"><span class="fa fa-shopping-cart"> Beli</span></button>
-                <button class="pd-button pd-button-primary pd-button-sm" data-toggle="modal" data-target="#myModal<?= $dp->id ?>">Detail</button>
+                <button class="pd-button pd-button-sm" style="background-color: #3282b8; color: #fff"><span class="fa fa-shopping-cart"> Beli</span></button>
+                <button class="pd-button pd-button-sm" data-toggle="modal" data-target="#myModal<?= $dp->id ?>" style="background-color: #3282b8; color: #fff">Detail</button>
               </div>
             </div>
           </div>
@@ -203,12 +203,13 @@
 
         </div>
 
-        <div class="pd-filter-pagination" data-pagination="6"></div>
+        <div class="pd-filter-pagination pb-3" data-pagination="6"></div>
 
       </div>
     </div>
   </div>
 
+  <!-- Hidden -->
   <div class="pd-container" style="display: none">
     <div class="pd-tabs pd-tabs-horizontal">
       <ul class="pd-tabs-header">
@@ -237,7 +238,7 @@
       </div>
     </div>
   </div>
-
+ <!-- Hidden -->
   <div class="pd-container" style="display: none">
     <div class="pd-accordion">
       <h3 class="pd-accordion-title">Lorem ipsum dolor sit amet</h3>
@@ -259,12 +260,9 @@
     </div>
   </div>
 
-  <footer class="pd-text-center">
-    <p>Toko Jaya Abadi</p>
-  </footer>
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   <script src="<?= base_url(); ?>assets/js/pidie-0.0.1.js"></script>
   <script>
 

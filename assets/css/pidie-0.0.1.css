@@ -96,8 +96,8 @@ body{ font-family: Titillium; }
 
 .pd-container-full {
   width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
+  padding-right: 0px;
+  padding-left: 0px;
   margin-right: auto;
   margin-left: auto;
 }
@@ -2765,10 +2765,12 @@ input[type="button"].pd-block {
 */
 .pd-horizontal-filter, .pd-vertical-filter{
   width: 100%;
-  padding: 5px 10px;
+  padding: 10px 15px;
   background-color: #3282b8;
   border:1px solid #3282b8;
-  margin: 10px 0;
+  margin-top: 0px;
+  margin-left: 0px;
+  margin-bottom: 15px;
 }
 .pd-horizontal-filter{
   display: -ms-flexbox;
@@ -2804,7 +2806,7 @@ input[type="button"].pd-block {
 }
 .pd-horizontal-filter .pd-filter-total{
   margin-top: 10px;
-  margin-left: 5px;
+  margin-left: 0px;
   vertical-align: middle;
 }
 .pd-filter-right{
@@ -2999,8 +3001,8 @@ input[type="button"].pd-block {
 .pd-pagination-item.active {
   z-index: 1;
   color: #fff;
-  background-color: rgb(255, 90, 61);
-  border-color: rgb(255, 90, 61);
+  background-color: #3282b8;
+  border-color: #3282b8;
   pointer-events: none;
   cursor: auto;
 }
