@@ -113,77 +113,63 @@
 
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
-	<!-- Content Header (Page header) -->
-	<div class="content-header">
-	  <div class="container-fluid">
-	    <div class="row mb-2">
-	      <div class="col-sm-6">
-	        <h1 class="m-0 text-dark">Daftar User</h1>
-	      </div><!-- /.col -->
-	    </div><!-- /.row -->
-	  </div><!-- /.container-fluid -->
-	</div>
-	<!-- /.content-header -->
-	<div class="container">
-		<div class="row">
-			<div class="col-xl-10">
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-xl-12">
-				<div class="card shadow mb-4">
-					<div class="card-body">
-					  <div class="table-responsive">
-					    <table class="table table-bordered" id="tabel" width="100%" cellspacing="0">
-					      <thead>
-					        <tr>
-					          <th>No</th>
-					          <th>Nama</th>
-					          <th>Hp</th>
-					          <th>Email</th>
-					          <th>Paket</th>
-                    <th>Tgl Daftar</th>
-                    <th>Tgl Bayar</th>
-                    <th>Tgl Aktif</th>
-                    <th>Tgl Expire</th>
-					          <th>Tindakan</th>
-					        </tr>
-					      </thead>
-					      <tbody>
-					      	<?php 
-					      	$no = 1;
-					      	foreach($data_user->result() as $dp)
-							{ 
-							?>
-						        <tr>
-						          <td><?=$no?></td>
-						          <td><?=$dp->user_nama?></td>
-						          <td><?=$dp->hp?></td>
-						          <td><?=$dp->email?></td>
-						          <td><?=$dp->paket_nama?></td>
+  <!-- Content Header (Page header) -->
+  <div class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-6">
+          <h1 class="m-0 text-dark">Daftar User Paket</h1>
+        </div><!-- /.col -->
+      </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+  </div>
+  <!-- /.content-header -->
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-10">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xl-12">
+        <div class="card shadow mb-4">
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table table-bordered" id="tabel" width="100%" cellspacing="0">
+                <thead>
+                  <tr>
+                    <th>No</th>
+                    <th>User ID</th>
+                    <th>Paket ID</th>
+                    <th>Tanggal Daftar</th>
+                    <th>Tanggal Bayar</th>
+                    <th>Tanggal Aktif</th>
+                    <th>Tanggal Expire</th>
+                    <th>Total</th>
+                    <th>Status</th>
+                    <th>Tindakan</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <?php 
+                  $no = 1;
+                  foreach($data_paket->result() as $dp)
+              { 
+              ?>
+                    <tr>
+                      <td><?=$no?></td>
+                      <td><?=$dp->user_id?></td>
+                      <td><?=$dp->paket_id?></td>
                       <td><?=$dp->tgl_daftar?></td>
                       <td><?=$dp->tgl_bayar?></td>
                       <td><?=$dp->tgl_aktif?></td>
                       <td><?=$dp->tgl_expire?></td>
-						          <td>
-                        <?php if($status == 'aktif'){
-                        ?>
-                          <a href="<?=base_url().'admin/hapus/'.$dp->user_id?>" class="btn btn-danger btn-circle" onclick="return confirm('Apakah Anda yakin untuk menghapus data <?=$dp->user_nama?>?');">
-                              <i class="fas fa-trash"></i>
-                          </a>
-                        <?php
-                        }else{
-                        ?>
-
-                          <a href="<?=base_url().'admin/aktivasi/'.$dp->transaksi_id?>" class="btn btn-primary btn-circle" onclick="return confirm('Apakah Anda yakin untuk mengaktifkan data <?=$dp->user_nama?>?');">
-                              <i class="fas fa-edit"></i>
-                          </a>
-                        <?php
-                        }
-                        ?>
-						          	
-						          </td>
-						        </tr>
+                      <td><?=$dp->total?></td>
+                      <td><?=$dp->status?></td>
+                      <td>
+                        
+                        
+                      </td>
+                    </tr>
 
 
           <!-- Modal -->
@@ -200,20 +186,20 @@
                 <!-- Modal body -->
                 <div class="modal-body">
                   
-	              <div class="form-group">
-	                <label class="control-label">Status</label>
-	                <select class="form-control" name="hak_akses">
-	                	<option value="1">Aktif</option>
-	                	<option value="0">Tidak Aktif</option>
-	                </select>
-	              </div>
-	              <div class="form-group">
-	                <label class="control-label">Paket</label>
-	                <select class="form-control" class="paket_id">
-	                	<option value="01">Starting</option>
-	                	<option value="02">Growing</option>
-	                </select>
-	              </div>
+                <div class="form-group">
+                  <label class="control-label">Status</label>
+                  <select class="form-control" name="hak_akses">
+                    <option value="1">Aktif</option>
+                    <option value="0">Tidak Aktif</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="control-label">Paket</label>
+                  <select class="form-control" class="paket_id">
+                    <option value="01">Starting</option>
+                    <option value="02">Growing</option>
+                  </select>
+                </div>
 
                 </div>
                 
@@ -227,18 +213,18 @@
             </div>
           </div>
 
-						    <?php
-						    	$no++;
-						    }
-						    ?>
-					      </tbody>
-					    </table>
-					  </div>
-					</div>
-				</div>
-			</div>		
-		</div>
-	</div>
+                <?php
+                  $no++;
+                }
+                ?>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>    
+    </div>
+  </div>
 </div>
   <!-- /.content-wrapper -->
   <footer class="main-footer">

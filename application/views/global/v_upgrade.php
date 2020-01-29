@@ -16,7 +16,9 @@
     <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
-        
+        <?php
+          var_dump($data_paket->result());
+        ?>
       </div><!-- /.container-fluid -->
     </section>
     <!-- /.content -->
