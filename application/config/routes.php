@@ -55,6 +55,7 @@ $route['translate_uri_dashes'] = FALSE;
 $route['masuk'] = 'main/masuk';
 $route['keluar'] = 'main/keluar';
 $route['daftar'] = 'main/daftar';
+$route['keranjang'] = 'main/keranjang';
 $route['seller/:num'] = 'seller/toko';
 
 // $route['suket/:num'] = 'suket';

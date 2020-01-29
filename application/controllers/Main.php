@@ -70,6 +70,16 @@ class main extends CI_Controller
 		redirect(base_url().'masuk');
 	}
 
+
+	function keranjang(){
+		$where = [
+			'ip' => getHostByName(getHostName())
+		];
+		$hasil['keranjang'] = $this->m_main->tampil_where('v_cart', $where);
+		$this->load->view('buyer/v_cart', $hasil);
+	}
+
+
 	public function upgrade(){
 		$where = [
 			'id' => $this->input->post('paket_id')
@@ -97,4 +107,5 @@ class main extends CI_Controller
 		$this->load->view('global/v_konfirmasi_pembayaran');
 		$this->load->view('global/v_footer');
 	}
+
 }

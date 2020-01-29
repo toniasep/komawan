@@ -151,7 +151,7 @@
             </select>
             <input type="search" class="pd-input-filter" placeholder="Cari Produk"/>
           </div>
-          <a href="<?=base_url()?>buyer/cart" class="pd-button-list"><span class="fa fa-shopping-cart fa-lg" style="color: #fff; margin-top: 12px; margin-right: 10px;"> (0)</span></a>
+          <a href="<?=base_url()?>keranjang" class="pd-button-list"><span class="fa fa-shopping-cart fa-lg" style="color: #fff; margin-top: 12px; margin-right: 10px;"> Keranjang</span></a>
         </div>
           <div class="container-fluid">
         <div class="pd-filter pd-filter-grid pd-row">
@@ -296,7 +296,7 @@
           data: fdata,
           dataType : 'json',
           success: function(data){
-            console.log("BERHASIL ATC");
+            alert("Sukses Menambahkan ke Keranjang");
           }
         });
       });
