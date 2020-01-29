@@ -71,7 +71,7 @@
           <?php
           if($this->session->userdata('paket_id') > 2){
           ?>
-            <a href="<?=base_url().'keluar'?>" class="dropdown-item dropdown-footer">Lihat Toko</a>
+            <a href="<?=base_url().'seller/'.$this->session->userdata('id')?>" class="dropdown-item dropdown-footer">Lihat Toko</a>
           <?php
           }
           ?>
