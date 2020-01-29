@@ -9,7 +9,7 @@ class seller extends CI_Controller
 
 	function toko(){
 		$where = [
-				'toko_id' => $this->uri->segment(2),
+				'id' => $this->uri->segment(2),
 				'dihapus' => '0'
 			];
 

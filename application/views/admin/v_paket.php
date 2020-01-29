@@ -100,7 +100,7 @@
             <a href="<?=base_url().'admin/daftar_paket'?>" class="nav-link">
               <i class="nav-icon fas fa-user-clock"></i>
               <p>
-                Request Paket
+                Paket
               </p>
             </a>
           </li>
@@ -137,7 +137,7 @@
               <table class="table table-bordered" id="tabel" width="100%" cellspacing="0">
                 <thead>
                   <tr>
-                    <th>No</th>
+                    <th>ID</th>
                     <th>User ID</th>
                     <th>Paket ID</th>
                     <th>Tanggal Daftar</th>
@@ -156,7 +156,7 @@
               { 
               ?>
                     <tr>
-                      <td><?=$no?></td>
+                      <td><?=$dp->id?></td>
                       <td><?=$dp->user_id?></td>
                       <td><?=$dp->paket_id?></td>
                       <td><?=$dp->tgl_daftar?></td>
@@ -166,7 +166,9 @@
                       <td><?=$dp->total?></td>
                       <td><?=$dp->status?></td>
                       <td>
-                        
+                        <a href="<?=base_url().'admin/aktivasi/'.$dp->id?>" class="btn btn-primary btn-circle" onclick="return confirm('Apakah Anda yakin untuk mengkonfirmasi <?=$dp->user_id?>?');">
+                              Konfirmasi
+                          </a>
                         
                       </td>
                     </tr>

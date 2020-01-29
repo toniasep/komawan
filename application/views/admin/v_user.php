@@ -100,7 +100,7 @@
             <a href="<?=base_url().'admin/daftar_paket'?>" class="nav-link">
               <i class="nav-icon fas fa-user-clock"></i>
               <p>
-                Request Paket
+                Paket
               </p>
             </a>
           </li>
