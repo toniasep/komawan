@@ -12,27 +12,30 @@
       </div><!-- /.container-fluid -->
     </div>
     <!-- /.content-header -->
+    <?php 
+    $data = $data_paket->result()[0];
 
+     ?>
     <!-- Main content -->
     <section class="content">
       <div class="container pb-5">
         <div class="row justify-content-center">
           <div class="col-lg-5 px-3 py-5" style="background-color: #ffffff;">
-            <h4 align="center">Terima Kasih Sudah Melakukan Upgrade Paket</h4>
+            <h4 align="center">Terima Kasih Sudah Melakukan Upgrade Paket <?= $data->nama ?></h4>
             <hr style="">
             <center>
             <table border="0">
               <tr>
-                <td style="width: 200px; text-align: left;">Kode Transaksi</td>
+                <td style="width: 200px; text-align: left;"></td>
                 <td style="width: 200px; text-align: right;">Status</td>
               </tr>
               <tr>
-                <td style="width: 200px; text-align: left;">123456789</td>
+                <td style="width: 200px; text-align: left;"></td>
                 <td style="width: 200px; text-align: right;">BELUM BAYAR</td>
               </tr>
             </table></center><br><hr>
             <p style="text-align: center;">Silahkan Transfer Dana Sebesar:</p>
-            <p class="h5" style="text-align: center;">Rp 500.000</p>
+            <p class="h5" style="text-align: center;">Rp <?= $data->harga ?></p>
             <p style="text-align: center;">ke salah satu bank dibawah ini:</p>
             <hr>
             <center>
@@ -54,7 +57,7 @@
               </tr>
             </table>
             <hr>
-            <input type="submit" class="btn btn-primary" value="KONFIRMASI PEMBAYARAN" style="background-color: #0f4c75; border-color: #0f4c75;">
+            <a href="http://wa.me/6282283293360" target="_blank" class="btn btn-primary" style="background-color: #0f4c75; border-color: #0f4c75;">KONFIRMASI PEMBAYARAN</a>
             </center>
           </div>
         </div>
