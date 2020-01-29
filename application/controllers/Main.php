@@ -80,4 +80,11 @@ class main extends CI_Controller
 		$this->load->view('global/v_upgrade', $hasil);
 		$this->load->view('global/v_footer');
 	}
+
+	function konfirmasiPembayaran(){
+
+		$this->load->view('global/v_header');
+		$this->load->view('global/v_konfirmasi_pembayaran');
+		$this->load->view('global/v_footer');
+	}
 }
