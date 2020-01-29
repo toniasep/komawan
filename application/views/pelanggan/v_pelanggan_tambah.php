@@ -41,18 +41,6 @@
                 <input class="form-control" type="number" name="alamat">
               </div>
               <div class="form-group">
-                <label class="control-label">Kelurahan</label>
-                <select class="form-control selectpicker" data-live-search="true" data-size="5" name="kelurahan" style="width: 40%" placeholder="Nama" required="">
-                  <?php
-                  foreach ($data_pos->result() as $dp) {
-                  ?>
-                    <option value="<?=$dp->id?>"><?=$dp->urban.','.$dp->sub_district.','.$dp->city?></option>
-                  <?php
-                  }
-                  ?>
-                </select>
-              </div>
-              <div class="form-group">
                 <label class="control-label">Kode Pos</label>
                 <input class="form-control" type="number" name="pos_id">
               </div>
@@ -71,10 +59,3 @@
     </section>
     <!-- /.content -->
   </div>
-
-<script>
-$.fn.selectpicker.Constructor.BootstrapVersion = '4';
-$(".selectpicker").keypress(function() {
-  console.log( "Handler for .keypress() called." );
-});
-</script>

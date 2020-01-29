@@ -37,7 +37,9 @@
       <div class="pd-col-md-5">
         <div class="card text-center" style="width:100%">
           <div class="card-body">
-            <form>
+            <form class="login-form" action="<?=base_url().'main/transaksi_buyer/'.$_GET['id']?>" method="post"><!-- 
+            <h3 class="login-head"><i class="fa fa-lg fa-fw fa-user"></i>SIGN IN</h3> -->
+            <input type="hidden" name="<?=$this->security->get_csrf_token_name();?>" value="<?=$this->security->get_csrf_hash();?>" style="display: none">
               <?php 
               $total = 0;
               foreach($keranjang->result() as $k) {
@@ -51,15 +53,17 @@
                     <h5 class="card-text">Rp<?=$k->harga_jual?></h5>
                   </div>
                   <div class="form-group col-md-4">
-                    <input type="number" class="form-control" name="qty" placeholder="Qty" value="<?=$k->qty?>" readonly>
+                    <input type="number" class="form-control" placeholder="Qty" value="<?=$k->qty?>" readonly>
                   </div>
                 </div>
                 <hr>
+                <input type="hidden" name="produk[]" value="<?=$k->produk_id?>">
+                <input type="hidden" name="harga[]" value="<?=$k->harga_jual?>">
+                <input type="hidden" name="qty[]" value="<?=$k->qty?>">
               <?php
               }
               ?>
               
-            </form>
           </div>
           <div class="card-body">
             <div class="form-row">
@@ -77,7 +81,6 @@
       </div>
 
       <div class="pd-col-md-7">
-        <form>
           <div class="form-row">
             <div class="form-group col-md-6">
               <label for="formGroupExampleInput">Nama</label>
@@ -93,20 +96,10 @@
               <label for="formGroupExampleInput">Email</label>
               <input type="email" class="form-control" id="inputEmail4" placeholder="Email" name="email">
             </div>
-            <div class="form-group col-md-6">
-              <label for="formGroupExampleInput">Kelurahan</label>
-              <select class="form-control" id="exampleFormControlSelect1" name="kelurahan">
-                <option>-- Kelurahan -</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-              </select>
-            </div>
           </div>
           <div class="form-group">
             <label for="formGroupExampleInput">Alamat Lengkap</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3">Alamat Lengkap</textarea>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="alamat"></textarea>
           </div>
           <button type="submit" class="btn" style="background-color: #0f4c75; color: #fff">Proses</button>
         </form>

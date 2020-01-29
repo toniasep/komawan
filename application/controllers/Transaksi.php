@@ -56,7 +56,6 @@ class transaksi extends CI_Controller
 						'pelanggan_id' => $this->input->post('pelanggan_id'),
 						'total_harga' => $total_harga,
 						'user_id' => $this->session->userdata('id'),
-						'kurir' => 'Anterin',
 						'status' => 'belum_diproses',
 						'dihapus' => '0',
 						'ditambah_oleh' => $this->session->userdata('email'),
@@ -86,8 +85,7 @@ class transaksi extends CI_Controller
 					'user_id' => $this->session->userdata('id'),
 					'dihapus' => '0'
 				];
-				$hasil['data_pos'] = $this->m_main->tampil('tbl_pos');
-				$hasil['pelanggan'] = $this->m_main->tampil_where('v_pelanggan_kelurahan', $where);
+				$hasil['pelanggan'] = $this->m_main->tampil_where('tbl_pelanggan', $where);
 				$hasil['produk'] = $this->m_main->tampil_where('tbl_produk', $where);
 
 				$this->load->view('global/v_header');

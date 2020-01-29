@@ -180,18 +180,6 @@
                 <label class="control-label">Alamat</label>
                 <textarea id="alamat" class="form-control" required></textarea>
               </div>
-              <div class="form-group">
-                <label class="control-label">Kelurahan</label>
-                <select class="form-control selectpicker" data-live-search="true" data-size="5" id="kelurahan" style="width: 40%" placeholder="Nama" required="">
-                  <?php
-                  foreach ($data_pos->result() as $dp) {
-                  ?>
-                    <option value="<?=$dp->id?>"><?=$dp->urban.', '.$dp->sub_district.', '.$dp->city?></option>
-                  <?php
-                  }
-                  ?>
-                </select>
-              </div>
             </div>            
           </div>
         </form> 
@@ -239,10 +227,8 @@ $(document).ready(function(){ //Make script DOM ready
       'hp': $('#hp').val(),
       'email': $('#email').val(),
       'alamat': $('#alamat').val(),
-      'kelurahan': $('#kelurahan').val(),
       'submit': 'true'
     };
-    var kelurahan_teks = $("#kelurahan option:selected").text();
 
     $.ajax({
       url: '<?=base_url()?>pelanggan/tambah',
@@ -267,7 +253,7 @@ $(document).ready(function(){ //Make script DOM ready
 
                $('*[name=nama]').val(formData['nama']);
                $('*[name=hp]').val(formData['hp']);
-               $('*[name=alamat]').val(formData['alamat']+'\n'+kelurahan_teks);
+               $('*[name=alamat]').val(formData['alamat']);
 
                $('#closemodal').click();
           }

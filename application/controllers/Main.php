@@ -116,4 +116,59 @@ class main extends CI_Controller
 		$this->load->view('global/v_footer');
 	}
 
+	function transaksi_buyer(){
+		$data = [
+			'nama' => $this->input->post('nama'),
+			'hp' => $this->input->post('hp'),
+			'email' => $this->input->post('email'),
+			'alamat' => $this->input->post('alamat'),
+			'dihapus' => '0',
+			'user_id' => $this->uri->segment(3),
+			'ditambah_oleh' => $this->session->userdata('email'),
+			'tgl_tambah' => date("Y-m-d H:i:s")
+		];
+
+		$pelanggan_id = $this->m_main->tambah('tbl_pelanggan', $data);
+
+		$produk = $this->input->post('produk');
+		$qty = $this->input->post('qty');
+		$harga = $this->input->post('harga');
+		$total_harga = 0;
+		for($i = 0; $i < count($harga); $i++){
+			$total_harga += $harga[$i];
+		}
+
+		$data = [
+			'pelanggan_id' => $pelanggan_id,
+			'total_harga' => $total_harga,
+			'user_id' => $this->uri->segment(3),
+			'status' => 'belum_diproses',
+			'dihapus' => '0',
+			'ditambah_oleh' => 'pelanggan '.$pelanggan_id,
+			'tgl_tambah' => date("Y-m-d H:i:s")
+		];
+		$id_terakhir = $this->m_main->tambah('tbl_transaksi', $data);
+
+		for($i = 0; $i < count($produk); $i++){
+			$data = [
+				'transaksi_id' => $id_terakhir,
+				'produk_id' => $produk[$i],
+				'qty' => $qty[$i],
+				'harga' => $harga[$i],
+				'ditambah_oleh' => 'pelanggan '.$pelanggan_id,
+				'tgl_tambah' => date("Y-m-d H:i:s")
+			];
+			$this->m_main->tambah('tbl_detail_transaksi', $data);
+		}
+
+		$where = [
+			'ip' => getHostByName(getHostName())
+		];
+		$this->m_main->hapus('tbl_cart', $where);
+
+		echo "<script>alert('BERHASIL MEMBUAT TRANSAKSI')</script>";
+		redirect(base_url().'seller/'.$this->uri->segment(3));
+
+	}
+
 }

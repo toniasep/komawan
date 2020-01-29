@@ -28,7 +28,6 @@ class pelanggan extends CI_Controller
 					'hp' => $this->input->post('hp'),
 					'email' => $this->input->post('email'),
 					'alamat' => $this->input->post('alamat'),
-					'pos_id' => $this->input->post('kelurahan'),
 					'dihapus' => '0',
 					'user_id' => $this->session->userdata('id'),
 					'ditambah_oleh' => $this->session->userdata('email'),
@@ -37,10 +36,8 @@ class pelanggan extends CI_Controller
 
 				$this->m_main->tambah('tbl_pelanggan', $data);
 			}else{
-				$hasil['data_pos'] = $this->m_main->tampil('tbl_pos');
-
 				$this->load->view('global/v_header');
-				$this->load->view('pelanggan/v_pelanggan_tambah', $hasil);
+				$this->load->view('pelanggan/v_pelanggan_tambah');
 				$this->load->view('global/v_footer');
 			}
 		}else{
