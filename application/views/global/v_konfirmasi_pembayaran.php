@@ -17,9 +17,9 @@
     <section class="content">
       <div class="container pb-5">
         <div class="row justify-content-center">
-          <h4 align="center">Konfirmasi Pembayaran</h4>
-          <hr>
-          <div class="col-lg-12 px-3 py-5" style="background-color: #ffffff;">
+          <div class="col-lg-6 px-4 py-5" style="background-color: #ffffff;">
+            <h4 align="center">Konfirmasi Pembayaran</h4>
+            <hr>
             <div class="form-group">
               <label class="control-label">NAMA PENGIRIM</label>
               <input class="form-control" type="text" name="sku">
@@ -36,7 +36,6 @@
                 <option>BRI | 123456789</option>
               </select>
             </div>
-            </div>
             <div class="form-group">
               <label class="control-label">BUKTI TRANSFER</label>
               <div class="custom-file mb-3">
@@ -48,7 +47,8 @@
               <label class="control-label">KETERANGAN</label>
               <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
             </div>
-            <input type="submit" class="btn btn-primary" value="KONFIRMASI" style="background-color: #0f4c75; border-color: #0f4c75;">
+            <center>
+            <input type="submit" class="btn btn-primary" value="KONFIRMASI" style="background-color: #0f4c75; border-color: #0f4c75;"></center>
             </center>
           </div>
         </div>
