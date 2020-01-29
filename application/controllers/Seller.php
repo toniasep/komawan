@@ -14,6 +14,7 @@ class seller extends CI_Controller
 			];
 
 		$userdata = $this->m_main->tampil_where('tbl_user', $where);
+		$hasil['user'] = $userdata;
 		if ($userdata->result()) {
 			$user_id = $userdata->result()[0]->id;
 			$where = [
