@@ -68,6 +68,14 @@
             </div>
           </div>
           <div class="dropdown-divider"></div>
+          <?php
+          if($this->session->userdata('paket_id') > 2){
+          ?>
+            <a href="<?=base_url().'keluar'?>" class="dropdown-item dropdown-footer">Lihat Toko</a>
+          <?php
+          }
+          ?>
+          
           <a href="<?=base_url().'keluar'?>" class="dropdown-item dropdown-footer">Logout</a>
         </div>
       </li>
