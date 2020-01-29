@@ -1,113 +1,59 @@
-<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
-
-<div class="container">
-    <div class="row">
-        <div class="col-xs-12">
-    		<div class="invoice-title">
-    			<h2>Invoice</h2><h3 class="pull-right">Order # 12345</h3>
-    		</div>
-    		<hr>
-    		<div class="row">
-    			<div class="col-xs-6">
-    				<address>
-    				<strong>Billed To:</strong><br>
-    					John Smith<br>
-    					1234 Main<br>
-    					Apt. 4B<br>
-    					Springfield, ST 54321
-    				</address>
-    			</div>
-    			<div class="col-xs-6 text-right">
-    				<address>
-        			<strong>Shipped To:</strong><br>
-    					Jane Smith<br>
-    					1234 Main<br>
-    					Apt. 4B<br>
-    					Springfield, ST 54321
-    				</address>
-    			</div>
-    		</div>
-    		<div class="row">
-    			<div class="col-xs-6">
-    				<address>
-    					<strong>Payment Method:</strong><br>
-    					Visa ending **** 4242<br>
-    					jsmith@email.com
-    				</address>
-    			</div>
-    			<div class="col-xs-6 text-right">
-    				<address>
-    					<strong>Order Date:</strong><br>
-    					March 7, 2014<br><br>
-    				</address>
-    			</div>
-    		</div>
-    	</div>
-    </div>
-    
-    <div class="row">
-    	<div class="col-md-12">
-    		<div class="panel panel-default">
-    			<div class="panel-heading">
-    				<h3 class="panel-title"><strong>Order summary</strong></h3>
-    			</div>
-    			<div class="panel-body">
-    				<div class="table-responsive">
-    					<table class="table table-condensed">
-    						<thead>
-                                <tr>
-        							<td><strong>Item</strong></td>
-        							<td class="text-center"><strong>Price</strong></td>
-        							<td class="text-center"><strong>Quantity</strong></td>
-        							<td class="text-right"><strong>Totals</strong></td>
-                                </tr>
-    						</thead>
-    						<tbody>
-    							<!-- foreach ($order->lineItems as $line) or some such thing here -->
-    							<tr>
-    								<td>BS-200</td>
-    								<td class="text-center">$10.99</td>
-    								<td class="text-center">1</td>
-    								<td class="text-right">$10.99</td>
-    							</tr>
-                                <tr>
-        							<td>BS-400</td>
-    								<td class="text-center">$20.00</td>
-    								<td class="text-center">3</td>
-    								<td class="text-right">$60.00</td>
-    							</tr>
-                                <tr>
-            						<td>BS-1000</td>
-    								<td class="text-center">$600.00</td>
-    								<td class="text-center">1</td>
-    								<td class="text-right">$600.00</td>
-    							</tr>
-    							<tr>
-    								<td class="thick-line"></td>
-    								<td class="thick-line"></td>
-    								<td class="thick-line text-center"><strong>Subtotal</strong></td>
-    								<td class="thick-line text-right">$670.99</td>
-    							</tr>
-    							<tr>
-    								<td class="no-line"></td>
-    								<td class="no-line"></td>
-    								<td class="no-line text-center"><strong>Shipping</strong></td>
-    								<td class="no-line text-right">$15</td>
-    							</tr>
-    							<tr>
-    								<td class="no-line"></td>
-    								<td class="no-line"></td>
-    								<td class="no-line text-center"><strong>Total</strong></td>
-    								<td class="no-line text-right">$685.99</td>
-    							</tr>
-    						</tbody>
-    					</table>
-    				</div>
-    			</div>
-    		</div>
-    	</div>
-    </div>
-</div>
+<!DOCTYPE>
+<html>
+<head>
+    <title>Klola</title>
+    <link rel="icon" href="<?=base_url()?>img/Untitled-3.png" type="image">
+</head>
+<body style="font-family: lato">
+        <div style="border: solid 1px; width: 700px">
+            <div style="margin: 20px;">
+                <img src="<?=base_url().'img/Untitled-1.png'?>" style="width: 100px;"/>
+                <hr>
+                <p>ID ORDER :</p>
+                <hr>
+                <table border="0">
+                    <tr>
+                        <td style="width: 230px;">SiCepat</td>
+                        <td style="width: 230px;">Berat</td>
+                        <td style="width: 230px;">Ongkir</td>
+                    </tr>
+                    <tr>
+                        <td style="width: 230px;"><p style="font-weight: bold;">Reg</p></td>
+                        <td style="width: 230px;"><p style="font-weight: bold;">0.5 Kg</p></td>
+                        <td style="width: 230px;"><p style="font-weight: bold;">Rp 11.000</p></td>
+                    </tr>
+                </table>
+                <hr>
+                <table border="0">
+                    <tr>
+                        <td style="width: 350px;">Kepada:</td>
+                        <td style="width: 350px; padding-left: 15px;">Dari:</td>
+                    </tr>
+                    <tr>
+                        <td style="width: 350px;"><p style="font-weight: bold;">Nama Penerima</p></td>
+                        <td style="width: 350px; padding-left: 15px;"><p style="font-weight: bold;">Nama Pengirim</p></td>
+                    </tr>
+                    <tr>
+                        <td style="width: 350px; text-align: left; vertical-align: top;">Coblong Dago Bandung Jawa Barat Indonesia 12345</td>
+                        <td style="width: 350px; text-align: left; vertical-align: top; padding-left: 15px;">Parangtritis, Yogyakarta</td>
+                    </tr>
+                    <tr>
+                        <td style="width: 350px;">081234567899</td>
+                        <td style="width: 350px; padding-left: 15px;">081234567898</td>
+                    </tr>
+                </table>
+                <hr>
+                <table border="0">
+                    <tr>
+                        <td style="width: 350px;"><p style="font-weight: bold;">Produk</p></td>
+                        <td style="width: 350px; padding-left: 20px;"><p style="font-weight: bold;">Qty</p></td>
+                    </tr>
+                    <tr>
+                        <td style="width: 350px;">Nama Produk</td>
+                        <td style="width: 350px; padding-left: 20px;">10</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+</body>
+</html>

@@ -69,4 +69,5 @@ class main extends CI_Controller
 		$this->auth->keluar();
 		redirect(base_url().'masuk');
 	}
+
 }
