@@ -166,7 +166,7 @@
                 <p class="pd-card-text pd-text-orange">Rp. <?=$dp->harga_jual?></p>
               </div>
               <div class="pd-card-footer pd-text-right">
-                <a href="<?=base_url()?>buyer/cart"><button class="pd-button pd-button-sm" style="background-color: #3282b8; color: #fff"><span class="fa fa-shopping-cart"> Beli</span></button></a>
+                <a href="<?=base_url()?>seller/cart"><button class="pd-button pd-button-sm" style="background-color: #3282b8; color: #fff"><span class="fa fa-shopping-cart"> Beli</span></button></a>
                 <button class="pd-button pd-button-sm" data-toggle="modal" data-target="#myModal<?= $dp->id ?>" style="background-color: #3282b8; color: #fff">Detail</button>
               </div>
             </div>

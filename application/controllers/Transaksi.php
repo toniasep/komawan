@@ -152,13 +152,9 @@ class transaksi extends CI_Controller
 		$this->load->view('transaksi/v_label');
 	}
 
-	public function nota_transaksi(){
-        $id = $this->uri->segment(3);
+	public function nota_transaksi($id){
 
-		$hasil['transaksi'] = $this->m_laundry->tampil_where('v_transaksi', ['id'=>$id]);
-		$hasil['detail_transaksi'] = $this->m_laundry->tampil_where('v_detail_transaksi', ['id_transaksi'=>$id]);
-        
-        $this->pdf->load_view('transaksi/laporan/nota_transaksi',$hasil);
+        $this->pdf->load_view('transaksi/v_label');
         set_time_limit (500);
         $this->pdf->render();
         $this->pdf->stream("Nota_".$id.".pdf");

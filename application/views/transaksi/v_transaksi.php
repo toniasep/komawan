@@ -115,7 +115,7 @@
                                         <!-- <a href="<?=base_url().'transaksi/ubah/'.$dt->id?>" class="btn btn-primary btn-circle">
                                             <i class="fas fa-fw fa-edit"></i>
                                         </a> -->
-                                        <a href="<?=base_url().'transaksi/hapus/'.$dt->id?>" class="btn btn-info btn-circle" onclick="return confirm('Apakah Anda yakin untuk menghapus data <?=$dt->id?>?');">
+                                        <a href="<?=base_url().'transaksi/nota_transaksi/'.$dt->id?>" class="btn btn-info btn-circle">
                                             <i class="fas fa-print"></i>
                                         </a>
                                         <div class="btn-group" role="group">
