@@ -306,3 +306,10 @@
     </section>
     <!-- /.content -->
   </div>
+<script>
+  $(document).ready(function() {
+
+   
+      var table = $('#tabel1').DataTable( {} );
+  } );
+</script>
