@@ -294,8 +294,7 @@
           url: "<?=base_url()?>seller/add_cart",
           method: "POST",
           data: fdata,
-          dataType : 'json',
-          success: function(data){
+          success: function(){
             alert("Sukses Menambahkan ke Keranjang");
           }
         });
