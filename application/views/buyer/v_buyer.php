@@ -139,7 +139,7 @@
     <div class="pd-row-full">
       <div class="">
         <div class="pd-horizontal-filter" style="background-color: #0f4c75; border: #0f4c75">
-          <a href="<?=base_url()?>buyer" style="text-decoration: none; color: #fff; font-size: 20px; margin-top: 6px; margin-left: 10px;">TOKO JAYA ABADI</a>
+          <a href="<?=base_url()?>seller/<?= $user->result()[0]->id ?>" style="text-decoration: none; color: #fff; font-size: 20px; margin-top: 6px; margin-left: 10px;">Toko <?= $user->result()[0]->nama ?></a>
           <a href="#" class="pd-button-grid" style="display: none;"><span class="fa fa-list fa-2x"></span></a>
           <a href="#" class="pd-button-list" style="display: none;"><span class="fa fa-th-large fa-2x"></span></a>
           <span class="pd-filter-total" style="display: none"></span>
@@ -151,7 +151,7 @@
             </select>
             <input type="search" class="pd-input-filter" placeholder="Cari Produk"/>
           </div>
-          <a href="<?=base_url()?>keranjang" class="pd-button-list"><span class="fa fa-shopping-cart fa-lg" style="color: #fff; margin-top: 12px; margin-right: 10px;"> Keranjang</span></a>
+          <a href="<?=base_url()?>keranjang/?id=<?= $user->result()[0]->id ?>" class="pd-button-list"><span class="fa fa-shopping-cart fa-lg" style="color: #fff; margin-top: 12px; margin-right: 10px;"> Keranjang</span></a>
         </div>
           <div class="container-fluid">
         <div class="pd-filter pd-filter-grid pd-row">

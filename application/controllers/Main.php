@@ -73,6 +73,14 @@ class main extends CI_Controller
 
 	function keranjang(){
 		$where = [
+				'id' => $_GET['id'],
+				'dihapus' => '0'
+			];
+
+		$userdata = $this->m_main->tampil_where('tbl_user', $where);
+		$hasil['user'] = $userdata;
+
+		$where = [
 			'ip' => getHostByName(getHostName())
 		];
 		$hasil['keranjang'] = $this->m_main->tampil_where('v_cart', $where);

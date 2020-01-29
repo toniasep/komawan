@@ -36,6 +36,6 @@ class seller extends CI_Controller
 			'produk_id' => $this->input->post('produk_id')
 		];
 		$this->m_main->tambah('tbl_cart', $data);
-		echo $this->tampil_cart();
+		
 	}
 }
