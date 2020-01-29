@@ -81,7 +81,8 @@
             <div class="modal fade" id="myModalPaket">
               <div class="modal-dialog modal-lg">
                 <div class="modal-content">
-                  <form action="" method="GET">
+                  <form action="<?= base_url(); ?>main/upgrade" method="POST">
+                  <input type="hidden" name="<?=$this->security->get_csrf_token_name();?>" value="<?=$this->security->get_csrf_hash();?>" style="display: none">
                   <!-- Modal Header -->
                   <div class="modal-header">
                     <h4 class="modal-title">Upgrade Paket</h4>
@@ -103,10 +104,10 @@
                   
                   <!-- Modal footer -->
                   <div class="modal-footer">
-                    <button type="button" class="btn btn-primary">Upgrade</button>
+                    <input type="submit" class="btn btn-primary" value="Upgrade">
                     <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                   </div>
-                  
+                  </form>
                 </div>
               </div>
             </div>

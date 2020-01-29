@@ -70,10 +70,9 @@ class main extends CI_Controller
 		redirect(base_url().'masuk');
 	}
 
-	function upgrade(){
+	public function upgrade(){
 		$where = [
-			'id' => $this->input->post('paket'),
-			'dihapus' => '0'
+			'id' => $this->input->post('paket_id')
 		];
 		$hasil['data_paket'] = $this->m_main->tampil_where('tbl_paket', $where);
 
