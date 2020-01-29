@@ -75,13 +75,14 @@
               echo round($sisa / (60 * 60 * 24)) . ' hari lagi'
                ?>)
                <br><br>
-            <a href="" class="btn btn-primary" data-toggle="modal" data-target="#myModalPaket">Upgrade Paket</a>
-            
+            <a href="" class="btn btn-primary" data-toggle="modal" data-target="#myModalPaket" style="background-color: #0f4c75; border-color: #0f4c75;">Upgrade Paket</a>
+
             <!-- Modal -->
             <div class="modal fade" id="myModalPaket">
               <div class="modal-dialog modal-lg">
                 <div class="modal-content">
-                
+                  <form action="<?= base_url(); ?>main/upgrade" method="POST">
+                  <input type="hidden" name="<?=$this->security->get_csrf_token_name();?>" value="<?=$this->security->get_csrf_hash();?>" style="display: none">
                   <!-- Modal Header -->
                   <div class="modal-header">
                     <h4 class="modal-title">Upgrade Paket</h4>
@@ -90,14 +91,23 @@
                   
                   <!-- Modal body -->
                   <div class="modal-body">
-                    
+                    Paket Saat Ini: <?=$this->session->userdata('paket_nama')?> <br><br>
+                    <label>Upgrade Paket</label>
+                    <select id="inputState" class="form-control" name="paket_id">
+                        <option selected="">-- Pilih Paket --</option>
+                        <option value="01">Starting</option>
+                        <option value="02">Growing</option>
+                        <option value="03">Proffesional</option>
+                        <option value="04">Enterprise</option>
+                      </select>
                   </div>
                   
                   <!-- Modal footer -->
                   <div class="modal-footer">
+                    <input type="submit" class="btn btn-primary" value="Upgrade" style="background-color: #0f4c75; border-color: #0f4c75;">
                     <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                   </div>
-                  
+                  </form>
                 </div>
               </div>
             </div>

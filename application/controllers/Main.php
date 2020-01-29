@@ -48,9 +48,9 @@ class main extends CI_Controller
 				'nama' => $this->input->post('nama'),
 				'hp' => $this->input->post('hp'),
 				'email' => $this->input->post('email'),
-				'paket_id' => $this->input->post('paket_id'),
+				'paket_id' => '01',
 				'password' => password_hash($this->input->post('password'), PASSWORD_DEFAULT),
-				'hak_akses' => '0',
+				'hak_akses' => '1',
 				'dihapus' => '0',
 				'ditambah_oleh' => $this->input->post('email'),
 				'tgl_tambah' => date("Y-m-d H:i:s")
@@ -70,12 +70,42 @@ class main extends CI_Controller
 		redirect(base_url().'masuk');
 	}
 
+
 	function keranjang(){
 		$where = [
 			'ip' => getHostByName(getHostName())
 		];
 		$hasil['keranjang'] = $this->m_main->tampil_where('v_cart', $where);
 		$this->load->view('buyer/v_cart', $hasil);
+	}
+
+
+	public function upgrade(){
+		$where = [
+			'id' => $this->input->post('paket_id')
+		];
+		$hasil['data_paket'] = $this->m_main->tampil_where('tbl_paket', $where);
+
+		$data = [
+			'user_id' => $this->session->userdata('id'),
+			'paket_id' => $this->input->post('paket_id'),
+			'tgl_daftar' => date("Y-m-d"),
+			'total' => $hasil['data_paket']->result()[0]->harga,
+			'status' => '0'
+		];
+
+		$this->m_main->tambah('tbl_transaksi_paket', $data);
+
+		$this->load->view('global/v_header');
+		$this->load->view('global/v_upgrade', $hasil);
+		$this->load->view('global/v_footer');
+	}
+
+	function konfirmasiPembayaran(){
+
+		$this->load->view('global/v_header');
+		$this->load->view('global/v_konfirmasi_pembayaran');
+		$this->load->view('global/v_footer');
 	}
 
 }

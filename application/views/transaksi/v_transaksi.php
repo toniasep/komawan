@@ -8,7 +8,7 @@
                     <h1 class="m-0 text-dark">Daftar Transaksi</h1>
                 </div>
                 <div class="col-lg-4">
-                    <a href="<?=base_url().'transaksi/tambah'?>" class="float-right d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm mb-3"><i class="fas fa-plus fa-sm text-white-50"></i> Tambah Data</a>     
+                    <a href="<?=base_url().'transaksi/tambah'?>" class="float-right d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm mb-3" style="background-color: #0f4c75; border-color: #0f4c75"><i class="fas fa-plus fa-sm text-white-50"></i> Tambah Data</a>     
                 </div>
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
@@ -19,9 +19,9 @@
     <nav>
         <div class="container">
           <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
-              <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-belum" role="tab" aria-controls="nav-home" aria-selected="true">Belum di Proses (<?= count($data_transaksi_belum->result()) ?>)</a>
-              <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-sedang" role="tab" aria-controls="nav-profile" aria-selected="false">Sudah di Proses (<?= count($data_transaksi_sedang->result()) ?>)</a>
-              <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-sudah" role="tab" aria-controls="nav-contact" aria-selected="false">Sudah di Kirim (<?= count($data_transaksi_sudah->result()) ?>)</a>
+              <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-belum" role="tab" aria-controls="nav-home" aria-selected="true" style="color: #0f4c75;">Belum di Proses (<?= count($data_transaksi_belum->result()) ?>)</a>
+              <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-sedang" role="tab" aria-controls="nav-profile" aria-selected="false" style="color: #0f4c75;">Sudah di Proses (<?= count($data_transaksi_sedang->result()) ?>)</a>
+              <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-sudah" role="tab" aria-controls="nav-contact" aria-selected="false" style="color: #0f4c75;">Sudah di Kirim (<?= count($data_transaksi_sudah->result()) ?>)</a>
           </div>
         </div>
     </nav>
@@ -115,7 +115,7 @@
                                         <!-- <a href="<?=base_url().'transaksi/ubah/'.$dt->id?>" class="btn btn-primary btn-circle">
                                             <i class="fas fa-fw fa-edit"></i>
                                         </a> -->
-                                        <a href="<?=base_url().'transaksi/nota_transaksi/'.$dt->id?>" class="btn btn-info btn-circle">
+                                        <a href="<?=base_url().'transaksi/nota_transaksi/'.$dt->id?>" class="btn btn-info btn-circle" style="background-color: #0f4c75; border-color: #0f4c75">
                                             <i class="fas fa-print"></i>
                                         </a>
                                         <div class="btn-group" role="group">
@@ -170,7 +170,7 @@
                                       <td><?=$dt->total_harga?></td>
                                       <td><?=$dt->kurir?></td>
                                       <td>
-                                        <a href="<?=base_url().'transaksi/ubah/'.$dt->id?>" class="btn btn-primary btn-circle">
+                                        <a href="<?=base_url().'transaksi/ubah/'.$dt->id?>" class="btn btn-primary btn-circle" style="background-color: #0f4c75; border-color: #0f4c75">
                                             Lacak Pengiriman
                                         </a>
                                         <!-- <a href="<?=base_url().'transaksi/hapus/'.$dt->id?>" class="btn btn-danger btn-circle" onclick="return confirm('Apakah Anda yakin untuk menghapus data <?=$dt->id?>?');">
