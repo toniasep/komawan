@@ -301,6 +301,36 @@
 
 <!-- Core plugin JavaScript-->
 <script src="<?=base_url().'assets/'?>vendor/jquery-easing/jquery.easing.min.js"></script>
-
+<script>
+  $(document).ready(function() {
+      // Setup - add a text input to each footer cell
+      $('#tabel thead tr').clone(true).appendTo( '#tabel thead' );
+      $('#tabel thead tr:eq(1) th').each( function (i) {
+          var title = $(this).text();
+          $(this).html( '<input type="text" placeholder="Cari '+title+'" />' );
+   
+          $( 'input', this ).on( 'keyup change', function () {
+              if ( table.column(i).search() !== this.value ) {
+                  table
+                      .column(i)
+                      .search( this.value )
+                      .draw();
+              }
+          } );
+      } );
+   
+      var table = $('#tabel').DataTable( {
+          orderCellsTop: true,
+          fixedHeader: true,
+          dom: 'Bfrtip',
+          buttons: [
+              'copyHtml5',
+              'excelHtml5',
+              'csvHtml5',
+              'pdfHtml5'
+          ]
+      } );
+  } );
+</script>
 </body>
 </html>
