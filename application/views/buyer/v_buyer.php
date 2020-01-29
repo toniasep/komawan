@@ -166,7 +166,9 @@
                 <p class="pd-card-text pd-text-orange">Rp. <?=$dp->harga_jual?></p>
               </div>
               <div class="pd-card-footer pd-text-right">
-                <a href="<?=base_url()?>seller/cart"><button class="pd-button pd-button-sm" style="background-color: #3282b8; color: #fff" data-id=""><span class="fa fa-shopping-cart"> Beli</span></button></a>
+                <!-- <a href="<?=base_url()?>seller/cart"> -->
+                  <button class="add_cart pd-button pd-button-sm" style="background-color: #3282b8; color: #fff" data-id="<?=$dp->id?>"><span class="fa fa-shopping-cart"> Beli</span></button>
+                <!-- </a> -->
                 <button class="pd-button pd-button-sm" data-toggle="modal" data-target="#myModal<?= $dp->id ?>" style="background-color: #3282b8; color: #fff">Detail</button>
               </div>
             </div>
@@ -277,7 +279,26 @@
     pidie.accordionCollapse
     pidie.filterSort
     pidie.filterPagination
-    pidie.filterCheckbox
+    pidie.filterCheckbox    
   </script>
 </body>
 </html>
+<script src="<?=base_url().'assets/'?>vendor/jquery/jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+  $(document).ready(function(){
+      $('.add_cart').click(function(){
+        var fdata = {
+          'produk_id': $(this).data("id")
+        };
+        $.ajax({
+          url: "<?=base_url()?>seller/add_cart",
+          method: "POST",
+          data: fdata,
+          dataType : 'json',
+          success: function(data){
+            console.log("BERHASIL ATC");
+          }
+        });
+      });
+    });
+</script>
