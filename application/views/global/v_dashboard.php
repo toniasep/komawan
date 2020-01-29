@@ -76,12 +76,12 @@
                ?>)
                <br><br>
             <a href="" class="btn btn-primary" data-toggle="modal" data-target="#myModalPaket">Upgrade Paket</a>
-            
+
             <!-- Modal -->
             <div class="modal fade" id="myModalPaket">
               <div class="modal-dialog modal-lg">
                 <div class="modal-content">
-                
+                  <form action="" method="GET">
                   <!-- Modal Header -->
                   <div class="modal-header">
                     <h4 class="modal-title">Upgrade Paket</h4>
@@ -90,11 +90,20 @@
                   
                   <!-- Modal body -->
                   <div class="modal-body">
-                    
+                    Paket Saat Ini: <?=$this->session->userdata('paket_nama')?> <br><br>
+                    <label>Upgrade Paket</label>
+                    <select id="inputState" class="form-control" name="paket_id">
+                        <option selected="">-- Pilih Paket --</option>
+                        <option value="01">Starting</option>
+                        <option value="02">Growing</option>
+                        <option value="03">Proffesional</option>
+                        <option value="04">Enterprise</option>
+                      </select>
                   </div>
                   
                   <!-- Modal footer -->
                   <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">Upgrade</button>
                     <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                   </div>
                   
