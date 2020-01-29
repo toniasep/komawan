@@ -20,8 +20,8 @@
         <div class="container">
           <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
               <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-belum" role="tab" aria-controls="nav-home" aria-selected="true">Belum di Proses (<?= count($data_transaksi_belum->result()) ?>)</a>
-              <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-sedang" role="tab" aria-controls="nav-profile" aria-selected="false">Sedang di Proses (<?= count($data_transaksi_sedang->result()) ?>)</a>
-              <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-sudah" role="tab" aria-controls="nav-contact" aria-selected="false">Sudah di Proses (<?= count($data_transaksi_sudah->result()) ?>)</a>
+              <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-sedang" role="tab" aria-controls="nav-profile" aria-selected="false">Sudah di Proses (<?= count($data_transaksi_sedang->result()) ?>)</a>
+              <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-sudah" role="tab" aria-controls="nav-contact" aria-selected="false">Sudah di Kirim (<?= count($data_transaksi_sudah->result()) ?>)</a>
           </div>
         </div>
     </nav>
@@ -56,12 +56,18 @@
                                       <td><?=$dt->total_harga?></td>
                                       <td><?=$dt->kurir?></td>
                                       <td>
-                                        <a href="<?=base_url().'transaksi/ubah/'.$dt->id?>" class="btn btn-primary btn-circle">
-                                            <i class="fas fa-fw fa-edit"></i>
-                                        </a>
                                         <a href="<?=base_url().'transaksi/hapus/'.$dt->id?>" class="btn btn-danger btn-circle" onclick="return confirm('Apakah Anda yakin untuk menghapus data <?=$dt->id?>?');">
                                             <i class="fas fa-trash"></i>
                                         </a>
+                                        <div class="btn-group" role="group">
+                                          <button id="btnGroupDrop1" type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            Proses
+                                          </button>
+                                          <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                                            <a class="dropdown-item" href="<?=base_url().'transaksi/updateProsesSudah/'.$dt->id?>">Sudah di Proses</a>
+                                            <a class="dropdown-item" href="#">Sudah di Kirim</a>
+                                          </div>
+                                        </div>
                                       </td>
                                     </tr>
                                 <?php
@@ -106,12 +112,20 @@
                                       <td><?=$dt->total_harga?></td>
                                       <td><?=$dt->kurir?></td>
                                       <td>
-                                        <a href="<?=base_url().'transaksi/ubah/'.$dt->id?>" class="btn btn-primary btn-circle">
+                                        <!-- <a href="<?=base_url().'transaksi/ubah/'.$dt->id?>" class="btn btn-primary btn-circle">
                                             <i class="fas fa-fw fa-edit"></i>
+                                        </a> -->
+                                        <a href="<?=base_url().'transaksi/hapus/'.$dt->id?>" class="btn btn-info btn-circle" onclick="return confirm('Apakah Anda yakin untuk menghapus data <?=$dt->id?>?');">
+                                            <i class="fas fa-print"></i>
                                         </a>
-                                        <a href="<?=base_url().'transaksi/hapus/'.$dt->id?>" class="btn btn-danger btn-circle" onclick="return confirm('Apakah Anda yakin untuk menghapus data <?=$dt->id?>?');">
-                                            <i class="fas fa-trash"></i>
-                                        </a>
+                                        <div class="btn-group" role="group">
+                                          <button id="btnGroupDrop1" type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            Proses
+                                          </button>
+                                          <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                                            <a class="dropdown-item" href="<?=base_url().'transaksi/updateSudahKirim/'.$dt->id?>">Sudah di Kirim</a>
+                                          </div>
+                                        </div>
                                       </td>
                                     </tr>
                                 <?php
@@ -157,11 +171,11 @@
                                       <td><?=$dt->kurir?></td>
                                       <td>
                                         <a href="<?=base_url().'transaksi/ubah/'.$dt->id?>" class="btn btn-primary btn-circle">
-                                            <i class="fas fa-fw fa-edit"></i>
+                                            Lacak Pengiriman
                                         </a>
-                                        <a href="<?=base_url().'transaksi/hapus/'.$dt->id?>" class="btn btn-danger btn-circle" onclick="return confirm('Apakah Anda yakin untuk menghapus data <?=$dt->id?>?');">
+                                        <!-- <a href="<?=base_url().'transaksi/hapus/'.$dt->id?>" class="btn btn-danger btn-circle" onclick="return confirm('Apakah Anda yakin untuk menghapus data <?=$dt->id?>?');">
                                             <i class="fas fa-trash"></i>
-                                        </a>
+                                        </a> -->
                                       </td>
                                     </tr>
                                 <?php

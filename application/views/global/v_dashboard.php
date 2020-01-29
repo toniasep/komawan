@@ -70,7 +70,10 @@
             }else{
               echo 'Tidak Aktif';
             } ?> <br>
-            Paket : <?=$this->session->userdata('paket_nama')?> (27 hari lagi)
+            Paket : <?=$this->session->userdata('paket_nama')?> (<?php 
+              $sisa = strtotime($this->session->userdata('tgl_expire')) - now();
+              echo round($sisa / (60 * 60 * 24)) . ' hari lagi'
+               ?>)
           </div>
           <!-- ./col -->
         </div>

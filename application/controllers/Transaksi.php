@@ -15,13 +15,13 @@ class transaksi extends CI_Controller
 			$wheres = [
 				'user_id' => $this->session->userdata('id'),
 				'dihapus' => '0',
-				'status' => 'sedang_diproses'
+				'status' => 'sudah_diproses'
 			];
 			$hasil['data_transaksi_sedang'] = $this->m_main->tampil_where('v_transaksi', $wheres);
 			$wheresu = [
 				'user_id' => $this->session->userdata('id'),
 				'dihapus' => '0',
-				'status' => 'sudah_diproses'
+				'status' => 'sudah_dikirim'
 			];
 			$hasil['data_transaksi_sudah'] = $this->m_main->tampil_where('v_transaksi', $wheresu);
 
@@ -33,8 +33,7 @@ class transaksi extends CI_Controller
 		}
 	}
 
-	function tambah()
-	{
+	function tambah(){
 
 		if($this->session->userdata('masuk') == '1'){
 			if($this->input->post('submit') != NULL){
@@ -101,6 +100,54 @@ class transaksi extends CI_Controller
 
 	}
 	
+	function updateProsesSudah($id){
+		if($this->session->userdata('masuk') == '1'){
+			if($id != NULL){
+				$where = [
+					'id' => $id,
+					'user_id' => $this->session->userdata('id'),
+					'dihapus' => '0'
+				];
+				$data = [
+					'status' => 'sudah_diproses'
+				];
+
+				$this->m_main->ubah('tbl_transaksi', $data, $where);
+
+				redirect(base_url().'transaksi');
+			}else{
+				echo "Gagal Update Transaksi";
+				
+			}
+		}else{
+			redirect(base_url().'masuk');
+		}
+	}
+	
+	function updateSudahKirim($id){
+		if($this->session->userdata('masuk') == '1'){
+			if($id != NULL){
+				$where = [
+					'id' => $id,
+					'user_id' => $this->session->userdata('id'),
+					'dihapus' => '0'
+				];
+				$data = [
+					'status' => 'sudah_dikirim'
+				];
+
+				$this->m_main->ubah('tbl_transaksi', $data, $where);
+
+				redirect(base_url().'transaksi');
+			}else{
+				echo "Gagal Update Transaksi";
+				
+			}
+		}else{
+			redirect(base_url().'masuk');
+		}
+	}
+
 	public function label(){
 		$this->load->view('transaksi/v_label');
 	}

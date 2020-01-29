@@ -104,6 +104,14 @@
               </p>
             </a>
           </li>
+          <li class="nav-item has-treeview">
+            <a href="<?=base_url().'admin/belum_aktif'?>" class="nav-link">
+              <i class="nav-icon fas fa-user-clock"></i>
+              <p>
+                Request Paket
+              </p>
+            </a>
+          </li>
         </ul>
       </nav>
       <!-- /.sidebar-menu -->

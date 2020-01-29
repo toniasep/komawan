@@ -1,98 +1,113 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<style> 
-		table.gambar{ 
-			background: url("<?php echo base_url().'img/bg.jpg';?>");
-			opacity: 0.3;
-		} 
-	</style>
-</head>
-<body>
-		<table width="50%" class="gambar">
-			<tr>
-				<td align="center">
-					<h1>"Mama Laundry"</h1>
-					<h3>Jl. Regol RT. 04 RW. 08
-					<br>
-						Telp. 085759898063
-					</h3><hr>			
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<table align="center" width="90%">
-						<?php foreach ($transaksi->result() as $t) {
-						?>
-							<tr>
-								<td>No. ID</td>
-								<td>: <?php echo $t->id; ?></td>
-							</tr>
-							<tr>
-								<td>Nama</td>
-								<td>: <?php echo $t->nama; ?></td>
-							</tr>
-							<tr>
-								<td>Telp.</td>
-								<td>: <?php echo $t->telp; ?></td>
-							</tr>
-							<tr>
-								<td>Tgl. Masuk</td>
-								<td>: <?php echo $t->tgl_masuk; ?></td>
-							</tr>
-							<tr>
-								<td>Tgl. Selesai</td>
-								<td>: <?php echo $t->tgl_selesai; ?></td>
-							</tr>
-							<tr>
-								<td>Total Harga</td>
-								<td>: <?php echo $t->total; ?></td>
-							</tr>
-						<?php
-						}
-						?>
-						
-					</table><hr>			
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<table width="90%">
-						<tr>
-							<th width="30%">Jenis</th>
-							<th width="20%" align="center">Qty</th>
-							<th width="50%" align="center">Hrga</th>
-						</tr>
-						<?php foreach ($detail_transaksi->result() as $dt) {
-						?>
-							<tr>
-								<td><?php echo $dt->nama_jenis; ?></td>
-								<td align="center"><?php echo $dt->qty.$dt->satuan; ?></td>
-								<td align="center">Rp. <?php echo $dt->harga; ?></td>
-							</tr>
-						<?php
-						}
-						?>
-					</table>
-				</td>
-			</tr>
-			<tr>
-				<td><hr>
-					<font size="2">
-					<b>PERHATIAN:</b><br>
-					<ol>
-						<li>Pengambilan barang harus dengan nota</li>
-						<li>Kain luntur/mengkerut sendiri diluar tanggungan</li>
-						<li>Hak klaim berlaku 24jam dari waktu pengambilan</li>
-						<li>Bon hanya berlaku 40 hari dari tanggal selesai</li>
-						<li>Kami tidak bertanggung jawab atas hilangnya kancing/barang yang tertinggal didalamnya</li>
-						<li>Segala kerusakan yang disebabkan karena rapuh, diluar tanggung jawab kami</li>
-						<li>Jika memberikan uang lebih dari total, maka tidak ada kembalian</li>
-						<li>Setiap konsumen dianggap setuju dengan isi perjanjian diatas</li>
-					</ol>
-					</font>
-				</td>
-			</tr>
-		</table>
-</body>
-</html>
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+    		<div class="invoice-title">
+    			<h2>Invoice</h2><h3 class="pull-right">Order # 12345</h3>
+    		</div>
+    		<hr>
+    		<div class="row">
+    			<div class="col-xs-6">
+    				<address>
+    				<strong>Billed To:</strong><br>
+    					John Smith<br>
+    					1234 Main<br>
+    					Apt. 4B<br>
+    					Springfield, ST 54321
+    				</address>
+    			</div>
+    			<div class="col-xs-6 text-right">
+    				<address>
+        			<strong>Shipped To:</strong><br>
+    					Jane Smith<br>
+    					1234 Main<br>
+    					Apt. 4B<br>
+    					Springfield, ST 54321
+    				</address>
+    			</div>
+    		</div>
+    		<div class="row">
+    			<div class="col-xs-6">
+    				<address>
+    					<strong>Payment Method:</strong><br>
+    					Visa ending **** 4242<br>
+    					jsmith@email.com
+    				</address>
+    			</div>
+    			<div class="col-xs-6 text-right">
+    				<address>
+    					<strong>Order Date:</strong><br>
+    					March 7, 2014<br><br>
+    				</address>
+    			</div>
+    		</div>
+    	</div>
+    </div>
+    
+    <div class="row">
+    	<div class="col-md-12">
+    		<div class="panel panel-default">
+    			<div class="panel-heading">
+    				<h3 class="panel-title"><strong>Order summary</strong></h3>
+    			</div>
+    			<div class="panel-body">
+    				<div class="table-responsive">
+    					<table class="table table-condensed">
+    						<thead>
+                                <tr>
+        							<td><strong>Item</strong></td>
+        							<td class="text-center"><strong>Price</strong></td>
+        							<td class="text-center"><strong>Quantity</strong></td>
+        							<td class="text-right"><strong>Totals</strong></td>
+                                </tr>
+    						</thead>
+    						<tbody>
+    							<!-- foreach ($order->lineItems as $line) or some such thing here -->
+    							<tr>
+    								<td>BS-200</td>
+    								<td class="text-center">$10.99</td>
+    								<td class="text-center">1</td>
+    								<td class="text-right">$10.99</td>
+    							</tr>
+                                <tr>
+        							<td>BS-400</td>
+    								<td class="text-center">$20.00</td>
+    								<td class="text-center">3</td>
+    								<td class="text-right">$60.00</td>
+    							</tr>
+                                <tr>
+            						<td>BS-1000</td>
+    								<td class="text-center">$600.00</td>
+    								<td class="text-center">1</td>
+    								<td class="text-right">$600.00</td>
+    							</tr>
+    							<tr>
+    								<td class="thick-line"></td>
+    								<td class="thick-line"></td>
+    								<td class="thick-line text-center"><strong>Subtotal</strong></td>
+    								<td class="thick-line text-right">$670.99</td>
+    							</tr>
+    							<tr>
+    								<td class="no-line"></td>
+    								<td class="no-line"></td>
+    								<td class="no-line text-center"><strong>Shipping</strong></td>
+    								<td class="no-line text-right">$15</td>
+    							</tr>
+    							<tr>
+    								<td class="no-line"></td>
+    								<td class="no-line"></td>
+    								<td class="no-line text-center"><strong>Total</strong></td>
+    								<td class="no-line text-right">$685.99</td>
+    							</tr>
+    						</tbody>
+    					</table>
+    				</div>
+    			</div>
+    		</div>
+    	</div>
+    </div>
+</div>
