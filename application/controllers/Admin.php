@@ -16,16 +16,12 @@ class admin extends CI_Controller
 		}
 	}
 
-	function belum_aktif(){
-		if($this->session->userdata('su') == '1'){
+	function daftar_paket(){
 
-			$hasil['data_user'] = $this->m_main->user_belum_aktif();
-			$hasil['status'] = 'belum aktif';
+		$hasil['data_paket'] = $this->m_main->tampil('tbl_transaksi_paket');
 
-			$this->load->view('admin/v_user', $hasil);
-		}else{
-			redirect(base_url().'admin/masuk');
-		}
+		$this->load->view('admin/v_paket', $hasil);
+
 	}
 
 	function hapus(){

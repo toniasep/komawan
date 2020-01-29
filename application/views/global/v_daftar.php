@@ -42,16 +42,6 @@
                     <div class="form-group">
                       <input class="form-control" type="password" placeholder="Konfirmasi Password" name="copassword" required="">
                     </div>
-                    <div class="form-group">
-                      <select id="inputState" class="form-control" name="paket_id">
-                        <option selected>-- Pilih Paket --</option>
-                        <option value="01">Starting</option>
-                        <option value="02">Growing</option>
-                        <option value="01">Proffesional</option>
-                        <option value="01">Enterprise</option>
-                      </select><br>
-                      <label><a href="<?=base_url().'masuk'?>">Lihat detail paket</a></label>
-                    </div>
                     <div class="form-group btn-container">
                       <input type="submit" name="submit" value="DAFTAR" class="btn btn-primary btn-block"><br>
                       <label>Sudah punya akun ? <a href="<?=base_url().'masuk'?>">Masuk</a></label>                      
