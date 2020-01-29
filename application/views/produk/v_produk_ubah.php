@@ -28,7 +28,10 @@
               </div>
               <div class="form-group">
                 <label class="control-label">Gambar</label>
-                <input type="file" class="form-control" name="gambar" accept="image/*" required>
+                <div class="custom-file mb-3">
+                  <input type="file" class="custom-file-input" id="customFile" name="gambar" accept="image/*" required="">
+                  <label class="custom-file-label" for="customFile">Upload File</label>
+                </div>
               </div>
               <div class="form-group">
                 <label class="control-label">SKU</label>
@@ -58,9 +61,9 @@
               </div>
             </div>
 
-            <div class="col-lg-12">
+            <div class="col-lg-6">
               <div class="form-group btn-container">
-                <input type="submit" name="submit" value="UBAH DATA" class="btn btn-primary btn-block">
+                <input type="submit" name="submit" value="UBAH DATA" class="btn btn-primary btn-block" style="background-color: #0f4c75; border-color: #0f4c75; width: 100%;">
               </div>
             </div>
 

@@ -16,7 +16,7 @@
             <div class="col-xl-10">
             </div>
             <div class="col-xl-2">
-                <a href="<?=base_url().'produk/tambah'?>" class="float-right d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm mb-3"><i class="fas fa-plus fa-sm text-white-50"></i> Tambah Data</a>     
+                <a href="<?=base_url().'produk/tambah'?>" class="float-right d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm mb-3" style="background-color: #0f4c75; border-color: #0f4c75"><i class="fas fa-plus fa-sm text-white-50"></i> Tambah Data</a>     
             </div>
         </div>
         <div class="row">
@@ -50,7 +50,7 @@
                                   <td><?=$dp->harga_jual?></td>
                                   <td><?=$dp->stok?></td>
                                   <td>
-                                    <a href="<?=base_url().'produk/ubah/'.$dp->id?>" class="btn btn-primary btn-circle">
+                                    <a href="<?=base_url().'produk/ubah/'.$dp->id?>" class="btn btn-primary btn-circle" style="background-color: #0f4c75; border-color: #0f4c75">
                                         <i class="fas fa-fw fa-edit"></i>
                                     </a>
                                     <a href="<?=base_url().'produk/hapus/'.$dp->id?>" class="btn btn-danger btn-circle" onclick="return confirm('Apakah Anda yakin untuk menghapus data <?=$dp->sku?>?');">
