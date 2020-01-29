@@ -90,7 +90,7 @@
                       <td><input type="number" name="qty[]" id="qty1" class="form-control" value="1" onchange="changeQty(1)"></td>
                       <td><input type="number" name="harga[]" id="harga1" readonly="" class="form-control" onchange="changeHarga()"></td>
                       <td>
-                        <button type="button" class="btn btn-primary mx-3" onclick="tambah_baris_produk()"><i class="fa fa-plus"></i></button>
+                        <button type="button" class="btn btn-primary mx-3" onclick="tambah_baris_produk()" style="background-color: #0f4c75; border-color: #0f4c75"><i class="fa fa-plus"></i></button>
                       </td>
                     </tr>
         
@@ -132,10 +132,10 @@
               </table>
             </div>
 
-            <div class="col-lg-12">
-              <br><br>
+            <div class="col-lg-12 pb-4">
+              <br>
               <div class="form-group btn-container">
-                <input type="submit" name="submit" value="TAMBAH TRANSAKSI" class="btn btn-primary btn-block">
+                <input type="submit" name="submit" value="TAMBAH TRANSAKSI" class="btn btn-primary btn-block" style="background-color: #0f4c75; border-color: #0f4c75; width: 17%; float: right;">
               </div>
             </div>
 
@@ -199,7 +199,7 @@
           </div>  
         </div>
         <div class="modal-footer">
-          <input type="submit" name="submit" value="TAMBAH DATA" id="submitpelanggan" class="btn btn-primary btn-block">
+          <input type="submit" name="submit" value="TAMBAH DATA" id="submitpelanggan" class="btn btn-primary btn-block" style="background-color: #0f4c75; border-color: #0f4c75">
           <button type="button" class="btn btn-default" id="closemodal" data-dismiss="modal">Close</button>
         </div>
       </div>
