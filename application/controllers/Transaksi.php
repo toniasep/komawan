@@ -148,13 +148,15 @@ class transaksi extends CI_Controller
 		}
 	}
 
-	public function label(){
-		$this->load->view('transaksi/v_label');
-	}
-
 	public function nota_transaksi($id){
 
-        $this->pdf->load_view('transaksi/v_label');
+		$whereb = [
+			'id' => $id,
+			'dihapus' => '0',
+		];
+		$hasil['print'] = $this->m_main->tampil_where('v_transaksi', $whereb);
+
+        $this->pdf->load_view('transaksi/v_label', $hasil);
         set_time_limit (500);
         $this->pdf->render();
         $this->pdf->stream("Nota_".$id.".pdf");
