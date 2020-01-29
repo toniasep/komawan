@@ -70,4 +70,15 @@ class main extends CI_Controller
 		redirect(base_url().'masuk');
 	}
 
+	function upgrade(){
+		$where = [
+			'id' => $this->input->post('paket'),
+			'dihapus' => '0'
+		];
+		$hasil['data_paket'] = $this->m_main->tampil_where('tbl_paket', $where);
+
+		$this->load->view('global/v_header');
+		$this->load->view('global/v_upgrade', $hasil);
+		$this->load->view('global/v_footer');
+	}
 }
