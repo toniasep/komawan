@@ -74,6 +74,34 @@
               $sisa = strtotime($this->session->userdata('tgl_expire')) - now();
               echo round($sisa / (60 * 60 * 24)) . ' hari lagi'
                ?>)
+               <br><br>
+            <a href="" class="btn btn-primary" data-toggle="modal" data-target="#myModalPaket">Upgrade Paket</a>
+            
+            <!-- Modal -->
+            <div class="modal fade" id="myModalPaket">
+              <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                
+                  <!-- Modal Header -->
+                  <div class="modal-header">
+                    <h4 class="modal-title">Upgrade Paket</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  </div>
+                  
+                  <!-- Modal body -->
+                  <div class="modal-body">
+                    
+                  </div>
+                  
+                  <!-- Modal footer -->
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+
           </div>
           <!-- ./col -->
         </div>
