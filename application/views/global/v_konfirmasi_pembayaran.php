@@ -48,7 +48,7 @@
               <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
             </div>
             <center>
-            <input type="submit" class="btn btn-primary" value="KONFIRMASI" style="background-color: #0f4c75; border-color: #0f4c75;"></center>
+            <input type="submit" class="btn btn-primary" value="KONFIRMASI" style="background-color: #0f4c75; border-color: #0f4c75; width: 50%"></center>
             </center>
           </div>
         </div>
