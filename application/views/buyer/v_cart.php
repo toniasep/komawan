@@ -26,7 +26,6 @@
               <option value="high">Price high to low</option>
             </select>
           </div>
-          <a href="<?=base_url()?>buyer/cart" class="pd-button-list"><span class="fa fa-shopping-cart fa-lg" style="color: #fff; margin-top: 12px; margin-right: 10px;"> (0)</span></a>
         </div>
 
       </div>
@@ -39,18 +38,27 @@
         <div class="card text-center" style="width:100%">
           <div class="card-body">
             <form>
-              <div class="form-row">
-                <div class="form-group col-md-4">
-                  <h5 class="card-title">Sepatu Kuda</h5>
+              <?php 
+              $total = 0;
+              foreach($keranjang->result() as $k) {
+              $total += $k->total;
+              ?>
+                <div class="form-row">
+                  <div class="form-group col-md-4">
+                    <h5 class="card-title"><?=$k->nama?></h5>
+                  </div>
+                  <div class="form-group col-md-4"> 
+                    <h5 class="card-text">Rp<?=$k->harga_jual?></h5>
+                  </div>
+                  <div class="form-group col-md-4">
+                    <input type="number" class="form-control" name="qty" placeholder="Qty" value="<?=$k->qty?>" readonly>
+                  </div>
                 </div>
-                <div class="form-group col-md-4"> 
-                  <h5 class="card-text">RP. 50000</h5>
-                </div>
-                <div class="form-group col-md-4">
-                  <input type="number" class="form-control" name="qty" placeholder="Qty">
-                </div>
-              </div>
-              <hr>
+                <hr>
+              <?php
+              }
+              ?>
+              
             </form>
           </div>
           <div class="card-body">
@@ -58,14 +66,10 @@
                 <div class="form-group col-md-4">
                 </div>
                 <div class="form-group col-md-4"> 
-                  <p class="card-text">Sub Total</p>
-                  <p class="card-text">Biaya Pengiriman</p>
                   <p class="card-text">Total</p>
                 </div>
                 <div class="form-group col-md-4">
-                  <p class="card-text">Rp.</p>
-                  <p class="card-text">Rp.</p>
-                  <p class="card-text">Rp.</p>
+                  <p class="card-text">Rp.<?=$total?></p>
                 </div>
               </div>
           </div>
@@ -77,21 +81,21 @@
           <div class="form-row">
             <div class="form-group col-md-6">
               <label for="formGroupExampleInput">Nama</label>
-              <input type="text" class="form-control" id="inputEmail4" placeholder="Nama">
+              <input type="text" class="form-control" id="inputEmail4" placeholder="Nama" name="nama">
             </div>
             <div class="form-group col-md-6">
               <label for="formGroupExampleInput">No. Hp</label>
-              <input type="number" class="form-control" id="inputPassword4" placeholder="No. Hp">
+              <input type="number" class="form-control" id="inputPassword4" placeholder="No. Hp" name="hp">
             </div>
           </div>
           <div class="form-row">
             <div class="form-group col-md-6">
               <label for="formGroupExampleInput">Email</label>
-              <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+              <input type="email" class="form-control" id="inputEmail4" placeholder="Email" name="email">
             </div>
             <div class="form-group col-md-6">
               <label for="formGroupExampleInput">Kelurahan</label>
-              <select class="form-control" id="exampleFormControlSelect1">
+              <select class="form-control" id="exampleFormControlSelect1" name="kelurahan">
                 <option>-- Kelurahan -</option>
                 <option>2</option>
                 <option>3</option>
