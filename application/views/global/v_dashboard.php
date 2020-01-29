@@ -75,7 +75,7 @@
               echo round($sisa / (60 * 60 * 24)) . ' hari lagi'
                ?>)
                <br><br>
-            <a href="" class="btn btn-primary" data-toggle="modal" data-target="#myModalPaket">Upgrade Paket</a>
+            <a href="" class="btn btn-primary" data-toggle="modal" data-target="#myModalPaket" style="background-color: #0f4c75; border-color: #0f4c75;">Upgrade Paket</a>
 
             <!-- Modal -->
             <div class="modal fade" id="myModalPaket">
@@ -104,7 +104,7 @@
                   
                   <!-- Modal footer -->
                   <div class="modal-footer">
-                    <input type="submit" class="btn btn-primary" value="Upgrade">
+                    <input type="submit" class="btn btn-primary" value="Upgrade" style="background-color: #0f4c75; border-color: #0f4c75;">
                     <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                   </div>
                   </form>
